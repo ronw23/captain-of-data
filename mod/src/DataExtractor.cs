@@ -180,10 +180,49 @@ namespace DataExtractorMod {
             return obj.ToString();
         }
 
-        public string MakeMachineJsonObject (
+        public string MakeMachineJsonObject(
+            string id,
+            string name,
+            string category,
+            string workers,
+            string maintenance_cost_units,
+            string maintenance_cost_quantity,
+            string electricity_consumed,
+            string electricity_generated,
+            string computing_consumed,
+            string computing_generated,
+            string capacity,
+            string unity_cost,
+            string research_speed,
+            string build_costs,
+            string recipes
+        )
+        {
+            return MakeMachineJsonObject2(
+                id,
+                name,
+                category,
+                "",
+                workers,
+                maintenance_cost_units,
+                maintenance_cost_quantity,
+                electricity_consumed,
+                electricity_generated,
+                computing_consumed,
+                computing_generated,
+                capacity,
+                unity_cost,
+                research_speed,
+                build_costs,
+                recipes
+            );
+        }
+
+        public string MakeMachineJsonObject2 (
             string id,
             string name, 
-            string category, 
+            string category,
+            string next_tier,
             string workers,
             string maintenance_cost_units,
             string maintenance_cost_quantity,
@@ -205,6 +244,7 @@ namespace DataExtractorMod {
             props.Add($"\"id\":\"{id}\"");
             props.Add($"\"name\":\"{name}\"");
             props.Add($"\"category\":\"{category}\"");
+            props.Add($"\"next_tier\":\"{next_tier}\"");
             props.Add($"\"workers\":{workers}");
             props.Add($"\"maintenance_cost_units\":\"{maintenance_cost_units}\"");
             props.Add($"\"maintenance_cost_quantity\":{maintenance_cost_quantity}");
@@ -387,6 +427,26 @@ namespace DataExtractorMod {
             props.Add($"\"name\":\"{name}\"");
             props.Add($"\"added_capacity\":{added_capacity}");
             props.Add($"\"costs\":[{costs}]");
+
+            obj.AppendLine("{");
+            obj.AppendLine(props.JoinStrings(","));
+            obj.AppendLine("}");
+            return obj.ToString();
+        }
+
+        public string MakeProductJsonObject(
+            string id,
+            string name,
+            string type
+        )
+        {
+            System.Text.StringBuilder obj = new System.Text.StringBuilder();
+
+            List<string> props = new List<string> { };
+
+            props.Add($"\"id\":\"{id}\"");
+            props.Add($"\"name\":\"{name}\"");
+            props.Add($"\"type\":\"{type}\"");
 
             obj.AppendLine("{");
             obj.AppendLine(props.JoinStrings(","));
@@ -1164,6 +1224,11 @@ namespace DataExtractorMod {
                     string capacity = "0";
                     string unity_cost = "0";
                     string research_speed = "0";
+                    string next_tier = "";
+                    if(machine.NextTier.HasValue)
+                    {
+                        next_tier = machine.NextTier.Value.Id.ToString();
+                    }
 
                     foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
                     {
@@ -1220,10 +1285,11 @@ namespace DataExtractorMod {
 
                     }
 
-                    string machineJson = MakeMachineJsonObject(
+                    string machineJson = MakeMachineJsonObject2(
                         id,
                         name,
                         category,
+                        next_tier,
                         workers,
                         maintenance_cost_units,
                         maintenance_cost_quantity,
@@ -1834,35 +1900,58 @@ namespace DataExtractorMod {
                 }
             }
 
-            List<string> countProds = new List<string> { };
+            /*
+             * -------------------------------------
+             * Part - Products.
+             * -------------------------------------
+            */
+            List<string> productsJson = new List<string> { };
+
             List<string> countProdNames = new List<string> { };
-            IEnumerable<CountableProductProto> countableProducts = protosDb.All<CountableProductProto>();
-            foreach (CountableProductProto product in countableProducts)
-            {
-                countProds.Add("\"" + product.Strings.Name.ToString() + "\"");
-                countProdNames.Add(product.Strings.Name.ToString());
-            }
-            string countProdsJson = countProds.JoinStrings(",");
-
-            List<string> looseProds = new List<string> { };
             List<string> looseProdNames = new List<string> { };
-            IEnumerable<LooseProductProto> looseProducts = protosDb.All<LooseProductProto>();
-            foreach (LooseProductProto product in looseProducts)
-            {
-                looseProds.Add("\"" + product.Strings.Name.ToString() + "\"");
-                looseProdNames.Add(product.Strings.Name.ToString());
-            }
-            string looseProdsJson = looseProds.JoinStrings(",");
-
-            List<string> fluidProds = new List<string> { };
             List<string> fluidProdNames = new List<string> { };
-            IEnumerable<FluidProductProto> fluidProducts = protosDb.All<FluidProductProto>();
-            foreach (FluidProductProto product in fluidProducts)
+            List<string> moltenProdNames = new List<string> { };
+            List<string> virtualProdNames = new List<string> { };
+
+            IEnumerable<ProductProto> products = protosDb.All<ProductProto>();
+            foreach (ProductProto product in products)
             {
-                fluidProds.Add("\"" + product.Strings.Name.ToString() + "\"");
-                fluidProdNames.Add(product.Strings.Name.ToString());
+                string type = null;
+                if(product is CountableProductProto)
+                {
+                    countProdNames.Add(product.Strings.Name.ToString());
+                    type = "Countable";
+                }
+                else if(product is LooseProductProto)
+                {
+                    looseProdNames.Add(product.Strings.Name.ToString());
+                    type = "Loose";
+                }
+                else if (product is FluidProductProto)
+                {
+                    fluidProdNames.Add(product.Strings.Name.ToString());
+                    type = "Fluid";
+                }
+                else if (product is MoltenProductProto)
+                {
+                    moltenProdNames.Add(product.Strings.Name.ToString());
+                    type = "Molten";
+                }
+                else if (product is VirtualProductProto)
+                {
+                    virtualProdNames.Add(product.Strings.Name.ToString());
+                    type = "Virtual";
+                }
+                if(type != null)
+                {
+                    productsJson.Add(MakeProductJsonObject(
+                        product.Id.ToString(),
+                        product.Strings.Name.ToString(),
+                        type));
+                }
             }
-            string fluidProdsJson = fluidProds.JoinStrings(",");
+
+            File.WriteAllText("c:/temp/products.json", $"{{\"game_version\":\"{game_version}\",\"products\":[{productsJson.JoinStrings(",")}]}}");
 
             List<string> storageItems = new List<string> { };
 
