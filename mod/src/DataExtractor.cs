@@ -130,6 +130,7 @@ using Mafi.Core.Buildings.Mine;
 using Mafi.Core.Research;
 using Mafi.Core.World.Contracts;
 using Mafi.Core.Game;
+using Mafi.Base.Prototypes.Machines;
 
 namespace DataExtractorMod {
     public sealed class DataExtractor : IMod
@@ -755,7 +756,7 @@ namespace DataExtractorMod {
 
             /*
              * -------------------------------------
-             * Part 3  - Power Generation Machines. (Behave Uniquely) Uses ProtoID List Method
+             * Part 3  - Power Generation Machines. (Behave Uniquely)
              * -------------------------------------
             */
 
@@ -765,25 +766,17 @@ namespace DataExtractorMod {
             // Turbines
             // -------------------------
 
-            MechPowerGeneratorFromProductProto.ID[] turbines = new MechPowerGeneratorFromProductProto.ID[] {
-                Ids.Machines.TurbineLowPressT2,
-                Ids.Machines.TurbineLowPress,
-                Ids.Machines.TurbineHighPressT2,
-                Ids.Machines.TurbineHighPress
-            };
-            foreach (MechPowerGeneratorFromProductProto.ID machineId in turbines)
+            IEnumerable<MechPowerGeneratorFromProductProto> turbines = protosDb.All<MechPowerGeneratorFromProductProto>();
+            foreach (MechPowerGeneratorFromProductProto generator in turbines)
             {
                 try
                 {
-
-                    Option<MechPowerGeneratorFromProductProto> generator = protosDb.Get<MechPowerGeneratorFromProductProto>(machineId);
-
-                    string id = generator.Value.Id.ToString();
-                    string name = generator.Value.Strings.Name.ToString();
+                    string id = generator.Id.ToString();
+                    string name = generator.Strings.Name.ToString();
                     string category = "";
-                    string workers = generator.Value.Costs.Workers.ToString();
-                    string maintenance_cost_units = generator.Value.Costs.Maintenance.Product.Strings.Name.ToString();
-                    string maintenance_cost_quantity = generator.Value.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
+                    string workers = generator.Costs.Workers.ToString();
+                    string maintenance_cost_units = generator.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_quantity = generator.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = "0";
                     string computing_consumed = "0";
@@ -792,14 +785,14 @@ namespace DataExtractorMod {
                     string unity_cost = "0";
                     string research_speed = "0";
 
-                    foreach (ToolbarCategoryProto cat in generator.Value.Graphics.Categories)
+                    foreach (ToolbarCategoryProto cat in generator.Graphics.Categories)
                     {
                         category = cat.Strings.Name.ToString();
                     }
 ;
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in generator.Value.Costs.Price.Products)
+                    foreach (ProductQuantity cost in generator.Costs.Price.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
                             cost.Product.Strings.Name.ToString(),
@@ -810,11 +803,11 @@ namespace DataExtractorMod {
 
                     List<string> recipeItems = new List<string> { };
 
-                    var duration = (generator.Value.Recipe.Duration / 10);
-                    var inputs = generator.Value.Recipe.AllUserVisibleInputs;
-                    var outputs = generator.Value.Recipe.AllUserVisibleOutputs;
+                    var duration = (generator.Recipe.Duration / 10);
+                    var inputs = generator.Recipe.AllUserVisibleInputs;
+                    var outputs = generator.Recipe.AllUserVisibleOutputs;
 
-                    string recipe_name = generator.Value.Recipe.Id.ToString();
+                    string recipe_name = generator.Recipe.Id.ToString();
                     string recipe_duration = duration.ToString();
 
                     List<string> inputItems = new List<string> { };
@@ -865,7 +858,7 @@ namespace DataExtractorMod {
                 catch
                 {
                     Log.Info("###################################################");
-                    Log.Info("ERROR" + machineId.ToString());
+                    Log.Info("ERROR" + generator.ToString());
                     Log.Info("###################################################");
                 }
             }
@@ -874,23 +867,18 @@ namespace DataExtractorMod {
             // Generators
             // -------------------------
 
-            ElectricityGeneratorFromMechPowerProto.ID[] generators = new ElectricityGeneratorFromMechPowerProto.ID[] {
-                Ids.Machines.PowerGeneratorT1,
-                Ids.Machines.PowerGeneratorT2,
-            };
-            foreach (ElectricityGeneratorFromMechPowerProto.ID machineId in generators)
+            IEnumerable<ElectricityGeneratorFromMechPowerProto> generators = protosDb.All<ElectricityGeneratorFromMechPowerProto>();
+            foreach (ElectricityGeneratorFromMechPowerProto generator in generators)
             {
                 try
                 {
 
-                    Option<ElectricityGeneratorFromMechPowerProto> generator = protosDb.Get<ElectricityGeneratorFromMechPowerProto>(machineId);
-
-                    string id = generator.Value.Id.ToString();
-                    string name = generator.Value.Strings.Name.ToString();
+                    string id = generator.Id.ToString();
+                    string name = generator.Strings.Name.ToString();
                     string category = "";
-                    string workers = generator.Value.Costs.Workers.ToString();
-                    string maintenance_cost_units = generator.Value.Costs.Maintenance.Product.Strings.Name.ToString();
-                    string maintenance_cost_quantity = generator.Value.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
+                    string workers = generator.Costs.Workers.ToString();
+                    string maintenance_cost_units = generator.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_quantity = generator.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = "";
                     string computing_consumed = "0";
@@ -899,14 +887,14 @@ namespace DataExtractorMod {
                     string unity_cost = "0";
                     string research_speed = "0";
 
-                    foreach (ToolbarCategoryProto cat in generator.Value.Graphics.Categories)
+                    foreach (ToolbarCategoryProto cat in generator.Graphics.Categories)
                     {
                         category = cat.Strings.Name.ToString();
                     }
 ;
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in generator.Value.Costs.Price.Products)
+                    foreach (ProductQuantity cost in generator.Costs.Price.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
                             cost.Product.Strings.Name.ToString(),
@@ -917,11 +905,11 @@ namespace DataExtractorMod {
 
                     List<string> recipeItems = new List<string> { };
 
-                    var duration = (generator.Value.Recipe.Duration / 10);
-                    var inputs = generator.Value.Recipe.AllUserVisibleInputs;
-                    var outputs = generator.Value.Recipe.AllUserVisibleOutputs;
+                    var duration = (generator.Recipe.Duration / 10);
+                    var inputs = generator.Recipe.AllUserVisibleInputs;
+                    var outputs = generator.Recipe.AllUserVisibleOutputs;
 
-                    string recipe_name = generator.Value.Recipe.Id.ToString();
+                    string recipe_name = generator.Recipe.Id.ToString();
                     string recipe_duration = duration.ToString();
 
                     List<string> inputItems = new List<string> { };
@@ -973,7 +961,7 @@ namespace DataExtractorMod {
                 catch
                 {
                     Log.Info("###################################################");
-                    Log.Info("ERROR" + machineId.ToString());
+                    Log.Info("ERROR" + generator.ToString());
                     Log.Info("###################################################");
                 }
             }
@@ -982,39 +970,34 @@ namespace DataExtractorMod {
             // Solar Panels
             // -------------------------
 
-            Mafi.Base.Prototypes.Machines.SolarElectricityGeneratorProto.ID[] solar = new Mafi.Base.Prototypes.Machines.SolarElectricityGeneratorProto.ID[] {
-                Ids.Machines.SolarPanel,
-                Ids.Machines.SolarPanelMono
-            };
-            foreach (Mafi.Base.Prototypes.Machines.SolarElectricityGeneratorProto.ID machineId in solar)
+            IEnumerable<SolarElectricityGeneratorProto> solar = protosDb.All<SolarElectricityGeneratorProto>();
+            foreach (SolarElectricityGeneratorProto generator in solar)
             {
                 try
                 {
 
-                    Option<Mafi.Base.Prototypes.Machines.SolarElectricityGeneratorProto> generator = protosDb.Get<Mafi.Base.Prototypes.Machines.SolarElectricityGeneratorProto>(machineId);
-
-                    string id = generator.Value.Id.ToString();
-                    string name = generator.Value.Strings.Name.ToString();
+                    string id = generator.Id.ToString();
+                    string name = generator.Strings.Name.ToString();
                     string category = "";
-                    string workers = generator.Value.Costs.Workers.ToString();
-                    string maintenance_cost_units = generator.Value.Costs.Maintenance.Product.Strings.Name.ToString();
-                    string maintenance_cost_quantity = generator.Value.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
+                    string workers = generator.Costs.Workers.ToString();
+                    string maintenance_cost_units = generator.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_quantity = generator.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
-                    string electricity_generated = generator.Value.OutputElectricity.Value.ToString();
+                    string electricity_generated = generator.OutputElectricity.Value.ToString();
                     string computing_consumed = "0";
                     string computing_generated = "0";
                     string capacity = "0";
                     string unity_cost = "0";
                     string research_speed = "0";
 
-                    foreach (ToolbarCategoryProto cat in generator.Value.Graphics.Categories)
+                    foreach (ToolbarCategoryProto cat in generator.Graphics.Categories)
                     {
                         category = cat.Strings.Name.ToString();
                     }
 ;
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in generator.Value.Costs.Price.Products)
+                    foreach (ProductQuantity cost in generator.Costs.Price.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
                             cost.Product.Strings.Name.ToString(),
@@ -1046,7 +1029,7 @@ namespace DataExtractorMod {
                 catch
                 {
                     Log.Info("###################################################");
-                    Log.Info("ERROR" + machineId.ToString());
+                    Log.Info("ERROR" + generator.ToString());
                     Log.Info("###################################################");
                 }
             }
@@ -1055,38 +1038,34 @@ namespace DataExtractorMod {
             // Disel Generator
             // -------------------------
 
-            ElectricityGeneratorFromProductProto.ID[] powerMachines = new ElectricityGeneratorFromProductProto.ID[] {
-                Ids.Machines.DieselGenerator
-            };
-            foreach (ElectricityGeneratorFromProductProto.ID machineId in powerMachines)
+            IEnumerable<ElectricityGeneratorFromProductProto> powerMachines = protosDb.All<ElectricityGeneratorFromProductProto>();
+            foreach (ElectricityGeneratorFromProductProto generator in powerMachines)
             {
                 try
                 {
 
-                    Option<ElectricityGeneratorFromProductProto> generator = protosDb.Get<ElectricityGeneratorFromProductProto>(machineId);
-
-                    string id = generator.Value.Id.ToString();
-                    string name = generator.Value.Strings.Name.ToString();
+                    string id = generator.Id.ToString();
+                    string name = generator.Strings.Name.ToString();
                     string category = "";
-                    string workers = generator.Value.Costs.Workers.ToString();
-                    string maintenance_cost_units = generator.Value.Costs.Maintenance.Product.Strings.Name.ToString();
-                    string maintenance_cost_quantity = generator.Value.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
+                    string workers = generator.Costs.Workers.ToString();
+                    string maintenance_cost_units = generator.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_quantity = generator.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
-                    string electricity_generated = generator.Value.OutputElectricity.Value.ToString();
+                    string electricity_generated = generator.OutputElectricity.Value.ToString();
                     string computing_consumed = "0";
                     string computing_generated = "0";
                     string capacity = "0";
                     string unity_cost = "0";
                     string research_speed = "0";
 
-                    foreach (ToolbarCategoryProto cat in generator.Value.Graphics.Categories)
+                    foreach (ToolbarCategoryProto cat in generator.Graphics.Categories)
                     {
                         category = cat.Strings.Name.ToString();
                     }
 ;
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in generator.Value.Costs.Price.Products)
+                    foreach (ProductQuantity cost in generator.Costs.Price.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
                             cost.Product.Strings.Name.ToString(),
@@ -1097,11 +1076,11 @@ namespace DataExtractorMod {
 
                     List<string> recipeItems = new List<string> { };
 
-                    var duration = (generator.Value.Recipe.Duration / 10);
-                    var inputs = generator.Value.Recipe.AllUserVisibleInputs;
-                    var outputs = generator.Value.Recipe.AllUserVisibleOutputs;
+                    var duration = (generator.Recipe.Duration / 10);
+                    var inputs = generator.Recipe.AllUserVisibleInputs;
+                    var outputs = generator.Recipe.AllUserVisibleOutputs;
 
-                    string recipe_name = generator.Value.Recipe.Id.ToString();
+                    string recipe_name = generator.Recipe.Id.ToString();
                     string recipe_duration = duration.ToString();
 
                     List<string> inputItems = new List<string> { };
@@ -1152,128 +1131,48 @@ namespace DataExtractorMod {
                 catch
                 {
                     Log.Info("###################################################");
-                    Log.Info("ERROR" + machineId.ToString());
+                    Log.Info("ERROR" + generator.ToString());
                     Log.Info("###################################################");
                 }
             }
 
             /*
              * -------------------------------------
-             * Part 4  - General Machines. Uses ProtoID List Method
+             * Part 4  - General Machines.
              * -------------------------------------
             */
 
-            MachineProto.ID[] machines = new MachineProto.ID[]
-            {
-                Ids.Buildings.MaintenanceDepotT0,
-                Ids.Buildings.MaintenanceDepotT1,
-                Ids.Buildings.MaintenanceDepotT2,
-                Ids.Buildings.MaintenanceDepotT3,
-                Ids.Machines.BasicDieselDistiller,
-                Ids.Machines.OilPump,
-                Ids.Machines.Crusher,
-                Ids.Machines.SmeltingFurnaceT2,
-                Ids.Machines.SmeltingFurnaceT1,
-                Ids.Machines.Caster,
-                Ids.Machines.CasterT2,
-                Ids.Machines.CasterCooled,
-                Ids.Machines.CasterCooledT2,
-                Ids.Machines.OxygenFurnace,
-                Ids.Machines.OxygenFurnaceT2,
-                Ids.Machines.ExhaustScrubber,
-                Ids.Machines.Electrolyzer,
-                Ids.Machines.AirSeparator,
-                Ids.Machines.CopperElectrolysis,
-                Ids.Machines.RotaryKiln,
-                Ids.Machines.RotaryKilnGas,
-                Ids.Machines.ConcreteMixer,
-                Ids.Machines.ConcreteMixerT2,
-                Ids.Machines.ConcreteMixerT3,
-                Ids.Machines.GeneralMixer,
-                Ids.Machines.FoodMill,
-                Ids.Machines.BakingUnit,
-                Ids.Machines.FoodProcessor,
-                Ids.Machines.SolidBurner,
-                Ids.Machines.WaterChiller,
-                Ids.Machines.ThermalDesalinator,
-                Ids.Machines.AssemblyManual,
-                Ids.Machines.AssemblyElectrified,
-                Ids.Machines.AssemblyElectrifiedT2,
-                Ids.Machines.AssemblyRoboticT1,
-                Ids.Machines.AssemblyRoboticT2,
-                Ids.Machines.MicrochipMachine,
-                Ids.Machines.MicrochipMachineT2,
-                Ids.Machines.WasteDump,
-                Ids.Machines.LandWaterPump,
-                Ids.Machines.GasInjectionPump,
-                Ids.Machines.OceanWaterPumpT1,
-                Ids.Machines.OceanWaterPumpLarge,
-                Ids.Machines.ChemicalPlant,
-                Ids.Machines.ChemicalPlant2,
-                Ids.Machines.WaterTreatmentPlant,
-                Ids.Machines.EvaporationPond,
-                Ids.Machines.EvaporationPondHeated,
-                Ids.Machines.AnaerobicDigester,
-                Ids.Machines.BoilerCoal,
-                Ids.Machines.BoilerGas,
-                Ids.Machines.BoilerElectric,
-                Ids.Machines.SmokeStack,
-                Ids.Machines.SmokeStackLarge,
-                Ids.Machines.CoolingTowerT1,
-                Ids.Machines.CoolingTowerT2,
-                Ids.Machines.GlassMakerT1,
-                Ids.Machines.GlassMakerT2,
-                Ids.Machines.FermentationTank,
-                Ids.Machines.UraniumEnrichmentPlant,
-                Ids.Machines.ArcFurnace,
-                Ids.Machines.ArcFurnace2,
-                Ids.Machines.SiliconReactor,
-                Ids.Machines.SiliconCrystallizer,
-                Ids.Machines.CharcoalMaker,
-                Ids.Machines.SettlingTank,
-                Ids.Machines.GoldFurnace,
-                Ids.Machines.DistillationTowerT1,
-                Ids.Machines.DistillationTowerT2,
-                Ids.Machines.DistillationTowerT3,
-                Ids.Machines.VacuumDistillationTower,
-                Ids.Machines.HydroCrackerT1,
-                Ids.Machines.Flare,
-                Ids.Machines.HydrogenReformer,
-                Ids.Machines.SourWaterStripper,
-                Ids.Machines.PolymerizationPlant
-            };
-            foreach (MachineProto.ID machineId in machines)
+            IEnumerable<MachineProto> machines = protosDb.All<MachineProto>();
+            foreach (MachineProto machine in machines)
             {
 
                 try
                 {
 
-                    Option<MachineProto> machine = protosDb.Get<MachineProto>(machineId);
+                    IIndexable<RecipeProto> machineRecipes = machine.Recipes;
 
-                    IIndexable<RecipeProto> machineRecipes = machine.Value.Recipes;
-
-                    string id = machine.Value.Id.ToString();
-                    string name = machine.Value.Strings.Name.ToString();
+                    string id = machine.Id.ToString();
+                    string name = machine.Strings.Name.ToString();
                     string category = "";
-                    string workers = machine.Value.Costs.Workers.ToString();
-                    string maintenance_cost_units = machine.Value.Costs.Maintenance.Product.Strings.Name.ToString();
-                    string maintenance_cost_quantity = machine.Value.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
-                    string electricity_consumed = machine.Value.ElectricityConsumed.Quantity.Value.ToString();
+                    string workers = machine.Costs.Workers.ToString();
+                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_quantity = machine.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
+                    string electricity_consumed = machine.ElectricityConsumed.Quantity.Value.ToString();
                     string electricity_generated = "0";
-                    string computing_consumed = machine.Value.ComputingConsumed.Value.ToString();
+                    string computing_consumed = machine.ComputingConsumed.Value.ToString();
                     string computing_generated = "0";
                     string capacity = "0";
                     string unity_cost = "0";
                     string research_speed = "0";
 
-                    foreach (ToolbarCategoryProto cat in machine.Value.Graphics.Categories)
+                    foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
                     {
                         category = cat.Strings.Name.ToString();
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in machine.Value.Costs.Price.Products)
+                    foreach (ProductQuantity cost in machine.Costs.Price.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
                             cost.Product.Strings.Name.ToString(),
@@ -1344,7 +1243,7 @@ namespace DataExtractorMod {
                 catch
                 {
                     Log.Info("###################################################");                    
-                    Log.Info("ERROR"+machineId.ToString());
+                    Log.Info("ERROR"+machine.ToString());
                     Log.Info("###################################################");
                 }
             }
