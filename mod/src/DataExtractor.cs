@@ -110,6 +110,7 @@ using Mafi.Core.Entities.Dynamic;
 using Mafi.Core.Fleet;
 using Mafi.Core.Vehicles.Excavators;
 using Mafi.Core.Vehicles.TreeHarvesters;
+using Mafi.Core.Vehicles.Trucks;
 using Mafi.Core.Buildings.Farms;
 using Mafi.Core.Buildings.Cargo.Modules;
 using Mafi.Core.Buildings.Cargo;
@@ -126,13 +127,12 @@ using Mafi.Collections.ReadonlyCollections;
 using Mafi.Base.Prototypes.Machines.PowerGenerators;
 using System.Reflection;
 using Mafi.Core.Buildings.Mine;
-using UnityEngine;
 using Mafi.Core.Research;
-using Mafi.Core.UnlockingTree;
 using Mafi.Core.World.Contracts;
+using Mafi.Core.Game;
 
 namespace DataExtractorMod {
-	public sealed class DataExtractor : IMod
+    public sealed class DataExtractor : IMod
     {
         public string Name => "Data Extractor Mod By ItsDesm";
 
@@ -499,7 +499,7 @@ namespace DataExtractorMod {
 
             /*
              * -------------------------------------
-             * Part 1  - Ship Upgrades. Uses ProtoID List Method
+             * Part 1  - Ship Upgrades.
              * -------------------------------------
             */
 
@@ -510,22 +510,16 @@ namespace DataExtractorMod {
             List<string> bridgeItems = new List<string> { };
             List<string> tankItems = new List<string> { };
 
-            FleetEntityPartProto.ID[] engines = new FleetEntityPartProto.ID[] {
-                Ids.Fleet.Engines.EngineT1,
-                Ids.Fleet.Engines.EngineT2,
-                Ids.Fleet.Engines.EngineT3
-            };
-            foreach (FleetEntityPartProto.ID upgradeId in engines)
+            IEnumerable<FleetEnginePartProto> engines = protosDb.All<FleetEnginePartProto>();
+            foreach (FleetEnginePartProto item in engines)
             {
 
                 try
                 {
 
-                    Option<FleetEnginePartProto> item = protosDb.Get<FleetEnginePartProto>(upgradeId);
-
                     List<string> vehicleProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in item.Value.Value.Products)
+                    foreach (ProductQuantity cost in item.Value.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
                             cost.Product.Strings.Name.ToString(),
@@ -535,9 +529,9 @@ namespace DataExtractorMod {
                     }
 
                     string vehicleJson = MakeEngineJsonObject(
-                        item.Value.Strings.Name.ToString(),
-                        item.Value.FuelCapacity.ToString(),
-                        item.Value.ExtraCrew.BonusValue.ToString(),
+                        item.Strings.Name.ToString(),
+                        item.FuelCapacity.ToString(),
+                        item.ExtraCrew.BonusValue.ToString(),
                         vehicleProducts.JoinStrings(",")
                     );
                     engineItems.Add(vehicleJson);
@@ -546,33 +540,23 @@ namespace DataExtractorMod {
                 catch
                 {
                     Log.Info("###################################################");
-                    Log.Info("ERROR" + upgradeId.ToString());
+                    Log.Info("ERROR" + item.ToString());
                     Log.Info("###################################################");
                 }
 
             }
             upgradeItems.Add($"\"engines\":[{engineItems.JoinStrings(",")}]");
 
-            FleetWeaponProto.ID[] guns = new FleetWeaponProto.ID[] {
-                Ids.Fleet.Weapons.Gun0,
-                Ids.Fleet.Weapons.Gun1,
-                Ids.Fleet.Weapons.Gun2,
-                Ids.Fleet.Weapons.Gun3,
-                Ids.Fleet.Weapons.Gun1Rear,
-                Ids.Fleet.Weapons.Gun1Rear,
-                Ids.Fleet.Weapons.Gun3Rear
-            };
-            foreach (FleetEntityPartProto.ID upgradeId in guns)
+            IEnumerable<FleetWeaponProto> guns = protosDb.All<FleetWeaponProto>();
+            foreach (FleetWeaponProto item in guns)
             {
 
                 try
                 {
 
-                    Option<FleetWeaponProto> item = protosDb.Get<FleetWeaponProto>(upgradeId);
-
                     List<string> vehicleProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in item.Value.Value.Products)
+                    foreach (ProductQuantity cost in item.Value.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
                             cost.Product.Strings.Name.ToString(),
@@ -582,10 +566,10 @@ namespace DataExtractorMod {
                     }
 
                     string vehicleJson = MakeGunJsonObject(
-                        item.Value.Strings.Name.ToString(),
-                        item.Value.Range.ToString(),
-                        item.Value.Damage.ToString(),
-                        item.Value.ExtraCrew.BonusValue.ToString(),
+                        item.Strings.Name.ToString(),
+                        item.Range.ToString(),
+                        item.Damage.ToString(),
+                        item.ExtraCrew.BonusValue.ToString(),
                         vehicleProducts.JoinStrings(",")
                     );
                     gunItems.Add(vehicleJson);
@@ -594,28 +578,22 @@ namespace DataExtractorMod {
                 catch
                 {
                     Log.Info("###################################################");
-                    Log.Info("ERROR" + upgradeId.ToString());
+                    Log.Info("ERROR" + item.ToString());
                     Log.Info("###################################################");
                 }
 
             }
             upgradeItems.Add($"\"weapons\":[{gunItems.JoinStrings(",")}]");
 
-            FleetWeaponProto.ID[] armor = new FleetWeaponProto.ID[] {
-                Ids.Fleet.Armor.ArmorT1,
-                Ids.Fleet.Armor.ArmorT2
-            };
-            foreach (FleetEntityPartProto.ID upgradeId in armor)
+            IEnumerable<UpgradeHullProto> armor = protosDb.All<UpgradeHullProto>();
+            foreach (UpgradeHullProto item in armor)
             {
 
                 try
                 {
-
-                    Option<UpgradeHullProto> item = protosDb.Get<UpgradeHullProto>(upgradeId);
-
                     List<string> vehicleProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in item.Value.Value.Products)
+                    foreach (ProductQuantity cost in item.Value.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
                             cost.Product.Strings.Name.ToString(),
@@ -625,7 +603,7 @@ namespace DataExtractorMod {
                     }
 
                     string vehicleJson = MakeArmorJsonObject(
-                        item.Value.Strings.Name.ToString(),
+                        item.Strings.Name.ToString(),
                         "0",
                         "0",
                         vehicleProducts.JoinStrings(",")
@@ -636,29 +614,23 @@ namespace DataExtractorMod {
                 catch
                 {
                     Log.Info("###################################################");
-                    Log.Info("ERROR" + upgradeId.ToString());
+                    Log.Info("ERROR" + item.ToString());
                     Log.Info("###################################################");
                 }
 
             }
             upgradeItems.Add($"\"armor\":[{armorItems.JoinStrings(",")}]");
 
-            FleetWeaponProto.ID[] bridges = new FleetWeaponProto.ID[] {
-                Ids.Fleet.Bridges.BridgeT1,
-                Ids.Fleet.Bridges.BridgeT2,
-                Ids.Fleet.Bridges.BridgeT3
-            };
-            foreach (FleetEntityPartProto.ID upgradeId in bridges)
+            IEnumerable<FleetBridgePartProto> bridges = protosDb.All<FleetBridgePartProto>();
+            foreach (FleetBridgePartProto item in bridges)
             {
 
                 try
                 {
 
-                    Option<FleetBridgePartProto> item = protosDb.Get<FleetBridgePartProto>(upgradeId);
-
                     List<string> vehicleProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in item.Value.Value.Products)
+                    foreach (ProductQuantity cost in item.Value.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
                             cost.Product.Strings.Name.ToString(),
@@ -668,10 +640,10 @@ namespace DataExtractorMod {
                     }
 
                     string vehicleJson = MakeBridgeJsonObject(
-                        item.Value.Strings.Name.ToString(),
+                        item.Strings.Name.ToString(),
                         "0",
                         "0",
-                        item.Value.ExtraCrew.BonusValue.ToString(),
+                        item.ExtraCrew.BonusValue.ToString(),
                         vehicleProducts.JoinStrings(",")
                     );
                     bridgeItems.Add(vehicleJson);
@@ -680,27 +652,23 @@ namespace DataExtractorMod {
                 catch
                 {
                     Log.Info("###################################################");
-                    Log.Info("ERROR" + upgradeId.ToString());
+                    Log.Info("ERROR" + item.ToString());
                     Log.Info("###################################################");
                 }
 
             }
             upgradeItems.Add($"\"bridges\":[{bridgeItems.JoinStrings(",")}]");
 
-            FleetWeaponProto.ID[] tanks = new FleetWeaponProto.ID[] {
-                Ids.Fleet.FuelTanks.FuelTankT1
-            };
-            foreach (FleetEntityPartProto.ID upgradeId in tanks)
+            IEnumerable<FleetFuelTankPartProto> tanks = protosDb.All<FleetFuelTankPartProto>();
+            foreach (FleetFuelTankPartProto item in tanks)
             {
 
                 try
                 {
 
-                    Option<FleetFuelTankPartProto> item = protosDb.Get<FleetFuelTankPartProto>(upgradeId);
-
                     List<string> vehicleProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in item.Value.Value.Products)
+                    foreach (ProductQuantity cost in item.Value.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
                             cost.Product.Strings.Name.ToString(),
@@ -710,8 +678,8 @@ namespace DataExtractorMod {
                     }
                     
                     string vehicleJson = MakeTankJsonObject(
-                        item.Value.Strings.Name.ToString(),
-                        item.Value.AddedFuelCapacity.ToString(),
+                        item.Strings.Name.ToString(),
+                        item.AddedFuelCapacity.ToString(),
                         vehicleProducts.JoinStrings(",")
                     );
                     tankItems.Add(vehicleJson);
@@ -720,7 +688,7 @@ namespace DataExtractorMod {
                 catch
                 {
                     Log.Info("###################################################");
-                    Log.Info("ERROR" + upgradeId.ToString());
+                    Log.Info("ERROR" + item.ToString());
                     Log.Info("###################################################");
                 }
 
@@ -731,69 +699,34 @@ namespace DataExtractorMod {
 
             /*
              * -------------------------------------
-             * Part 2  - Vehicles. Uses ProtoID List Method
+             * Part 2  - Vehicles.
              * -------------------------------------
             */
 
             List<string> vehicleItems = new List<string> { };
 
-            DynamicEntityProto.ID[] vehicles = new DynamicEntityProto.ID[] {
-                Ids.Vehicles.TruckT1.Id,
-                Ids.Vehicles.TruckT2.Id,
-                Ids.Vehicles.TruckT3Fluid.Id,
-                Ids.Vehicles.TruckT3Loose.Id,
-            };
-            foreach (DynamicEntityProto.ID vehicleId in vehicles)
+            List<DrivingEntityProto> vehicles = new List<DrivingEntityProto> { };
+            foreach(TruckProto vehicle in protosDb.All<TruckProto>())
             {
-
-                try
-                {
-
-                    Option<Mafi.Core.Vehicles.Trucks.TruckProto> vehicle = protosDb.Get<Mafi.Core.Vehicles.Trucks.TruckProto>(vehicleId);
-
-                    List<string> vehicleProducts = new List<string> { };
-
-                    foreach (ProductQuantity cost in vehicle.Value.CostToBuild.Products)
-                    {
-                        string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
-                            cost.Quantity.ToString()
-                        );
-                        vehicleProducts.Add(vehicleProductJson);
-                    }
-
-                    string vehicleJson = MakeVehicleJsonObject(
-                        vehicle.Value.Strings.Name.ToString(),
-                        vehicleProducts.JoinStrings(",")
-                    );
-                    vehicleItems.Add(vehicleJson);
-
-                }
-                catch
-                {
-                    Log.Info("###################################################");
-                    Log.Info("ERROR" + vehicleId.ToString());
-                    Log.Info("###################################################");
-                }
-
+                vehicles.Add(vehicle);
+            }
+            foreach (ExcavatorProto vehicle in protosDb.All<ExcavatorProto>())
+            {
+                vehicles.Add(vehicle);
+            }
+            foreach (TreeHarvesterProto vehicle in protosDb.All<TreeHarvesterProto>())
+            {
+                vehicles.Add(vehicle);
             }
 
-            DynamicEntityProto.ID[] excavators = new DynamicEntityProto.ID[] {
-                Ids.Vehicles.ExcavatorT1,
-                Ids.Vehicles.ExcavatorT2,
-                Ids.Vehicles.ExcavatorT3,
-            };
-            foreach (DynamicEntityProto.ID excavatorId in excavators)
+            foreach (DrivingEntityProto vehicle in vehicles)
             {
 
                 try
                 {
-
-                    Option<ExcavatorProto> vehicle = protosDb.Get<ExcavatorProto>(excavatorId);
-
                     List<string> vehicleProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in vehicle.Value.CostToBuild.Products)
+                    foreach (ProductQuantity cost in vehicle.CostToBuild.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
                             cost.Product.Strings.Name.ToString(),
@@ -803,7 +736,7 @@ namespace DataExtractorMod {
                     }
 
                     string vehicleJson = MakeVehicleJsonObject(
-                        vehicle.Value.Strings.Name.ToString(),
+                        vehicle.Strings.Name.ToString(),
                         vehicleProducts.JoinStrings(",")
                     );
                     vehicleItems.Add(vehicleJson);
@@ -812,46 +745,7 @@ namespace DataExtractorMod {
                 catch
                 {
                     Log.Info("###################################################");
-                    Log.Info("ERROR" + excavatorId.ToString());
-                    Log.Info("###################################################");
-                }
-
-            }
-
-            DynamicEntityProto.ID[] harvesters = new DynamicEntityProto.ID[] {
-                Ids.Vehicles.TreeHarvesterT1,
-                Ids.Vehicles.TreeHarvesterT2
-            };
-            foreach (DynamicEntityProto.ID harvesterId in harvesters)
-            {
-
-                try
-                {
-
-                    Option<TreeHarvesterProto> vehicle = protosDb.Get<TreeHarvesterProto>(harvesterId);
-
-                    List<string> vehicleProducts = new List<string> { };
-
-                    foreach (ProductQuantity cost in vehicle.Value.CostToBuild.Products)
-                    {
-                        string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
-                            cost.Quantity.ToString()
-                        );
-                        vehicleProducts.Add(vehicleProductJson);
-                    }
-
-                    string vehicleJson = MakeVehicleJsonObject(
-                        vehicle.Value.Strings.Name.ToString(),
-                        vehicleProducts.JoinStrings(",")
-                    );
-                    vehicleItems.Add(vehicleJson);
-
-                }
-                catch
-                {
-                    Log.Info("###################################################");
-                    Log.Info("ERROR" + harvesterId.ToString());
+                    Log.Info("ERROR" + vehicle.ToString());
                     Log.Info("###################################################");
                 }
 
@@ -3281,5 +3175,8 @@ namespace DataExtractorMod {
 
         public void Register(ImmutableArray<DataOnlyMod> mods, RegistrationContext context) {}
 
+        void IMod.ChangeConfigs(Mafi.Collections.Lyst<IConfig> configs)
+        {
+        }
     }
 }

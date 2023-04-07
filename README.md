@@ -1,3 +1,13 @@
+# What's new in this fork
+
+Added solution file and project. I have only `VS Community 2019`, so sorry, solution is for this studio and `Windows .Net 4.0`.
+
+In order to open properly, you should set `COI_ROOT` environment variable to your Captain Of Industry Steam installation, and set your `PATH` variable to `%COI_ROOT%\Captain of Industry_Data\Managed`.
+
+Updated for latest version `0.4.14b(157)`, and migrated everything to `protosDb.All` getting rid of hardcoded ids, and automatically catching new items/buildings.
+
+# Original REAMDE is below
+
 # Captain Of Industry Data Export
 
 This repo contains an export of the game data in JSON with the majority of relevant fields.
