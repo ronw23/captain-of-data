@@ -1,5 +1,5 @@
 {
-    "game_version": "0.4.7.0",
+    "game_version": "0.4.14.0",
     "vehicles": [
         {
             "name": "Pickup",
@@ -36,7 +36,7 @@
             ]
         },
         {
-            "name": "Haul truck (tank)",
+            "name": "Haul truck (dump)",
             "costs": [
                 {
                     "product": "Vehicle Parts III",
@@ -53,7 +53,7 @@
             ]
         },
         {
-            "name": "Haul truck (dump)",
+            "name": "Haul truck (tank)",
             "costs": [
                 {
                     "product": "Vehicle Parts III",

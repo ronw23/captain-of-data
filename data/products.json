@@ -1,0 +1,830 @@
+{
+    "game_version": "0.4.14.0",
+    "products": [
+        {
+            "id": "Product_Virtual_Electricity",
+            "name": "Electricity",
+            "type": "Virtual"
+        },
+        {
+            "id": "Product_Virtual_MechPower",
+            "name": "Mechanical power",
+            "type": "Virtual"
+        },
+        {
+            "id": "Product_Virtual_Computing",
+            "name": "Computing",
+            "type": "Virtual"
+        },
+        {
+            "id": "Product_Virtual_Upoints",
+            "name": "Unity",
+            "type": "Virtual"
+        },
+        {
+            "id": "Product_Virtual_MaintenanceT1",
+            "name": "Maintenance I",
+            "type": "Virtual"
+        },
+        {
+            "id": "Product_Virtual_MaintenanceT2",
+            "name": "Maintenance II",
+            "type": "Virtual"
+        },
+        {
+            "id": "Product_Virtual_MaintenanceT3",
+            "name": "Maintenance III",
+            "type": "Virtual"
+        },
+        {
+            "id": "Product_Wood",
+            "name": "Wood",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Fertilizer",
+            "name": "Fertilizer I",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_Fertilizer2",
+            "name": "Fertilizer II",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_FertilizerOrganic",
+            "name": "Fertilizer (organic)",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_Dirt",
+            "name": "Dirt",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Compost",
+            "name": "Compost",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Sludge",
+            "name": "Sludge",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Limestone",
+            "name": "Limestone",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Rock",
+            "name": "Rock",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Gravel",
+            "name": "Gravel",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_FilterMedia",
+            "name": "Filter media",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Coal",
+            "name": "Coal",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Graphite",
+            "name": "Graphite",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Slag",
+            "name": "Slag",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_SlagCrushed",
+            "name": "Slag crushed",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_IronOre",
+            "name": "Iron ore",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_IronOreCrushed",
+            "name": "Iron ore crushed",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_IronScrap",
+            "name": "Iron scrap",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_MoltenIron",
+            "name": "Molten iron",
+            "type": "Molten"
+        },
+        {
+            "id": "Product_MoltenSteel",
+            "name": "Molten steel",
+            "type": "Molten"
+        },
+        {
+            "id": "Product_Iron",
+            "name": "Iron",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Steel",
+            "name": "Steel",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_CopperOre",
+            "name": "Copper ore",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_CopperOreCrushed",
+            "name": "Copper ore crushed",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_CopperScrap",
+            "name": "Copper scrap",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_MoltenCopper",
+            "name": "Molten copper",
+            "type": "Molten"
+        },
+        {
+            "id": "Product_ImpureCopper",
+            "name": "Impure copper",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Copper",
+            "name": "Copper",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_GoldOre",
+            "name": "Gold ore",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_GoldOreCrushed",
+            "name": "Gold ore crushed",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_GoldOrePowder",
+            "name": "Gold ore powder",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_GoldOreConcentrate",
+            "name": "Gold ore concentrate",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Gold",
+            "name": "Gold",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_GoldScrap",
+            "name": "Gold scrap",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Sand",
+            "name": "Sand",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_MoltenGlass",
+            "name": "Molten glass",
+            "type": "Molten"
+        },
+        {
+            "id": "Product_BrokenGlass",
+            "name": "Broken glass",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Glass",
+            "name": "Glass",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_GlassMix",
+            "name": "Glass mix",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_UraniumOre",
+            "name": "Uranium ore",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_UraniumOreCrushed",
+            "name": "Uranium ore crushed",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_YellowCake",
+            "name": "Yellowcake",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_UraniumPellets",
+            "name": "Uranium pellets",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_UraniumRod",
+            "name": "Uranium rod",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_SpentFuel",
+            "name": "Spent fuel",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Quartz",
+            "name": "Quartz",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_MoltenSilicon",
+            "name": "Molten silicon",
+            "type": "Molten"
+        },
+        {
+            "id": "Product_PolySilicon",
+            "name": "Silicon (poly)",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_SiliconWafer",
+            "name": "Silicon wafer",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Water",
+            "name": "Water",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_ChilledWater",
+            "name": "Chilled water",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_Seawater",
+            "name": "Seawater",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_Brine",
+            "name": "Brine",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_WasteWater",
+            "name": "Waste water",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_ToxicSlurry",
+            "name": "Toxic slurry",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_Virtual_PollutedWater",
+            "name": "Water pollution",
+            "type": "Virtual"
+        },
+        {
+            "id": "Product_Virtual_PollutedAir",
+            "name": "Air pollution",
+            "type": "Virtual"
+        },
+        {
+            "id": "Product_Chlorine",
+            "name": "Chlorine",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_SteamHi",
+            "name": "Steam hi",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_SteamLP",
+            "name": "Steam lo",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_SteamDepleted",
+            "name": "Steam depleted",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_Salt",
+            "name": "Salt",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Exhaust",
+            "name": "Exhaust",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_Recyclables",
+            "name": "Recyclables",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_CrudeOil",
+            "name": "Crude oil",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_Diesel",
+            "name": "Diesel",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_Naphtha",
+            "name": "Naphtha",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_FuelGas",
+            "name": "Fuel gas",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_Sulfur",
+            "name": "Sulfur",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_SourWater",
+            "name": "Sour water",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_Ammonia",
+            "name": "Ammonia",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_Acid",
+            "name": "Acid",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_HeavyOil",
+            "name": "Heavy oil",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_MediumOil",
+            "name": "Medium oil",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_LightOil",
+            "name": "Light oil",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_Plastic",
+            "name": "Plastic",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Rubber",
+            "name": "Rubber",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Hydrogen",
+            "name": "Hydrogen",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_Nitrogen",
+            "name": "Nitrogen",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_NitrogenLiquidTank",
+            "name": "Nitrogen Tank",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_CarbonDioxide",
+            "name": "Carbon dioxide",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_Ethanol",
+            "name": "Ethanol",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_Potato",
+            "name": "Potato",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Corn",
+            "name": "Corn",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Wheat",
+            "name": "Wheat",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Soybean",
+            "name": "Soybean",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_SugarCane",
+            "name": "Sugar cane",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Canola",
+            "name": "Canola",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Vegetables",
+            "name": "Vegetables",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Fruit",
+            "name": "Fruit",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Poppy",
+            "name": "Poppy",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Bread",
+            "name": "Bread",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Flour",
+            "name": "Flour",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_AnimalFeed",
+            "name": "Animal feed",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Biomass",
+            "name": "Biomass",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Eggs",
+            "name": "Eggs",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Tofu",
+            "name": "Tofu",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_CookingOil",
+            "name": "Cooking oil",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_Meat",
+            "name": "Meat",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Sausage",
+            "name": "Sausage",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Snack",
+            "name": "Snack",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Cake",
+            "name": "Cake",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_FoodPack",
+            "name": "Food pack",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Chicken",
+            "name": "Chicken",
+            "type": "Virtual"
+        },
+        {
+            "id": "Product_CargoShip",
+            "name": "Cargo ship",
+            "type": "Virtual"
+        },
+        {
+            "id": "Product_ChickenCarcass",
+            "name": "Chicken carcass",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_MeatTrimmings",
+            "name": "Meat trimmings",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Sugar",
+            "name": "Sugar",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_CornMash",
+            "name": "Corn mash",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_HouseholdGoods",
+            "name": "Household goods",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_HouseholdAppliances",
+            "name": "Household appliances",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_ConsumerElectronics",
+            "name": "Consumer electronics",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Antibiotics",
+            "name": "Antibiotics",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Disinfectant",
+            "name": "Disinfectant",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Anesthetics",
+            "name": "Anesthetics",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Morphine",
+            "name": "Morphine",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_MedicalEquipment",
+            "name": "Medical equipment",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_MedicalSupplies",
+            "name": "Medical Supplies",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_MedicalSupplies2",
+            "name": "Medical Supplies II",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_MedicalSupplies3",
+            "name": "Medical Supplies III",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Cement",
+            "name": "Cement",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_ConcreteSlab",
+            "name": "Concrete slab",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Bricks",
+            "name": "Bricks",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_ConstructionParts",
+            "name": "Construction Parts",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_ConstructionParts2",
+            "name": "Construction Parts II",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_ConstructionParts3",
+            "name": "Construction Parts III",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_ConstructionParts4",
+            "name": "Construction Parts IV",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_MechanicalParts",
+            "name": "Mechanical Parts",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_VehicleParts",
+            "name": "Vehicle Parts",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_VehicleParts2",
+            "name": "Vehicle Parts II",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_VehicleParts3",
+            "name": "Vehicle Parts III",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_LabEquipment",
+            "name": "Lab Equipment",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_LabEquipment2",
+            "name": "Lab Equipment II",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_LabEquipment3",
+            "name": "Lab Equipment III",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_LabEquipment4",
+            "name": "Lab Equipment IV",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Electronics",
+            "name": "Electronics",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_PCB",
+            "name": "PCB",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Electronics2",
+            "name": "Electronics II",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Electronics3",
+            "name": "Electronics III",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Server",
+            "name": "Server",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Microchips",
+            "name": "Microchips",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_MicrochipsStage1A",
+            "name": "Microchips stage 1 a",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_MicrochipsStage1B",
+            "name": "Microchips stage 1 b",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_MicrochipsStage1C",
+            "name": "Microchips stage 1 c",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_MicrochipsStage2A",
+            "name": "Microchips stage 2 a",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_MicrochipsStage2B",
+            "name": "Microchips stage 2 b",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_MicrochipsStage2C",
+            "name": "Microchips stage 2 c",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_MicrochipsStage3A",
+            "name": "Microchips stage 3 a",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_MicrochipsStage3B",
+            "name": "Microchips stage 3 b",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_MicrochipsStage3C",
+            "name": "Microchips stage 3 c",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_MicrochipsStage4A",
+            "name": "Microchips stage 4 a",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_MicrochipsStage4B",
+            "name": "Microchips stage 4 b",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_SolarCell",
+            "name": "Solar cell",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_SolarCellMono",
+            "name": "Solar cell mono",
+            "type": "Countable"
+        },
+        {
+            "id": "Product_Oxygen",
+            "name": "Oxygen",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_HydrogenFluoride",
+            "name": "Hydrogen fluoride",
+            "type": "Fluid"
+        },
+        {
+            "id": "Product_Waste",
+            "name": "Waste",
+            "type": "Loose"
+        },
+        {
+            "id": "Product_Flowers",
+            "name": "Flowers",
+            "type": "Countable"
+        }
+    ]
+}

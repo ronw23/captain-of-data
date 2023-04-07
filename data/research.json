@@ -1,5 +1,5 @@
 {
-    "game_version": "0.4.7.0",
+    "game_version": "0.4.14.0",
     "research": [
         {
             "id": "ResearchCpPacking",
@@ -10,8 +10,8 @@
         {
             "id": "ResearchRepairDock",
             "name": "Ship dock repair",
-            "difficulty": 3,
-            "total_steps": 70
+            "difficulty": 2,
+            "total_steps": 36
         },
         {
             "id": "ResearchMaintenanceDepot",
@@ -26,8 +26,14 @@
             "total_steps": 234
         },
         {
+            "id": "ResearchRecyclingForSettlement",
+            "name": "Settlement recycling",
+            "difficulty": 13,
+            "total_steps": 343
+        },
+        {
             "id": "ResearchConcreteProduction",
-            "name": "Concrete production",
+            "name": "Bricks production",
             "difficulty": 2,
             "total_steps": 36
         },
@@ -344,6 +350,12 @@
             "total_steps": 98
         },
         {
+            "id": "ResearchBlueprints",
+            "name": "Blueprints",
+            "difficulty": 5,
+            "total_steps": 125
+        },
+        {
             "id": "ResearchEdicts1",
             "name": "Edicts",
             "difficulty": 5,
@@ -472,8 +484,8 @@
         {
             "id": "ResearchStoragesT1",
             "name": "Storage",
-            "difficulty": 3,
-            "total_steps": 70
+            "difficulty": 2,
+            "total_steps": 36
         },
         {
             "id": "ResearchStorage2",
@@ -604,12 +616,12 @@
         {
             "id": "ResearchCopperRefinement",
             "name": "Copper refinement",
-            "difficulty": 3,
-            "total_steps": 70
+            "difficulty": 2,
+            "total_steps": 36
         },
         {
             "id": "ResearchConcreteAdvanced",
-            "name": "Efficient concrete",
+            "name": "Concrete production",
             "difficulty": 3,
             "total_steps": 70
         },
@@ -706,8 +718,8 @@
         {
             "id": "ResearchPowerAndMaintenance",
             "name": "Power & maintenance",
-            "difficulty": 2,
-            "total_steps": 36
+            "difficulty": 1,
+            "total_steps": 18
         },
         {
             "id": "ResearchBeacon",
@@ -778,8 +790,8 @@
         {
             "id": "ResearchBasicDiesel",
             "name": "Basic diesel",
-            "difficulty": 3,
-            "total_steps": 70
+            "difficulty": 2,
+            "total_steps": 36
         },
         {
             "id": "ResearchCrudeOilDistillation",
@@ -838,8 +850,8 @@
         {
             "id": "ResearchRubberProduction",
             "name": "Synthetic rubber",
-            "difficulty": 4,
-            "total_steps": 98
+            "difficulty": 2,
+            "total_steps": 36
         },
         {
             "id": "ResearchPlasticProduction",
