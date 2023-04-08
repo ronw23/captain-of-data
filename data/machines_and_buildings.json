@@ -9881,6 +9881,7 @@
             ],
             "recipes": [
                 {
+                    "id": "ResearchLab5",
                     "name": "Research lab V",
                     "duration": 15,
                     "inputs": [
@@ -9929,6 +9930,7 @@
             ],
             "recipes": [
                 {
+                    "id": "ResearchLab4",
                     "name": "Research lab IV",
                     "duration": 15,
                     "inputs": [
@@ -9973,6 +9975,7 @@
             ],
             "recipes": [
                 {
+                    "id": "ResearchLab3",
                     "name": "Research lab III",
                     "duration": 15,
                     "inputs": [
@@ -10017,6 +10020,7 @@
             ],
             "recipes": [
                 {
+                    "id": "ResearchLab2",
                     "name": "Research lab II",
                     "duration": 15,
                     "inputs": [

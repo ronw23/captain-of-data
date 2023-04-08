@@ -1641,7 +1641,7 @@ namespace DataExtractorMod {
                         string inputsObj = ($"\"inputs\":[{{{inputList.JoinStrings(",")}}}],");
                         string outputsObj = ($"\"outputs\":[{{{outputList.JoinStrings(",")}}}]");
 
-                        recipes = $"{{\"name\":\"{name}\",\"duration\":{item.DurationForRecipe.Seconds},{inputsObj + outputsObj}}}";
+                        recipes = $"{{\"id\":\"{id}\",\"name\":\"{name}\",\"duration\":{item.DurationForRecipe.Seconds},{inputsObj + outputsObj}}}";
 
                     }
 
