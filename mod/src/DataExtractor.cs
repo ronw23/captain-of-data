@@ -265,6 +265,7 @@ namespace DataExtractorMod {
         }
 
         public string MakeRecipeJsonObject(
+            string id,
             string name,
             string duration,
             string inputs,
@@ -275,6 +276,7 @@ namespace DataExtractorMod {
 
             List<string> props = new List<string> { };
 
+            props.Add($"\"id\":\"{id}\"");
             props.Add($"\"name\":\"{name}\"");
             props.Add($"\"duration\":{duration}");
             props.Add($"\"inputs\":[{inputs}]");
@@ -446,6 +448,7 @@ namespace DataExtractorMod {
 
             props.Add($"\"id\":\"{id}\"");
             props.Add($"\"name\":\"{name}\"");
+            props.Add($"\"icon\":\"{productNameToIcon(name)}\"");
             props.Add($"\"type\":\"{type}\"");
 
             obj.AppendLine("{");
@@ -543,6 +546,24 @@ namespace DataExtractorMod {
             obj.AppendLine(props.JoinStrings(","));
             obj.AppendLine("}");
             return obj.ToString();
+        }
+
+        public static string productNameToIcon(string n)
+        {
+            n = n.Replace("(", "");
+            n = n.Replace(")", "");
+            if(n.EndsWith(" IV"))
+                n = n.Replace(" IV", "4");
+            if (n.EndsWith(" V"))
+                n = n.Replace(" V", "5");
+            if (n.EndsWith(" III"))
+                n = n.Replace(" III", "3");
+            if (n.EndsWith(" II"))
+                n = n.Replace(" II", "2");
+            if (n.EndsWith(" I"))
+                n = n.Replace(" I", "1");
+            n = n.Replace(" ", "");
+            return n;
         }
 
         /*
@@ -889,6 +910,7 @@ namespace DataExtractorMod {
 
                     string machineRecipeJson = MakeRecipeJsonObject(
                         recipe_name,
+                        recipe_name,
                         recipe_duration,
                         inputItems.JoinStrings(","),
                         outputItems.JoinStrings(",")
@@ -991,6 +1013,7 @@ namespace DataExtractorMod {
                     });
 
                     string machineRecipeJson = MakeRecipeJsonObject(
+                        recipe_name,
                         recipe_name,
                         recipe_duration,
                         inputItems.JoinStrings(","),
@@ -1162,6 +1185,7 @@ namespace DataExtractorMod {
 
                     string machineRecipeJson = MakeRecipeJsonObject(
                         recipe_name,
+                        recipe_name,
                         recipe_duration,
                         inputItems.JoinStrings(","),
                         outputItems.JoinStrings(",")
@@ -1255,6 +1279,7 @@ namespace DataExtractorMod {
                         var inputs = recipe.AllUserVisibleInputs;
                         var outputs = recipe.AllUserVisibleOutputs;
 
+                        string recipe_id = recipe.Id.ToString();
                         string recipe_name = recipe.Strings.Name.ToString();
                         string recipe_duration = duration.ToString();
 
@@ -1276,6 +1301,7 @@ namespace DataExtractorMod {
                         });
 
                         string machineRecipeJson = MakeRecipeJsonObject(
+                            recipe_id,
                             recipe_name,
                             recipe_duration,
                             inputItems.JoinStrings(","),
@@ -1711,6 +1737,7 @@ namespace DataExtractorMod {
                         var inputs = recipe.AllUserVisibleInputs;
                         var outputs = recipe.AllUserVisibleOutputs;
 
+                        string recipe_id = recipe.Id.ToString();
                         string recipe_name = recipe.Strings.Name.ToString();
                         string recipe_duration = duration.ToString();
 
@@ -1732,6 +1759,7 @@ namespace DataExtractorMod {
                         });
 
                         string machineRecipeJson = MakeRecipeJsonObject(
+                            recipe_id,
                             recipe_name,
                             recipe_duration,
                             inputItems.JoinStrings(","),
@@ -2027,6 +2055,7 @@ namespace DataExtractorMod {
                         outputItems.Add(machineRecipeInputJson);
 
                         string machineRecipeJson = MakeRecipeJsonObject(
+                            recipe_name,
                             recipe_name,
                             recipe_duration,
                             inputItems.JoinStrings(","),
@@ -2541,6 +2570,7 @@ namespace DataExtractorMod {
 
                     string machineRecipeJson = MakeRecipeJsonObject(
                         recipe_name,
+                        recipe_name,
                         recipe_duration,
                         inputItems.JoinStrings(","),
                         outputItems.JoinStrings(",")
@@ -2773,6 +2803,7 @@ namespace DataExtractorMod {
 
                     string machineRecipeJson = MakeRecipeJsonObject(
                         recipe_name,
+                        recipe_name,
                         recipe_duration,
                         inputItems.JoinStrings(","),
                         outputItems.JoinStrings(",")
@@ -2980,6 +3011,7 @@ namespace DataExtractorMod {
                     outputItems.Add(machineRecipeOutputJson);
 
                     string machineRecipeJson = MakeRecipeJsonObject(
+                        recipe_name,
                         recipe_name,
                         recipe_duration,
                         inputItems.JoinStrings(","),

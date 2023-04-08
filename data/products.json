@@ -4,826 +4,991 @@
         {
             "id": "Product_Virtual_Electricity",
             "name": "Electricity",
+            "icon": "Electricity",
             "type": "Virtual"
         },
         {
             "id": "Product_Virtual_MechPower",
             "name": "Mechanical power",
+            "icon": "Mechanicalpower",
             "type": "Virtual"
         },
         {
             "id": "Product_Virtual_Computing",
             "name": "Computing",
+            "icon": "Computing",
             "type": "Virtual"
         },
         {
             "id": "Product_Virtual_Upoints",
             "name": "Unity",
+            "icon": "Unity",
             "type": "Virtual"
         },
         {
             "id": "Product_Virtual_MaintenanceT1",
             "name": "Maintenance I",
+            "icon": "Maintenance1",
             "type": "Virtual"
         },
         {
             "id": "Product_Virtual_MaintenanceT2",
             "name": "Maintenance II",
+            "icon": "Maintenance2",
             "type": "Virtual"
         },
         {
             "id": "Product_Virtual_MaintenanceT3",
             "name": "Maintenance III",
+            "icon": "Maintenance3",
             "type": "Virtual"
         },
         {
             "id": "Product_Wood",
             "name": "Wood",
+            "icon": "Wood",
             "type": "Countable"
         },
         {
             "id": "Product_Fertilizer",
             "name": "Fertilizer I",
+            "icon": "Fertilizer1",
             "type": "Fluid"
         },
         {
             "id": "Product_Fertilizer2",
             "name": "Fertilizer II",
+            "icon": "Fertilizer2",
             "type": "Fluid"
         },
         {
             "id": "Product_FertilizerOrganic",
             "name": "Fertilizer (organic)",
+            "icon": "Fertilizerorganic",
             "type": "Fluid"
         },
         {
             "id": "Product_Dirt",
             "name": "Dirt",
+            "icon": "Dirt",
             "type": "Loose"
         },
         {
             "id": "Product_Compost",
             "name": "Compost",
+            "icon": "Compost",
             "type": "Loose"
         },
         {
             "id": "Product_Sludge",
             "name": "Sludge",
+            "icon": "Sludge",
             "type": "Loose"
         },
         {
             "id": "Product_Limestone",
             "name": "Limestone",
+            "icon": "Limestone",
             "type": "Loose"
         },
         {
             "id": "Product_Rock",
             "name": "Rock",
+            "icon": "Rock",
             "type": "Loose"
         },
         {
             "id": "Product_Gravel",
             "name": "Gravel",
+            "icon": "Gravel",
             "type": "Loose"
         },
         {
             "id": "Product_FilterMedia",
             "name": "Filter media",
+            "icon": "Filtermedia",
             "type": "Loose"
         },
         {
             "id": "Product_Coal",
             "name": "Coal",
+            "icon": "Coal",
             "type": "Loose"
         },
         {
             "id": "Product_Graphite",
             "name": "Graphite",
+            "icon": "Graphite",
             "type": "Countable"
         },
         {
             "id": "Product_Slag",
             "name": "Slag",
+            "icon": "Slag",
             "type": "Loose"
         },
         {
             "id": "Product_SlagCrushed",
             "name": "Slag crushed",
+            "icon": "Slagcrushed",
             "type": "Loose"
         },
         {
             "id": "Product_IronOre",
             "name": "Iron ore",
+            "icon": "Ironore",
             "type": "Loose"
         },
         {
             "id": "Product_IronOreCrushed",
             "name": "Iron ore crushed",
+            "icon": "Ironorecrushed",
             "type": "Loose"
         },
         {
             "id": "Product_IronScrap",
             "name": "Iron scrap",
+            "icon": "Ironscrap",
             "type": "Loose"
         },
         {
             "id": "Product_MoltenIron",
             "name": "Molten iron",
+            "icon": "Molteniron",
             "type": "Molten"
         },
         {
             "id": "Product_MoltenSteel",
             "name": "Molten steel",
+            "icon": "Moltensteel",
             "type": "Molten"
         },
         {
             "id": "Product_Iron",
             "name": "Iron",
+            "icon": "Iron",
             "type": "Countable"
         },
         {
             "id": "Product_Steel",
             "name": "Steel",
+            "icon": "Steel",
             "type": "Countable"
         },
         {
             "id": "Product_CopperOre",
             "name": "Copper ore",
+            "icon": "Copperore",
             "type": "Loose"
         },
         {
             "id": "Product_CopperOreCrushed",
             "name": "Copper ore crushed",
+            "icon": "Copperorecrushed",
             "type": "Loose"
         },
         {
             "id": "Product_CopperScrap",
             "name": "Copper scrap",
+            "icon": "Copperscrap",
             "type": "Loose"
         },
         {
             "id": "Product_MoltenCopper",
             "name": "Molten copper",
+            "icon": "Moltencopper",
             "type": "Molten"
         },
         {
             "id": "Product_ImpureCopper",
             "name": "Impure copper",
+            "icon": "Impurecopper",
             "type": "Countable"
         },
         {
             "id": "Product_Copper",
             "name": "Copper",
+            "icon": "Copper",
             "type": "Countable"
         },
         {
             "id": "Product_GoldOre",
             "name": "Gold ore",
+            "icon": "Goldore",
             "type": "Loose"
         },
         {
             "id": "Product_GoldOreCrushed",
             "name": "Gold ore crushed",
+            "icon": "Goldorecrushed",
             "type": "Loose"
         },
         {
             "id": "Product_GoldOrePowder",
             "name": "Gold ore powder",
+            "icon": "Goldorepowder",
             "type": "Loose"
         },
         {
             "id": "Product_GoldOreConcentrate",
             "name": "Gold ore concentrate",
+            "icon": "Goldoreconcentrate",
             "type": "Loose"
         },
         {
             "id": "Product_Gold",
             "name": "Gold",
+            "icon": "Gold",
             "type": "Countable"
         },
         {
             "id": "Product_GoldScrap",
             "name": "Gold scrap",
+            "icon": "Goldscrap",
             "type": "Loose"
         },
         {
             "id": "Product_Sand",
             "name": "Sand",
+            "icon": "Sand",
             "type": "Loose"
         },
         {
             "id": "Product_MoltenGlass",
             "name": "Molten glass",
+            "icon": "Moltenglass",
             "type": "Molten"
         },
         {
             "id": "Product_BrokenGlass",
             "name": "Broken glass",
+            "icon": "Brokenglass",
             "type": "Loose"
         },
         {
             "id": "Product_Glass",
             "name": "Glass",
+            "icon": "Glass",
             "type": "Countable"
         },
         {
             "id": "Product_GlassMix",
             "name": "Glass mix",
+            "icon": "Glassmix",
             "type": "Loose"
         },
         {
             "id": "Product_UraniumOre",
             "name": "Uranium ore",
+            "icon": "Uraniumore",
             "type": "Loose"
         },
         {
             "id": "Product_UraniumOreCrushed",
             "name": "Uranium ore crushed",
+            "icon": "Uraniumorecrushed",
             "type": "Loose"
         },
         {
             "id": "Product_YellowCake",
             "name": "Yellowcake",
+            "icon": "Yellowcake",
             "type": "Loose"
         },
         {
             "id": "Product_UraniumPellets",
             "name": "Uranium pellets",
+            "icon": "Uraniumpellets",
             "type": "Countable"
         },
         {
             "id": "Product_UraniumRod",
             "name": "Uranium rod",
+            "icon": "Uraniumrod",
             "type": "Countable"
         },
         {
             "id": "Product_SpentFuel",
             "name": "Spent fuel",
+            "icon": "Spentfuel",
             "type": "Countable"
         },
         {
             "id": "Product_Quartz",
             "name": "Quartz",
+            "icon": "Quartz",
             "type": "Loose"
         },
         {
             "id": "Product_MoltenSilicon",
             "name": "Molten silicon",
+            "icon": "Moltensilicon",
             "type": "Molten"
         },
         {
             "id": "Product_PolySilicon",
             "name": "Silicon (poly)",
+            "icon": "Siliconpoly",
             "type": "Countable"
         },
         {
             "id": "Product_SiliconWafer",
             "name": "Silicon wafer",
+            "icon": "Siliconwafer",
             "type": "Countable"
         },
         {
             "id": "Product_Water",
             "name": "Water",
+            "icon": "Water",
             "type": "Fluid"
         },
         {
             "id": "Product_ChilledWater",
             "name": "Chilled water",
+            "icon": "Chilledwater",
             "type": "Fluid"
         },
         {
             "id": "Product_Seawater",
             "name": "Seawater",
+            "icon": "Seawater",
             "type": "Fluid"
         },
         {
             "id": "Product_Brine",
             "name": "Brine",
+            "icon": "Brine",
             "type": "Fluid"
         },
         {
             "id": "Product_WasteWater",
             "name": "Waste water",
+            "icon": "Wastewater",
             "type": "Fluid"
         },
         {
             "id": "Product_ToxicSlurry",
             "name": "Toxic slurry",
+            "icon": "Toxicslurry",
             "type": "Fluid"
         },
         {
             "id": "Product_Virtual_PollutedWater",
             "name": "Water pollution",
+            "icon": "Waterpollution",
             "type": "Virtual"
         },
         {
             "id": "Product_Virtual_PollutedAir",
             "name": "Air pollution",
+            "icon": "Airpollution",
             "type": "Virtual"
         },
         {
             "id": "Product_Chlorine",
             "name": "Chlorine",
+            "icon": "Chlorine",
             "type": "Fluid"
         },
         {
             "id": "Product_SteamHi",
             "name": "Steam hi",
+            "icon": "Steamhi",
             "type": "Fluid"
         },
         {
             "id": "Product_SteamLP",
             "name": "Steam lo",
+            "icon": "Steamlo",
             "type": "Fluid"
         },
         {
             "id": "Product_SteamDepleted",
             "name": "Steam depleted",
+            "icon": "Steamdepleted",
             "type": "Fluid"
         },
         {
             "id": "Product_Salt",
             "name": "Salt",
+            "icon": "Salt",
             "type": "Loose"
         },
         {
             "id": "Product_Exhaust",
             "name": "Exhaust",
+            "icon": "Exhaust",
             "type": "Fluid"
         },
         {
             "id": "Product_Recyclables",
             "name": "Recyclables",
+            "icon": "Recyclables",
             "type": "Loose"
         },
         {
             "id": "Product_CrudeOil",
             "name": "Crude oil",
+            "icon": "Crudeoil",
             "type": "Fluid"
         },
         {
             "id": "Product_Diesel",
             "name": "Diesel",
+            "icon": "Diesel",
             "type": "Fluid"
         },
         {
             "id": "Product_Naphtha",
             "name": "Naphtha",
+            "icon": "Naphtha",
             "type": "Fluid"
         },
         {
             "id": "Product_FuelGas",
             "name": "Fuel gas",
+            "icon": "Fuelgas",
             "type": "Fluid"
         },
         {
             "id": "Product_Sulfur",
             "name": "Sulfur",
+            "icon": "Sulfur",
             "type": "Loose"
         },
         {
             "id": "Product_SourWater",
             "name": "Sour water",
+            "icon": "Sourwater",
             "type": "Fluid"
         },
         {
             "id": "Product_Ammonia",
             "name": "Ammonia",
+            "icon": "Ammonia",
             "type": "Fluid"
         },
         {
             "id": "Product_Acid",
             "name": "Acid",
+            "icon": "Acid",
             "type": "Fluid"
         },
         {
             "id": "Product_HeavyOil",
             "name": "Heavy oil",
+            "icon": "Heavyoil",
             "type": "Fluid"
         },
         {
             "id": "Product_MediumOil",
             "name": "Medium oil",
+            "icon": "Mediumoil",
             "type": "Fluid"
         },
         {
             "id": "Product_LightOil",
             "name": "Light oil",
+            "icon": "Lightoil",
             "type": "Fluid"
         },
         {
             "id": "Product_Plastic",
             "name": "Plastic",
+            "icon": "Plastic",
             "type": "Countable"
         },
         {
             "id": "Product_Rubber",
             "name": "Rubber",
+            "icon": "Rubber",
             "type": "Countable"
         },
         {
             "id": "Product_Hydrogen",
             "name": "Hydrogen",
+            "icon": "Hydrogen",
             "type": "Fluid"
         },
         {
             "id": "Product_Nitrogen",
             "name": "Nitrogen",
+            "icon": "Nitrogen",
             "type": "Fluid"
         },
         {
             "id": "Product_NitrogenLiquidTank",
             "name": "Nitrogen Tank",
+            "icon": "NitrogenTank",
             "type": "Countable"
         },
         {
             "id": "Product_CarbonDioxide",
             "name": "Carbon dioxide",
+            "icon": "Carbondioxide",
             "type": "Fluid"
         },
         {
             "id": "Product_Ethanol",
             "name": "Ethanol",
+            "icon": "Ethanol",
             "type": "Fluid"
         },
         {
             "id": "Product_Potato",
             "name": "Potato",
+            "icon": "Potato",
             "type": "Loose"
         },
         {
             "id": "Product_Corn",
             "name": "Corn",
+            "icon": "Corn",
             "type": "Loose"
         },
         {
             "id": "Product_Wheat",
             "name": "Wheat",
+            "icon": "Wheat",
             "type": "Loose"
         },
         {
             "id": "Product_Soybean",
             "name": "Soybean",
+            "icon": "Soybean",
             "type": "Loose"
         },
         {
             "id": "Product_SugarCane",
             "name": "Sugar cane",
+            "icon": "Sugarcane",
             "type": "Loose"
         },
         {
             "id": "Product_Canola",
             "name": "Canola",
+            "icon": "Canola",
             "type": "Loose"
         },
         {
             "id": "Product_Vegetables",
             "name": "Vegetables",
+            "icon": "Vegetables",
             "type": "Countable"
         },
         {
             "id": "Product_Fruit",
             "name": "Fruit",
+            "icon": "Fruit",
             "type": "Countable"
         },
         {
             "id": "Product_Poppy",
             "name": "Poppy",
+            "icon": "Poppy",
             "type": "Loose"
         },
         {
             "id": "Product_Bread",
             "name": "Bread",
+            "icon": "Bread",
             "type": "Countable"
         },
         {
             "id": "Product_Flour",
             "name": "Flour",
+            "icon": "Flour",
             "type": "Countable"
         },
         {
             "id": "Product_AnimalFeed",
             "name": "Animal feed",
+            "icon": "Animalfeed",
             "type": "Loose"
         },
         {
             "id": "Product_Biomass",
             "name": "Biomass",
+            "icon": "Biomass",
             "type": "Loose"
         },
         {
             "id": "Product_Eggs",
             "name": "Eggs",
+            "icon": "Eggs",
             "type": "Countable"
         },
         {
             "id": "Product_Tofu",
             "name": "Tofu",
+            "icon": "Tofu",
             "type": "Countable"
         },
         {
             "id": "Product_CookingOil",
             "name": "Cooking oil",
+            "icon": "Cookingoil",
             "type": "Fluid"
         },
         {
             "id": "Product_Meat",
             "name": "Meat",
+            "icon": "Meat",
             "type": "Countable"
         },
         {
             "id": "Product_Sausage",
             "name": "Sausage",
+            "icon": "Sausage",
             "type": "Countable"
         },
         {
             "id": "Product_Snack",
             "name": "Snack",
+            "icon": "Snack",
             "type": "Countable"
         },
         {
             "id": "Product_Cake",
             "name": "Cake",
+            "icon": "Cake",
             "type": "Countable"
         },
         {
             "id": "Product_FoodPack",
             "name": "Food pack",
+            "icon": "Foodpack",
             "type": "Countable"
         },
         {
             "id": "Product_Chicken",
             "name": "Chicken",
+            "icon": "Chicken",
             "type": "Virtual"
         },
         {
             "id": "Product_CargoShip",
             "name": "Cargo ship",
+            "icon": "Cargoship",
             "type": "Virtual"
         },
         {
             "id": "Product_ChickenCarcass",
             "name": "Chicken carcass",
+            "icon": "Chickencarcass",
             "type": "Countable"
         },
         {
             "id": "Product_MeatTrimmings",
             "name": "Meat trimmings",
+            "icon": "Meattrimmings",
             "type": "Loose"
         },
         {
             "id": "Product_Sugar",
             "name": "Sugar",
+            "icon": "Sugar",
             "type": "Loose"
         },
         {
             "id": "Product_CornMash",
             "name": "Corn mash",
+            "icon": "Cornmash",
             "type": "Fluid"
         },
         {
             "id": "Product_HouseholdGoods",
             "name": "Household goods",
+            "icon": "Householdgoods",
             "type": "Countable"
         },
         {
             "id": "Product_HouseholdAppliances",
             "name": "Household appliances",
+            "icon": "Householdappliances",
             "type": "Countable"
         },
         {
             "id": "Product_ConsumerElectronics",
             "name": "Consumer electronics",
+            "icon": "Consumerelectronics",
             "type": "Countable"
         },
         {
             "id": "Product_Antibiotics",
             "name": "Antibiotics",
+            "icon": "Antibiotics",
             "type": "Countable"
         },
         {
             "id": "Product_Disinfectant",
             "name": "Disinfectant",
+            "icon": "Disinfectant",
             "type": "Countable"
         },
         {
             "id": "Product_Anesthetics",
             "name": "Anesthetics",
+            "icon": "Anesthetics",
             "type": "Countable"
         },
         {
             "id": "Product_Morphine",
             "name": "Morphine",
+            "icon": "Morphine",
             "type": "Countable"
         },
         {
             "id": "Product_MedicalEquipment",
             "name": "Medical equipment",
+            "icon": "Medicalequipment",
             "type": "Countable"
         },
         {
             "id": "Product_MedicalSupplies",
             "name": "Medical Supplies",
+            "icon": "MedicalSupplies",
             "type": "Countable"
         },
         {
             "id": "Product_MedicalSupplies2",
             "name": "Medical Supplies II",
+            "icon": "MedicalSupplies2",
             "type": "Countable"
         },
         {
             "id": "Product_MedicalSupplies3",
             "name": "Medical Supplies III",
+            "icon": "MedicalSupplies3",
             "type": "Countable"
         },
         {
             "id": "Product_Cement",
             "name": "Cement",
+            "icon": "Cement",
             "type": "Countable"
         },
         {
             "id": "Product_ConcreteSlab",
             "name": "Concrete slab",
+            "icon": "Concreteslab",
             "type": "Countable"
         },
         {
             "id": "Product_Bricks",
             "name": "Bricks",
+            "icon": "Bricks",
             "type": "Countable"
         },
         {
             "id": "Product_ConstructionParts",
             "name": "Construction Parts",
+            "icon": "ConstructionParts",
             "type": "Countable"
         },
         {
             "id": "Product_ConstructionParts2",
             "name": "Construction Parts II",
+            "icon": "ConstructionParts2",
             "type": "Countable"
         },
         {
             "id": "Product_ConstructionParts3",
             "name": "Construction Parts III",
+            "icon": "ConstructionParts3",
             "type": "Countable"
         },
         {
             "id": "Product_ConstructionParts4",
             "name": "Construction Parts IV",
+            "icon": "ConstructionParts4",
             "type": "Countable"
         },
         {
             "id": "Product_MechanicalParts",
             "name": "Mechanical Parts",
+            "icon": "MechanicalParts",
             "type": "Countable"
         },
         {
             "id": "Product_VehicleParts",
             "name": "Vehicle Parts",
+            "icon": "VehicleParts",
             "type": "Countable"
         },
         {
             "id": "Product_VehicleParts2",
             "name": "Vehicle Parts II",
+            "icon": "VehicleParts2",
             "type": "Countable"
         },
         {
             "id": "Product_VehicleParts3",
             "name": "Vehicle Parts III",
+            "icon": "VehicleParts3",
             "type": "Countable"
         },
         {
             "id": "Product_LabEquipment",
             "name": "Lab Equipment",
+            "icon": "LabEquipment",
             "type": "Countable"
         },
         {
             "id": "Product_LabEquipment2",
             "name": "Lab Equipment II",
+            "icon": "LabEquipment2",
             "type": "Countable"
         },
         {
             "id": "Product_LabEquipment3",
             "name": "Lab Equipment III",
+            "icon": "LabEquipment3",
             "type": "Countable"
         },
         {
             "id": "Product_LabEquipment4",
             "name": "Lab Equipment IV",
+            "icon": "LabEquipment4",
             "type": "Countable"
         },
         {
             "id": "Product_Electronics",
             "name": "Electronics",
+            "icon": "Electronics",
             "type": "Countable"
         },
         {
             "id": "Product_PCB",
             "name": "PCB",
+            "icon": "PCB",
             "type": "Countable"
         },
         {
             "id": "Product_Electronics2",
             "name": "Electronics II",
+            "icon": "Electronics2",
             "type": "Countable"
         },
         {
             "id": "Product_Electronics3",
             "name": "Electronics III",
+            "icon": "Electronics3",
             "type": "Countable"
         },
         {
             "id": "Product_Server",
             "name": "Server",
+            "icon": "Server",
             "type": "Countable"
         },
         {
             "id": "Product_Microchips",
             "name": "Microchips",
+            "icon": "Microchips",
             "type": "Countable"
         },
         {
             "id": "Product_MicrochipsStage1A",
             "name": "Microchips stage 1 a",
+            "icon": "Microchipsstage1a",
             "type": "Countable"
         },
         {
             "id": "Product_MicrochipsStage1B",
             "name": "Microchips stage 1 b",
+            "icon": "Microchipsstage1b",
             "type": "Countable"
         },
         {
             "id": "Product_MicrochipsStage1C",
             "name": "Microchips stage 1 c",
+            "icon": "Microchipsstage1c",
             "type": "Countable"
         },
         {
             "id": "Product_MicrochipsStage2A",
             "name": "Microchips stage 2 a",
+            "icon": "Microchipsstage2a",
             "type": "Countable"
         },
         {
             "id": "Product_MicrochipsStage2B",
             "name": "Microchips stage 2 b",
+            "icon": "Microchipsstage2b",
             "type": "Countable"
         },
         {
             "id": "Product_MicrochipsStage2C",
             "name": "Microchips stage 2 c",
+            "icon": "Microchipsstage2c",
             "type": "Countable"
         },
         {
             "id": "Product_MicrochipsStage3A",
             "name": "Microchips stage 3 a",
+            "icon": "Microchipsstage3a",
             "type": "Countable"
         },
         {
             "id": "Product_MicrochipsStage3B",
             "name": "Microchips stage 3 b",
+            "icon": "Microchipsstage3b",
             "type": "Countable"
         },
         {
             "id": "Product_MicrochipsStage3C",
             "name": "Microchips stage 3 c",
+            "icon": "Microchipsstage3c",
             "type": "Countable"
         },
         {
             "id": "Product_MicrochipsStage4A",
             "name": "Microchips stage 4 a",
+            "icon": "Microchipsstage4a",
             "type": "Countable"
         },
         {
             "id": "Product_MicrochipsStage4B",
             "name": "Microchips stage 4 b",
+            "icon": "Microchipsstage4b",
             "type": "Countable"
         },
         {
             "id": "Product_SolarCell",
             "name": "Solar cell",
+            "icon": "Solarcell",
             "type": "Countable"
         },
         {
             "id": "Product_SolarCellMono",
             "name": "Solar cell mono",
+            "icon": "Solarcellmono",
             "type": "Countable"
         },
         {
             "id": "Product_Oxygen",
             "name": "Oxygen",
+            "icon": "Oxygen",
             "type": "Fluid"
         },
         {
             "id": "Product_HydrogenFluoride",
             "name": "Hydrogen fluoride",
+            "icon": "Hydrogenfluoride",
             "type": "Fluid"
         },
         {
             "id": "Product_Waste",
             "name": "Waste",
+            "icon": "Waste",
             "type": "Loose"
         },
         {
             "id": "Product_Flowers",
             "name": "Flowers",
+            "icon": "Flowers",
             "type": "Countable"
         }
     ]

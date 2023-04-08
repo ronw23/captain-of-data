@@ -24,6 +24,7 @@
             ],
             "recipes": [
                 {
+                    "id": "TurbineHighPressT2",
                     "name": "TurbineHighPressT2",
                     "duration": 10,
                     "inputs": [
@@ -68,6 +69,7 @@
             ],
             "recipes": [
                 {
+                    "id": "TurbineHighPress",
                     "name": "TurbineHighPress",
                     "duration": 10,
                     "inputs": [
@@ -112,6 +114,7 @@
             ],
             "recipes": [
                 {
+                    "id": "TurbineLowPressT2",
                     "name": "TurbineLowPressT2",
                     "duration": 10,
                     "inputs": [
@@ -156,6 +159,7 @@
             ],
             "recipes": [
                 {
+                    "id": "TurbineLowPress",
                     "name": "TurbineLowPress",
                     "duration": 10,
                     "inputs": [
@@ -204,6 +208,7 @@
             ],
             "recipes": [
                 {
+                    "id": "PowerGeneratorT1",
                     "name": "PowerGeneratorT1",
                     "duration": 0,
                     "inputs": [
@@ -248,6 +253,7 @@
             ],
             "recipes": [
                 {
+                    "id": "PowerGeneratorT2",
                     "name": "PowerGeneratorT2",
                     "duration": 0,
                     "inputs": [
@@ -354,6 +360,7 @@
             ],
             "recipes": [
                 {
+                    "id": "DieselGenerator",
                     "name": "DieselGenerator",
                     "duration": 20,
                     "inputs": [
@@ -398,6 +405,7 @@
             ],
             "recipes": [
                 {
+                    "id": "DieselDistillationBasic",
                     "name": "Diesel distillation (basic)",
                     "duration": 20,
                     "inputs": [
@@ -426,6 +434,7 @@
                     ]
                 },
                 {
+                    "id": "WaterDesalinationBasic",
                     "name": "Water desalination (basic)",
                     "duration": 10,
                     "inputs": [
@@ -482,6 +491,7 @@
             ],
             "recipes": [
                 {
+                    "id": "SmokeStackLargeDepletedSteam",
                     "name": "Product disposal",
                     "duration": 20,
                     "inputs": [
@@ -493,6 +503,7 @@
                     "outputs": []
                 },
                 {
+                    "id": "SmokeStackLargeHpSteam",
                     "name": "Product disposal",
                     "duration": 20,
                     "inputs": [
@@ -504,6 +515,7 @@
                     "outputs": []
                 },
                 {
+                    "id": "SmokeStackLargeLpSteam",
                     "name": "Product disposal",
                     "duration": 20,
                     "inputs": [
@@ -515,6 +527,7 @@
                     "outputs": []
                 },
                 {
+                    "id": "SmokeStackLargeOxygen",
                     "name": "Product disposal",
                     "duration": 20,
                     "inputs": [
@@ -526,6 +539,7 @@
                     "outputs": []
                 },
                 {
+                    "id": "SmokeStackLargeNitrogen",
                     "name": "Product disposal",
                     "duration": 20,
                     "inputs": [
@@ -537,6 +551,7 @@
                     "outputs": []
                 },
                 {
+                    "id": "SmokeStackLargeExhaust",
                     "name": "Product disposal",
                     "duration": 20,
                     "inputs": [
@@ -553,6 +568,7 @@
                     ]
                 },
                 {
+                    "id": "SmokeStackLargeCarbonDioxide",
                     "name": "Product disposal",
                     "duration": 20,
                     "inputs": [
@@ -593,6 +609,7 @@
             ],
             "recipes": [
                 {
+                    "id": "SmokeStackDepletedSteam",
                     "name": "Product disposal",
                     "duration": 20,
                     "inputs": [
@@ -604,6 +621,7 @@
                     "outputs": []
                 },
                 {
+                    "id": "SmokeStackHpSteam",
                     "name": "Product disposal",
                     "duration": 20,
                     "inputs": [
@@ -615,6 +633,7 @@
                     "outputs": []
                 },
                 {
+                    "id": "SmokeStackLpSteam",
                     "name": "Product disposal",
                     "duration": 20,
                     "inputs": [
@@ -626,6 +645,7 @@
                     "outputs": []
                 },
                 {
+                    "id": "SmokeStackOxygen",
                     "name": "Product disposal",
                     "duration": 20,
                     "inputs": [
@@ -637,6 +657,7 @@
                     "outputs": []
                 },
                 {
+                    "id": "SmokeStackNitrogen",
                     "name": "Product disposal",
                     "duration": 20,
                     "inputs": [
@@ -648,6 +669,7 @@
                     "outputs": []
                 },
                 {
+                    "id": "SmokeStackExhaust",
                     "name": "Product disposal",
                     "duration": 20,
                     "inputs": [
@@ -664,6 +686,7 @@
                     ]
                 },
                 {
+                    "id": "SmokeStackCarbonDioxide",
                     "name": "Product disposal",
                     "duration": 20,
                     "inputs": [
@@ -704,6 +727,7 @@
             ],
             "recipes": [
                 {
+                    "id": "OceanWaterDumping",
                     "name": "Water dumping",
                     "duration": 2,
                     "inputs": [
@@ -715,6 +739,7 @@
                     "outputs": []
                 },
                 {
+                    "id": "BrineDumping",
                     "name": "Brine dumping",
                     "duration": 2,
                     "inputs": [
@@ -726,6 +751,7 @@
                     "outputs": []
                 },
                 {
+                    "id": "OceanWasteWaterPumping",
                     "name": "Waste water dumping",
                     "duration": 2,
                     "inputs": [
@@ -742,6 +768,7 @@
                     ]
                 },
                 {
+                    "id": "SourWaterDumping",
                     "name": "Sour water dumping",
                     "duration": 2,
                     "inputs": [
@@ -758,6 +785,7 @@
                     ]
                 },
                 {
+                    "id": "WasteAcidDumping",
                     "name": "Acid dumping",
                     "duration": 2,
                     "inputs": [
@@ -774,6 +802,7 @@
                     ]
                 },
                 {
+                    "id": "ToxicSlurryDumping",
                     "name": "Toxic slurry dumping",
                     "duration": 2,
                     "inputs": [
@@ -790,6 +819,7 @@
                     ]
                 },
                 {
+                    "id": "SeaWaterDumping",
                     "name": "Seawater dumping",
                     "duration": 2,
                     "inputs": [
@@ -801,6 +831,7 @@
                     "outputs": []
                 },
                 {
+                    "id": "FertilizerOrganicDumping",
                     "name": "Fertilizer dumping",
                     "duration": 4,
                     "inputs": [
@@ -817,6 +848,7 @@
                     ]
                 },
                 {
+                    "id": "FertilizerChem1Dumping",
                     "name": "Fertilizer dumping",
                     "duration": 4,
                     "inputs": [
@@ -833,6 +865,7 @@
                     ]
                 },
                 {
+                    "id": "FertilizerChem2Dumping",
                     "name": "Fertilizer dumping",
                     "duration": 4,
                     "inputs": [
@@ -873,6 +906,7 @@
             ],
             "recipes": [
                 {
+                    "id": "FlareDiesel",
                     "name": "Diesel disposal",
                     "duration": 20,
                     "inputs": [
@@ -889,6 +923,7 @@
                     ]
                 },
                 {
+                    "id": "FlareHeavyOil",
                     "name": "Heavy oil disposal",
                     "duration": 20,
                     "inputs": [
@@ -905,6 +940,7 @@
                     ]
                 },
                 {
+                    "id": "FlareLightOil",
                     "name": "Light oil disposal",
                     "duration": 20,
                     "inputs": [
@@ -921,6 +957,7 @@
                     ]
                 },
                 {
+                    "id": "FlareNaphtha",
                     "name": "Naphtha disposal",
                     "duration": 20,
                     "inputs": [
@@ -937,6 +974,7 @@
                     ]
                 },
                 {
+                    "id": "FlareEthanol",
                     "name": "Ethanol disposal",
                     "duration": 20,
                     "inputs": [
@@ -953,6 +991,7 @@
                     ]
                 },
                 {
+                    "id": "FlareFuelGas",
                     "name": "Fuel gas disposal",
                     "duration": 20,
                     "inputs": [
@@ -969,6 +1008,7 @@
                     ]
                 },
                 {
+                    "id": "FlareAmmonia",
                     "name": "Ammonia disposal",
                     "duration": 20,
                     "inputs": [
@@ -985,6 +1025,7 @@
                     ]
                 },
                 {
+                    "id": "FlareHydrogen",
                     "name": "Hydrogen disposal",
                     "duration": 20,
                     "inputs": [
@@ -1020,6 +1061,7 @@
             ],
             "recipes": [
                 {
+                    "id": "ExhaustFiltering",
                     "name": "Exhaust filtering",
                     "duration": 10,
                     "inputs": [
@@ -1076,6 +1118,7 @@
             ],
             "recipes": [
                 {
+                    "id": "WaterTreatment",
                     "name": "Water treatment",
                     "duration": 30,
                     "inputs": [
@@ -1104,6 +1147,7 @@
                     ]
                 },
                 {
+                    "id": "WaterTreatmentT2",
                     "name": "Water treatment (advanced)",
                     "duration": 30,
                     "inputs": [
@@ -1132,6 +1176,7 @@
                     ]
                 },
                 {
+                    "id": "ToxicSlurryTreatment",
                     "name": "Toxic slurry treatment",
                     "duration": 30,
                     "inputs": [
@@ -1184,6 +1229,7 @@
             ],
             "recipes": [
                 {
+                    "id": "SludgeDigestion",
                     "name": "Digestion",
                     "duration": 60,
                     "inputs": [
@@ -1204,6 +1250,7 @@
                     ]
                 },
                 {
+                    "id": "PotatoDigestion",
                     "name": "Digestion",
                     "duration": 60,
                     "inputs": [
@@ -1224,6 +1271,7 @@
                     ]
                 },
                 {
+                    "id": "VegetablesDigestion",
                     "name": "Digestion",
                     "duration": 60,
                     "inputs": [
@@ -1244,6 +1292,7 @@
                     ]
                 },
                 {
+                    "id": "FruitDigestion",
                     "name": "Digestion",
                     "duration": 90,
                     "inputs": [
@@ -1264,6 +1313,7 @@
                     ]
                 },
                 {
+                    "id": "PoppyDigestion",
                     "name": "Digestion",
                     "duration": 60,
                     "inputs": [
@@ -1284,6 +1334,7 @@
                     ]
                 },
                 {
+                    "id": "WheatDigestion",
                     "name": "Digestion",
                     "duration": 90,
                     "inputs": [
@@ -1304,6 +1355,7 @@
                     ]
                 },
                 {
+                    "id": "MeatTrimmingsDigestion",
                     "name": "Digestion",
                     "duration": 120,
                     "inputs": [
@@ -1348,6 +1400,7 @@
             ],
             "recipes": [
                 {
+                    "id": "LandfillBurning",
                     "name": "Burning",
                     "duration": 10,
                     "inputs": [
@@ -1364,6 +1417,7 @@
                     ]
                 },
                 {
+                    "id": "BiomassBurning",
                     "name": "Burning",
                     "duration": 10,
                     "inputs": [
@@ -1380,6 +1434,7 @@
                     ]
                 },
                 {
+                    "id": "AnimalFeedBurning",
                     "name": "Burning",
                     "duration": 10,
                     "inputs": [
@@ -1396,6 +1451,7 @@
                     ]
                 },
                 {
+                    "id": "MeatTrimmingsBurning",
                     "name": "Burning",
                     "duration": 20,
                     "inputs": [
@@ -1412,6 +1468,7 @@
                     ]
                 },
                 {
+                    "id": "ChickenCarcassBurning",
                     "name": "Burning",
                     "duration": 20,
                     "inputs": [
@@ -1428,6 +1485,7 @@
                     ]
                 },
                 {
+                    "id": "SulfurBurning",
                     "name": "Burning",
                     "duration": 10,
                     "inputs": [
@@ -1444,6 +1502,7 @@
                     ]
                 },
                 {
+                    "id": "SludgeBurning",
                     "name": "Burning",
                     "duration": 20,
                     "inputs": [
@@ -1484,6 +1543,7 @@
             ],
             "recipes": [
                 {
+                    "id": "OilGroundPumping",
                     "name": "Oil pumping",
                     "duration": 20,
                     "inputs": [],
@@ -1519,6 +1579,7 @@
             ],
             "recipes": [
                 {
+                    "id": "LandWaterPumping",
                     "name": "Water pumping",
                     "duration": 10,
                     "inputs": [],
@@ -1554,6 +1615,7 @@
             ],
             "recipes": [
                 {
+                    "id": "CarbonDioxideInjection",
                     "name": "Co2 injection",
                     "duration": 10,
                     "inputs": [
@@ -1593,6 +1655,7 @@
             ],
             "recipes": [
                 {
+                    "id": "OceanWaterPumping",
                     "name": "Ocean water pumping",
                     "duration": 10,
                     "inputs": [],
@@ -1628,6 +1691,7 @@
             ],
             "recipes": [
                 {
+                    "id": "OceanWaterPumpingT2",
                     "name": "Ocean water pumping II",
                     "duration": 10,
                     "inputs": [],
@@ -1663,6 +1727,7 @@
             ],
             "recipes": [
                 {
+                    "id": "SteamGenerationCoal",
                     "name": "Steam generation",
                     "duration": 10,
                     "inputs": [
@@ -1687,6 +1752,7 @@
                     ]
                 },
                 {
+                    "id": "SteamGenerationBiomass",
                     "name": "Steam generation",
                     "duration": 10,
                     "inputs": [
@@ -1711,6 +1777,7 @@
                     ]
                 },
                 {
+                    "id": "SteamGenerationAnimalFeed",
                     "name": "Steam generation",
                     "duration": 10,
                     "inputs": [
@@ -1759,6 +1826,7 @@
             ],
             "recipes": [
                 {
+                    "id": "SteamGenerationHeavyOil",
                     "name": "Steam generation",
                     "duration": 10,
                     "inputs": [
@@ -1783,6 +1851,7 @@
                     ]
                 },
                 {
+                    "id": "SteamGenerationMediumOil",
                     "name": "Steam generation",
                     "duration": 10,
                     "inputs": [
@@ -1807,6 +1876,7 @@
                     ]
                 },
                 {
+                    "id": "SteamGenerationLightOil",
                     "name": "Steam generation",
                     "duration": 10,
                     "inputs": [
@@ -1831,6 +1901,7 @@
                     ]
                 },
                 {
+                    "id": "SteamGenerationNaphtha",
                     "name": "Steam generation",
                     "duration": 10,
                     "inputs": [
@@ -1855,6 +1926,7 @@
                     ]
                 },
                 {
+                    "id": "SteamGenerationEthanol",
                     "name": "Steam generation",
                     "duration": 10,
                     "inputs": [
@@ -1879,6 +1951,7 @@
                     ]
                 },
                 {
+                    "id": "SteamGenerationFuelGas",
                     "name": "Steam generation",
                     "duration": 10,
                     "inputs": [
@@ -1903,6 +1976,7 @@
                     ]
                 },
                 {
+                    "id": "SteamGenerationHydrogen",
                     "name": "Steam generation",
                     "duration": 10,
                     "inputs": [
@@ -1955,6 +2029,7 @@
             ],
             "recipes": [
                 {
+                    "id": "SteamGenerationElectric",
                     "name": "Steam generation",
                     "duration": 10,
                     "inputs": [
@@ -1995,6 +2070,7 @@
             ],
             "recipes": [
                 {
+                    "id": "BrineMakingHeated",
                     "name": "Brine making",
                     "duration": 20,
                     "inputs": [
@@ -2011,6 +2087,7 @@
                     ]
                 },
                 {
+                    "id": "SaltMakingHeated",
                     "name": "Salt making",
                     "duration": 40,
                     "inputs": [
@@ -2027,6 +2104,7 @@
                     ]
                 },
                 {
+                    "id": "SaltMakingFromBrineHeated",
                     "name": "Salt making",
                     "duration": 20,
                     "inputs": [
@@ -2067,6 +2145,7 @@
             ],
             "recipes": [
                 {
+                    "id": "BrineMaking",
                     "name": "Brine making",
                     "duration": 40,
                     "inputs": [
@@ -2083,6 +2162,7 @@
                     ]
                 },
                 {
+                    "id": "SaltMaking",
                     "name": "Salt making",
                     "duration": 80,
                     "inputs": [
@@ -2099,6 +2179,7 @@
                     ]
                 },
                 {
+                    "id": "SaltMakingFromBrine",
                     "name": "Salt making",
                     "duration": 40,
                     "inputs": [
@@ -2143,6 +2224,7 @@
             ],
             "recipes": [
                 {
+                    "id": "DesalinationFromHP",
                     "name": "Thermal desalination",
                     "duration": 10,
                     "inputs": [
@@ -2167,6 +2249,7 @@
                     ]
                 },
                 {
+                    "id": "DesalinationFromLP",
                     "name": "Thermal desalination",
                     "duration": 20,
                     "inputs": [
@@ -2191,6 +2274,7 @@
                     ]
                 },
                 {
+                    "id": "DesalinationFromDepleted",
                     "name": "Thermal desalination",
                     "duration": 40,
                     "inputs": [
@@ -2239,6 +2323,7 @@
             ],
             "recipes": [
                 {
+                    "id": "WaterChilling",
                     "name": "Water cooling",
                     "duration": 20,
                     "inputs": [
@@ -2279,6 +2364,7 @@
             ],
             "recipes": [
                 {
+                    "id": "BricksMaking",
                     "name": "Bricks making",
                     "duration": 40,
                     "inputs": [
@@ -2331,6 +2417,7 @@
             ],
             "recipes": [
                 {
+                    "id": "ConcreteMixingSlagT3",
                     "name": "Concrete mixing",
                     "duration": 20,
                     "inputs": [
@@ -2359,6 +2446,7 @@
                     ]
                 },
                 {
+                    "id": "ConcreteMixingGravelT3",
                     "name": "Concrete mixing",
                     "duration": 20,
                     "inputs": [
@@ -2411,6 +2499,7 @@
             ],
             "recipes": [
                 {
+                    "id": "ConcreteMixingSlagT2",
                     "name": "Concrete mixing",
                     "duration": 20,
                     "inputs": [
@@ -2439,6 +2528,7 @@
                     ]
                 },
                 {
+                    "id": "ConcreteMixingGravelT2",
                     "name": "Concrete mixing",
                     "duration": 20,
                     "inputs": [
@@ -2495,6 +2585,7 @@
             ],
             "recipes": [
                 {
+                    "id": "ConcreteMixingSlag",
                     "name": "Concrete mixing",
                     "duration": 40,
                     "inputs": [
@@ -2523,6 +2614,7 @@
                     ]
                 },
                 {
+                    "id": "ConcreteMixingGravel",
                     "name": "Concrete mixing",
                     "duration": 40,
                     "inputs": [
@@ -2551,6 +2643,7 @@
                     ]
                 },
                 {
+                    "id": "ConcreteMixingBasic",
                     "name": "Concrete mixing",
                     "duration": 40,
                     "inputs": [
@@ -2575,6 +2668,7 @@
                     ]
                 },
                 {
+                    "id": "ConcreteMixingBasicGravel",
                     "name": "Concrete mixing",
                     "duration": 40,
                     "inputs": [
@@ -2623,6 +2717,7 @@
             ],
             "recipes": [
                 {
+                    "id": "GlassMixMixing",
                     "name": "Glass mix mixing",
                     "duration": 20,
                     "inputs": [
@@ -2647,6 +2742,7 @@
                     ]
                 },
                 {
+                    "id": "GlassMixMixingWithAcid",
                     "name": "Glass mix mixing",
                     "duration": 20,
                     "inputs": [
@@ -2675,6 +2771,7 @@
                     ]
                 },
                 {
+                    "id": "AcidMixMixing",
                     "name": "Acid mixing",
                     "duration": 20,
                     "inputs": [
@@ -2695,6 +2792,7 @@
                     ]
                 },
                 {
+                    "id": "SulfurNeutralization",
                     "name": "Sulfur neutralization",
                     "duration": 20,
                     "inputs": [
@@ -2715,6 +2813,7 @@
                     ]
                 },
                 {
+                    "id": "BrineProduction",
                     "name": "Brine production",
                     "duration": 20,
                     "inputs": [
@@ -2735,6 +2834,7 @@
                     ]
                 },
                 {
+                    "id": "FilterMediaMixing",
                     "name": "Filter media mixing",
                     "duration": 20,
                     "inputs": [
@@ -2759,6 +2859,7 @@
                     ]
                 },
                 {
+                    "id": "OrganicFertilizerProduction",
                     "name": "Fertilizer mixing",
                     "duration": 20,
                     "inputs": [
@@ -2779,6 +2880,7 @@
                     ]
                 },
                 {
+                    "id": "Fertilizer2Production",
                     "name": "Fertilizer II synthesis",
                     "duration": 20,
                     "inputs": [
@@ -2803,6 +2905,7 @@
                     ]
                 },
                 {
+                    "id": "AnimalFeedFromPotato",
                     "name": "Animal feed production",
                     "duration": 10,
                     "inputs": [
@@ -2819,6 +2922,7 @@
                     ]
                 },
                 {
+                    "id": "AnimalFeedFromWheat",
                     "name": "Animal feed production",
                     "duration": 10,
                     "inputs": [
@@ -2835,6 +2939,7 @@
                     ]
                 },
                 {
+                    "id": "AnimalFeedFromCorn",
                     "name": "Animal feed production",
                     "duration": 10,
                     "inputs": [
@@ -2851,6 +2956,7 @@
                     ]
                 },
                 {
+                    "id": "AnimalFeedFromSoybean",
                     "name": "Animal feed production",
                     "duration": 10,
                     "inputs": [
@@ -2867,6 +2973,7 @@
                     ]
                 },
                 {
+                    "id": "AnimalFeedCompost",
                     "name": "Composing",
                     "duration": 60,
                     "inputs": [
@@ -2883,6 +2990,7 @@
                     ]
                 },
                 {
+                    "id": "BiomassCompost",
                     "name": "Composing",
                     "duration": 60,
                     "inputs": [
@@ -2899,6 +3007,7 @@
                     ]
                 },
                 {
+                    "id": "MeatTrimmingsCompost",
                     "name": "Composing",
                     "duration": 60,
                     "inputs": [
@@ -2939,6 +3048,7 @@
             ],
             "recipes": [
                 {
+                    "id": "Cp4AssemblyT2",
                     "name": "CP4 assembly (T2)",
                     "duration": 40,
                     "inputs": [
@@ -2959,6 +3069,7 @@
                     ]
                 },
                 {
+                    "id": "HouseholdAppliancesAssemblyT3",
                     "name": "Household appliances assembly (T3)",
                     "duration": 10,
                     "inputs": [
@@ -2983,6 +3094,7 @@
                     ]
                 },
                 {
+                    "id": "PCBAssemblyT3",
                     "name": "PCB assembly (T3)",
                     "duration": 10,
                     "inputs": [
@@ -3007,6 +3119,7 @@
                     ]
                 },
                 {
+                    "id": "ElectronicsAssemblyT5",
                     "name": "Electronics assembly (T5)",
                     "duration": 10,
                     "inputs": [
@@ -3027,6 +3140,7 @@
                     ]
                 },
                 {
+                    "id": "Electronics2AssemblyT3",
                     "name": "Electronics 2 assembly (T3)",
                     "duration": 10,
                     "inputs": [
@@ -3051,6 +3165,7 @@
                     ]
                 },
                 {
+                    "id": "SolarCellAssemblyT3",
                     "name": "Solar cell assembly",
                     "duration": 40,
                     "inputs": [
@@ -3075,6 +3190,7 @@
                     ]
                 },
                 {
+                    "id": "SolarCellMonoAssemblyT1",
                     "name": "Solar cell assembly",
                     "duration": 60,
                     "inputs": [
@@ -3099,6 +3215,7 @@
                     ]
                 },
                 {
+                    "id": "Electronics3AssemblyT3",
                     "name": "Electronics 3 assembly (T3)",
                     "duration": 20,
                     "inputs": [
@@ -3119,6 +3236,7 @@
                     ]
                 },
                 {
+                    "id": "ServerAssemblyT3",
                     "name": "Server assembly (T3)",
                     "duration": 40,
                     "inputs": [
@@ -3139,6 +3257,7 @@
                     ]
                 },
                 {
+                    "id": "ConsumerElectronicsAssemblyT1",
                     "name": "Consumer electronics assembly (T1)",
                     "duration": 60,
                     "inputs": [
@@ -3191,6 +3310,7 @@
             ],
             "recipes": [
                 {
+                    "id": "CpBricksAssemblyT4",
                     "name": "CP assembly (T4)",
                     "duration": 10,
                     "inputs": [
@@ -3215,6 +3335,7 @@
                     ]
                 },
                 {
+                    "id": "CpAssemblyT4",
                     "name": "CP assembly (T4)",
                     "duration": 10,
                     "inputs": [
@@ -3239,6 +3360,7 @@
                     ]
                 },
                 {
+                    "id": "Cp2AssemblyT4",
                     "name": "CP2 assembly (T3)",
                     "duration": 10,
                     "inputs": [
@@ -3259,6 +3381,7 @@
                     ]
                 },
                 {
+                    "id": "Cp3AssemblyT3",
                     "name": "CP3 assembly (T3)",
                     "duration": 20,
                     "inputs": [
@@ -3279,6 +3402,7 @@
                     ]
                 },
                 {
+                    "id": "Cp4AssemblyT1",
                     "name": "CP4 assembly (T1)",
                     "duration": 60,
                     "inputs": [
@@ -3299,6 +3423,7 @@
                     ]
                 },
                 {
+                    "id": "MechPartsAssemblyT4",
                     "name": "Mech. parts assembly (T4)",
                     "duration": 10,
                     "inputs": [
@@ -3315,6 +3440,7 @@
                     ]
                 },
                 {
+                    "id": "VehicleParts1AssemblyT4",
                     "name": "Vehicle parts assembly (T4)",
                     "duration": 10,
                     "inputs": [
@@ -3339,6 +3465,7 @@
                     ]
                 },
                 {
+                    "id": "VehicleParts2AssemblyT2",
                     "name": "Vehicle parts 2 assembly (T2)",
                     "duration": 20,
                     "inputs": [
@@ -3363,6 +3490,7 @@
                     ]
                 },
                 {
+                    "id": "VehicleParts3AssemblyT2",
                     "name": "Vehicle parts 3 assembly (T2)",
                     "duration": 20,
                     "inputs": [
@@ -3383,6 +3511,7 @@
                     ]
                 },
                 {
+                    "id": "LabEquipment1AssemblyT3",
                     "name": "Lab equipment assembly (T3)",
                     "duration": 10,
                     "inputs": [
@@ -3403,6 +3532,7 @@
                     ]
                 },
                 {
+                    "id": "LabEquipment2AssemblyT3",
                     "name": "Lab equipment assembly (T2)",
                     "duration": 10,
                     "inputs": [
@@ -3423,6 +3553,7 @@
                     ]
                 },
                 {
+                    "id": "LabEquipment3AssemblyT2",
                     "name": "Lab equipment 2 assembly (T3)",
                     "duration": 20,
                     "inputs": [
@@ -3443,6 +3574,7 @@
                     ]
                 },
                 {
+                    "id": "LabEquipment4AssemblyT2",
                     "name": "Lab equipment 4 assembly (T3)",
                     "duration": 20,
                     "inputs": [
@@ -3463,6 +3595,7 @@
                     ]
                 },
                 {
+                    "id": "HouseholdGoodsAssemblyT3",
                     "name": "Household goods assembly (T3)",
                     "duration": 15,
                     "inputs": [
@@ -3487,6 +3620,7 @@
                     ]
                 },
                 {
+                    "id": "HouseholdAppliancesAssemblyT2",
                     "name": "Household appliances assembly (T2)",
                     "duration": 20,
                     "inputs": [
@@ -3511,6 +3645,7 @@
                     ]
                 },
                 {
+                    "id": "PCBAssemblyT2",
                     "name": "PCB assembly (T2)",
                     "duration": 20,
                     "inputs": [
@@ -3535,6 +3670,7 @@
                     ]
                 },
                 {
+                    "id": "ElectronicsAssemblyT4",
                     "name": "Electronics assembly (T4)",
                     "duration": 10,
                     "inputs": [
@@ -3555,6 +3691,7 @@
                     ]
                 },
                 {
+                    "id": "Electronics2AssemblyT2",
                     "name": "Electronics 2 assembly (T2)",
                     "duration": 20,
                     "inputs": [
@@ -3579,6 +3716,7 @@
                     ]
                 },
                 {
+                    "id": "SolarCellAssemblyT2",
                     "name": "Solar cell assembly",
                     "duration": 60,
                     "inputs": [
@@ -3603,6 +3741,7 @@
                     ]
                 },
                 {
+                    "id": "Electronics3AssemblyT2",
                     "name": "Electronics 3 assembly (T2)",
                     "duration": 40,
                     "inputs": [
@@ -3623,6 +3762,7 @@
                     ]
                 },
                 {
+                    "id": "ServerAssemblyT2",
                     "name": "Server assembly (T2)",
                     "duration": 80,
                     "inputs": [
@@ -3643,6 +3783,7 @@
                     ]
                 },
                 {
+                    "id": "MedicalEquipmentAssemblyT2",
                     "name": "Medical equipment assembly (T2)",
                     "duration": 20,
                     "inputs": [
@@ -3663,6 +3804,7 @@
                     ]
                 },
                 {
+                    "id": "MedicalSuppliesAssemblyT2",
                     "name": "Medical supplies assembly (T2)",
                     "duration": 10,
                     "inputs": [
@@ -3683,6 +3825,7 @@
                     ]
                 },
                 {
+                    "id": "MedicalSupplies2AssemblyT2",
                     "name": "Medical supplies assembly (T2)",
                     "duration": 10,
                     "inputs": [
@@ -3703,6 +3846,7 @@
                     ]
                 },
                 {
+                    "id": "MedicalSupplies3AssemblyT2",
                     "name": "Medical supplies III assembly (T2)",
                     "duration": 10,
                     "inputs": [
@@ -3751,6 +3895,7 @@
             ],
             "recipes": [
                 {
+                    "id": "CpBricksAssemblyT3",
                     "name": "CP assembly (T3)",
                     "duration": 10,
                     "inputs": [
@@ -3775,6 +3920,7 @@
                     ]
                 },
                 {
+                    "id": "CpAssemblyT3",
                     "name": "CP assembly (T3)",
                     "duration": 10,
                     "inputs": [
@@ -3799,6 +3945,7 @@
                     ]
                 },
                 {
+                    "id": "Cp2AssemblyT3",
                     "name": "CP2 assembly (T2)",
                     "duration": 20,
                     "inputs": [
@@ -3819,6 +3966,7 @@
                     ]
                 },
                 {
+                    "id": "Cp3AssemblyT2",
                     "name": "CP3 assembly (T2)",
                     "duration": 40,
                     "inputs": [
@@ -3839,6 +3987,7 @@
                     ]
                 },
                 {
+                    "id": "MechPartsAssemblyT3Iron",
                     "name": "Mech. parts assembly (T3-1)",
                     "duration": 20,
                     "inputs": [
@@ -3855,6 +4004,7 @@
                     ]
                 },
                 {
+                    "id": "MechPartsAssemblyT3",
                     "name": "Mech. parts assembly (T3-2)",
                     "duration": 20,
                     "inputs": [
@@ -3871,6 +4021,7 @@
                     ]
                 },
                 {
+                    "id": "VehicleParts1AssemblyT3",
                     "name": "Vehicle parts assembly (T3)",
                     "duration": 20,
                     "inputs": [
@@ -3895,6 +4046,7 @@
                     ]
                 },
                 {
+                    "id": "VehicleParts2AssemblyT1",
                     "name": "Vehicle parts 2 assembly (T1)",
                     "duration": 40,
                     "inputs": [
@@ -3919,6 +4071,7 @@
                     ]
                 },
                 {
+                    "id": "VehicleParts3AssemblyT1",
                     "name": "Vehicle parts 3 assembly (T1)",
                     "duration": 40,
                     "inputs": [
@@ -3939,6 +4092,7 @@
                     ]
                 },
                 {
+                    "id": "LabEquipment1AssemblyT2",
                     "name": "Lab equipment assembly (T2)",
                     "duration": 10,
                     "inputs": [
@@ -3959,6 +4113,7 @@
                     ]
                 },
                 {
+                    "id": "LabEquipment2AssemblyT2",
                     "name": "Lab equipment assembly (T1)",
                     "duration": 20,
                     "inputs": [
@@ -3979,6 +4134,7 @@
                     ]
                 },
                 {
+                    "id": "LabEquipment3AssemblyT1",
                     "name": "Lab equipment 2 assembly (T2)",
                     "duration": 40,
                     "inputs": [
@@ -3999,6 +4155,7 @@
                     ]
                 },
                 {
+                    "id": "LabEquipment4AssemblyT1",
                     "name": "Lab equipment 4 assembly (T2)",
                     "duration": 40,
                     "inputs": [
@@ -4019,6 +4176,7 @@
                     ]
                 },
                 {
+                    "id": "HouseholdGoodsAssemblyT2",
                     "name": "Household goods assembly (T2)",
                     "duration": 30,
                     "inputs": [
@@ -4043,6 +4201,7 @@
                     ]
                 },
                 {
+                    "id": "HouseholdAppliancesAssemblyT1",
                     "name": "Household appliances assembly (T1)",
                     "duration": 30,
                     "inputs": [
@@ -4067,6 +4226,7 @@
                     ]
                 },
                 {
+                    "id": "PCBAssemblyT1",
                     "name": "PCB assembly (T1)",
                     "duration": 40,
                     "inputs": [
@@ -4091,6 +4251,7 @@
                     ]
                 },
                 {
+                    "id": "ElectronicsAssemblyT3",
                     "name": "Electronics assembly (T3)",
                     "duration": 10,
                     "inputs": [
@@ -4111,6 +4272,7 @@
                     ]
                 },
                 {
+                    "id": "Electronics2AssemblyT1",
                     "name": "Electronics 2 assembly (T1)",
                     "duration": 40,
                     "inputs": [
@@ -4135,6 +4297,7 @@
                     ]
                 },
                 {
+                    "id": "UraniumRodsAssemblyT1",
                     "name": "Uranium rods (T1)",
                     "duration": 180,
                     "inputs": [
@@ -4155,6 +4318,7 @@
                     ]
                 },
                 {
+                    "id": "SolarCellAssemblyT1",
                     "name": "Solar cell assembly",
                     "duration": 120,
                     "inputs": [
@@ -4179,6 +4343,7 @@
                     ]
                 },
                 {
+                    "id": "Electronics3AssemblyT1",
                     "name": "Electronics 3 assembly (T1)",
                     "duration": 80,
                     "inputs": [
@@ -4199,6 +4364,7 @@
                     ]
                 },
                 {
+                    "id": "ServerAssemblyT1",
                     "name": "Server assembly (T1)",
                     "duration": 160,
                     "inputs": [
@@ -4219,6 +4385,7 @@
                     ]
                 },
                 {
+                    "id": "MedicalEquipmentAssemblyT1",
                     "name": "Medical equipment assembly (T1)",
                     "duration": 40,
                     "inputs": [
@@ -4239,6 +4406,7 @@
                     ]
                 },
                 {
+                    "id": "MedicalSuppliesAssemblyT1",
                     "name": "Medical supplies assembly (T1)",
                     "duration": 20,
                     "inputs": [
@@ -4259,6 +4427,7 @@
                     ]
                 },
                 {
+                    "id": "MedicalSupplies2AssemblyT1",
                     "name": "Medical supplies assembly (T1)",
                     "duration": 20,
                     "inputs": [
@@ -4279,6 +4448,7 @@
                     ]
                 },
                 {
+                    "id": "MedicalSupplies3AssemblyT1",
                     "name": "Medical supplies III assembly (T1)",
                     "duration": 20,
                     "inputs": [
@@ -4303,6 +4473,7 @@
                     ]
                 },
                 {
+                    "id": "FoodPackAssemblyMeat",
                     "name": "Food pack assembly (meat)",
                     "duration": 20,
                     "inputs": [
@@ -4327,6 +4498,7 @@
                     ]
                 },
                 {
+                    "id": "FoodPackAssemblyEggs",
                     "name": "Food pack assembly (eggs)",
                     "duration": 20,
                     "inputs": [
@@ -4375,6 +4547,7 @@
             ],
             "recipes": [
                 {
+                    "id": "CpBricksAssemblyT2",
                     "name": "CP assembly (T2)",
                     "duration": 20,
                     "inputs": [
@@ -4399,6 +4572,7 @@
                     ]
                 },
                 {
+                    "id": "CpAssemblyT2",
                     "name": "CP assembly (T2)",
                     "duration": 20,
                     "inputs": [
@@ -4423,6 +4597,7 @@
                     ]
                 },
                 {
+                    "id": "Cp2AssemblyT2",
                     "name": "CP2 assembly (T1)",
                     "duration": 40,
                     "inputs": [
@@ -4443,6 +4618,7 @@
                     ]
                 },
                 {
+                    "id": "Cp3AssemblyT1",
                     "name": "CP3 assembly (T1)",
                     "duration": 80,
                     "inputs": [
@@ -4463,6 +4639,7 @@
                     ]
                 },
                 {
+                    "id": "MechPartsAssemblyT2",
                     "name": "Mech. parts assembly (T2)",
                     "duration": 20,
                     "inputs": [
@@ -4479,6 +4656,7 @@
                     ]
                 },
                 {
+                    "id": "VehicleParts1AssemblyT2",
                     "name": "Vehicle parts assembly (T2)",
                     "duration": 40,
                     "inputs": [
@@ -4503,6 +4681,7 @@
                     ]
                 },
                 {
+                    "id": "LabEquipment1AssemblyT1",
                     "name": "Lab equipment assembly (T1)",
                     "duration": 40,
                     "inputs": [
@@ -4523,6 +4702,7 @@
                     ]
                 },
                 {
+                    "id": "HouseholdGoodsAssemblyT1",
                     "name": "Household goods assembly (T1)",
                     "duration": 60,
                     "inputs": [
@@ -4547,6 +4727,7 @@
                     ]
                 },
                 {
+                    "id": "ElectronicsAssemblyT2",
                     "name": "Electronics assembly (T2)",
                     "duration": 20,
                     "inputs": [
@@ -4591,6 +4772,7 @@
             ],
             "recipes": [
                 {
+                    "id": "CpBricksAssemblyT1",
                     "name": "CP assembly (T1)",
                     "duration": 40,
                     "inputs": [
@@ -4615,6 +4797,7 @@
                     ]
                 },
                 {
+                    "id": "CpAssemblyT1",
                     "name": "CP assembly (T1)",
                     "duration": 40,
                     "inputs": [
@@ -4639,6 +4822,7 @@
                     ]
                 },
                 {
+                    "id": "Cp2AssemblyT1",
                     "name": "CP2 assembly (T1)",
                     "duration": 80,
                     "inputs": [
@@ -4659,6 +4843,7 @@
                     ]
                 },
                 {
+                    "id": "MechPartsAssemblyT1",
                     "name": "Mech. parts assembly (T1)",
                     "duration": 40,
                     "inputs": [
@@ -4675,6 +4860,7 @@
                     ]
                 },
                 {
+                    "id": "VehicleParts1AssemblyT1",
                     "name": "Vehicle parts assembly (T1)",
                     "duration": 80,
                     "inputs": [
@@ -4699,6 +4885,7 @@
                     ]
                 },
                 {
+                    "id": "ElectronicsAssemblyT1",
                     "name": "Electronics assembly (T1)",
                     "duration": 60,
                     "inputs": [
@@ -4743,6 +4930,7 @@
             ],
             "recipes": [
                 {
+                    "id": "AirSeparation",
                     "name": "Air separation",
                     "duration": 20,
                     "inputs": [],
@@ -4782,6 +4970,7 @@
             ],
             "recipes": [
                 {
+                    "id": "MicrochipMachineT2_MicrochipProdStage1A",
                     "name": "Microchip manufacturing stage 1A",
                     "duration": 20,
                     "inputs": [
@@ -4806,6 +4995,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachineT2_MicrochipProdStage2A",
                     "name": "Microchip manufacturing stage 2A",
                     "duration": 20,
                     "inputs": [
@@ -4830,6 +5020,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachineT2_MicrochipProdStage3A",
                     "name": "Microchip manufacturing stage 3A",
                     "duration": 20,
                     "inputs": [
@@ -4850,6 +5041,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachineT2_MicrochipProdStage1B",
                     "name": "Microchip manufacturing stage 1B",
                     "duration": 20,
                     "inputs": [
@@ -4874,6 +5066,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachineT2_MicrochipProdStage2B",
                     "name": "Microchip manufacturing stage 2B",
                     "duration": 20,
                     "inputs": [
@@ -4898,6 +5091,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachineT2_MicrochipProdStage3B",
                     "name": "Microchip manufacturing stage 3B",
                     "duration": 20,
                     "inputs": [
@@ -4918,6 +5112,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachineT2_MicrochipProdStage1C",
                     "name": "Microchip manufacturing stage 1C",
                     "duration": 20,
                     "inputs": [
@@ -4942,6 +5137,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachineT2_MicrochipProdStage2C",
                     "name": "Microchip manufacturing stage 2C",
                     "duration": 20,
                     "inputs": [
@@ -4966,6 +5162,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachineT2_MicrochipProdStage3C",
                     "name": "Microchip manufacturing stage 3C",
                     "duration": 20,
                     "inputs": [
@@ -4986,6 +5183,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachineT2_MicrochipProdStage1D",
                     "name": "Microchip manufacturing stage 1D",
                     "duration": 20,
                     "inputs": [
@@ -5010,6 +5208,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachineT2_MicrochipProdStage2D",
                     "name": "Microchip manufacturing stage 2D",
                     "duration": 20,
                     "inputs": [
@@ -5034,6 +5233,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachineT2_MicrochipProdFinalStage",
                     "name": "Microchip manufacturing final stage",
                     "duration": 20,
                     "inputs": [
@@ -5078,6 +5278,7 @@
             ],
             "recipes": [
                 {
+                    "id": "MicrochipMachine_MicrochipProdStage1A",
                     "name": "Microchip manufacturing stage 1A",
                     "duration": 40,
                     "inputs": [
@@ -5102,6 +5303,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachine_MicrochipProdStage2A",
                     "name": "Microchip manufacturing stage 2A",
                     "duration": 40,
                     "inputs": [
@@ -5126,6 +5328,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachine_MicrochipProdStage3A",
                     "name": "Microchip manufacturing stage 3A",
                     "duration": 40,
                     "inputs": [
@@ -5146,6 +5349,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachine_MicrochipProdStage1B",
                     "name": "Microchip manufacturing stage 1B",
                     "duration": 40,
                     "inputs": [
@@ -5170,6 +5374,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachine_MicrochipProdStage2B",
                     "name": "Microchip manufacturing stage 2B",
                     "duration": 40,
                     "inputs": [
@@ -5194,6 +5399,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachine_MicrochipProdStage3B",
                     "name": "Microchip manufacturing stage 3B",
                     "duration": 40,
                     "inputs": [
@@ -5214,6 +5420,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachine_MicrochipProdStage1C",
                     "name": "Microchip manufacturing stage 1C",
                     "duration": 40,
                     "inputs": [
@@ -5238,6 +5445,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachine_MicrochipProdStage2C",
                     "name": "Microchip manufacturing stage 2C",
                     "duration": 40,
                     "inputs": [
@@ -5262,6 +5470,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachine_MicrochipProdStage3C",
                     "name": "Microchip manufacturing stage 3C",
                     "duration": 40,
                     "inputs": [
@@ -5282,6 +5491,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachine_MicrochipProdStage1D",
                     "name": "Microchip manufacturing stage 1D",
                     "duration": 40,
                     "inputs": [
@@ -5306,6 +5516,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachine_MicrochipProdStage2D",
                     "name": "Microchip manufacturing stage 2D",
                     "duration": 40,
                     "inputs": [
@@ -5330,6 +5541,7 @@
                     ]
                 },
                 {
+                    "id": "MicrochipMachine_MicrochipProdFinalStage",
                     "name": "Microchip manufacturing final stage",
                     "duration": 40,
                     "inputs": [
@@ -5374,6 +5586,7 @@
             ],
             "recipes": [
                 {
+                    "id": "BrineElectrolysis",
                     "name": "Brine electrolysis",
                     "duration": 10,
                     "inputs": [
@@ -5390,6 +5603,7 @@
                     ]
                 },
                 {
+                    "id": "WaterElectrolysis",
                     "name": "Water electrolysis",
                     "duration": 80,
                     "inputs": [
@@ -5410,6 +5624,7 @@
                     ]
                 },
                 {
+                    "id": "AmmoniaElectrolysis",
                     "name": "Ammonia electrolysis",
                     "duration": 20,
                     "inputs": [
@@ -5454,6 +5669,7 @@
             ],
             "recipes": [
                 {
+                    "id": "SugarToEthanolFermentation",
                     "name": "Ethanol making (sugar)",
                     "duration": 40,
                     "inputs": [
@@ -5478,6 +5694,7 @@
                     ]
                 },
                 {
+                    "id": "CornToEthanolFermentation",
                     "name": "Ethanol making (corn)",
                     "duration": 40,
                     "inputs": [
@@ -5502,6 +5719,7 @@
                     ]
                 },
                 {
+                    "id": "AntibioticsFermentation",
                     "name": "Antibiotics",
                     "duration": 80,
                     "inputs": [
@@ -5554,6 +5772,7 @@
             ],
             "recipes": [
                 {
+                    "id": "GoldSettling",
                     "name": "Gold settling",
                     "duration": 30,
                     "inputs": [
@@ -5578,6 +5797,7 @@
                     ]
                 },
                 {
+                    "id": "UraniumLeaching",
                     "name": "Uranium leaching",
                     "duration": 60,
                     "inputs": [
@@ -5602,6 +5822,7 @@
                     ]
                 },
                 {
+                    "id": "FluorideLeaching",
                     "name": "Fluoride leaching",
                     "duration": 60,
                     "inputs": [
@@ -5654,6 +5875,7 @@
             ],
             "recipes": [
                 {
+                    "id": "SteamHpCondensation",
                     "name": "Hi-press steam condensation",
                     "duration": 10,
                     "inputs": [
@@ -5670,6 +5892,7 @@
                     ]
                 },
                 {
+                    "id": "SteamLpCondensation",
                     "name": "Lo-press steam condensation",
                     "duration": 10,
                     "inputs": [
@@ -5686,6 +5909,7 @@
                     ]
                 },
                 {
+                    "id": "SteamDepletedCondensation",
                     "name": "Depleted steam condensation",
                     "duration": 10,
                     "inputs": [
@@ -5730,6 +5954,7 @@
             ],
             "recipes": [
                 {
+                    "id": "SteamHpCondensationT2",
                     "name": "Hi-press steam condensation",
                     "duration": 10,
                     "inputs": [
@@ -5746,6 +5971,7 @@
                     ]
                 },
                 {
+                    "id": "SteamLpCondensationT2",
                     "name": "Lo-press steam condensation",
                     "duration": 10,
                     "inputs": [
@@ -5762,6 +5988,7 @@
                     ]
                 },
                 {
+                    "id": "SteamDepletedCondensationT2",
                     "name": "Depleted steam condensation",
                     "duration": 10,
                     "inputs": [
@@ -5806,6 +6033,7 @@
             ],
             "recipes": [
                 {
+                    "id": "UraniumEnrichment",
                     "name": "Uranium enrichment",
                     "duration": 60,
                     "inputs": [
@@ -5850,6 +6078,7 @@
             ],
             "recipes": [
                 {
+                    "id": "CharcoalBurning",
                     "name": "Charcoal making",
                     "duration": 40,
                     "inputs": [
@@ -5894,6 +6123,7 @@
             ],
             "recipes": [
                 {
+                    "id": "IronOreCrushing",
                     "name": "Iron ore crushing",
                     "duration": 20,
                     "inputs": [
@@ -5910,6 +6140,7 @@
                     ]
                 },
                 {
+                    "id": "CopperOreCrushing",
                     "name": "Copper ore crushing",
                     "duration": 20,
                     "inputs": [
@@ -5926,6 +6157,7 @@
                     ]
                 },
                 {
+                    "id": "SlagCrushing",
                     "name": "Slag crushing",
                     "duration": 20,
                     "inputs": [
@@ -5942,6 +6174,7 @@
                     ]
                 },
                 {
+                    "id": "RockCrushing",
                     "name": "Rock crushing",
                     "duration": 20,
                     "inputs": [
@@ -5958,6 +6191,7 @@
                     ]
                 },
                 {
+                    "id": "GravelCrushing",
                     "name": "Gravel crushing",
                     "duration": 60,
                     "inputs": [
@@ -5974,6 +6208,7 @@
                     ]
                 },
                 {
+                    "id": "UraniumCrushing",
                     "name": "Uranium crushing",
                     "duration": 60,
                     "inputs": [
@@ -5990,6 +6225,7 @@
                     ]
                 },
                 {
+                    "id": "GoldOreCrushing",
                     "name": "Gold ore crushing",
                     "duration": 30,
                     "inputs": [
@@ -6006,6 +6242,7 @@
                     ]
                 },
                 {
+                    "id": "GoldMilling",
                     "name": "Gold ore milling",
                     "duration": 30,
                     "inputs": [
@@ -6046,6 +6283,7 @@
             ],
             "recipes": [
                 {
+                    "id": "CementProductionGas",
                     "name": "Cement production",
                     "duration": 40,
                     "inputs": [
@@ -6070,6 +6308,7 @@
                     ]
                 },
                 {
+                    "id": "CementProductionHydrogen",
                     "name": "Cement production",
                     "duration": 40,
                     "inputs": [
@@ -6118,6 +6357,7 @@
             ],
             "recipes": [
                 {
+                    "id": "CementProduction",
                     "name": "Cement production",
                     "duration": 40,
                     "inputs": [
@@ -6166,6 +6406,7 @@
             ],
             "recipes": [
                 {
+                    "id": "IronSmeltingArcScrap",
                     "name": "Iron scrap smelting (arc)",
                     "duration": 20,
                     "inputs": [
@@ -6198,6 +6439,7 @@
                     ]
                 },
                 {
+                    "id": "IronSmeltingArc",
                     "name": "Iron smelting (arc)",
                     "duration": 20,
                     "inputs": [
@@ -6238,6 +6480,7 @@
                     ]
                 },
                 {
+                    "id": "CopperSmeltingArcScrap",
                     "name": "Copper scrap smelting (arc)",
                     "duration": 20,
                     "inputs": [
@@ -6270,6 +6513,7 @@
                     ]
                 },
                 {
+                    "id": "CopperSmeltingArc",
                     "name": "Copper smelting (arc)",
                     "duration": 20,
                     "inputs": [
@@ -6310,6 +6554,7 @@
                     ]
                 },
                 {
+                    "id": "GlassSmeltingArc",
                     "name": "Glass smelting",
                     "duration": 20,
                     "inputs": [
@@ -6346,6 +6591,7 @@
                     ]
                 },
                 {
+                    "id": "GlassSmeltingArcWithBroken",
                     "name": "Glass smelting",
                     "duration": 20,
                     "inputs": [
@@ -6378,6 +6624,7 @@
                     ]
                 },
                 {
+                    "id": "SiliconSmeltingArc2",
                     "name": "Silicon smelting (Arc II)",
                     "duration": 20,
                     "inputs": [
@@ -6442,6 +6689,7 @@
             ],
             "recipes": [
                 {
+                    "id": "SiliconSmeltingArc",
                     "name": "Silicon smelting (Arc)",
                     "duration": 20,
                     "inputs": [
@@ -6498,6 +6746,7 @@
             ],
             "recipes": [
                 {
+                    "id": "IronSmeltingT2Scrap",
                     "name": "Iron scrap smelting",
                     "duration": 20,
                     "inputs": [
@@ -6522,6 +6771,7 @@
                     ]
                 },
                 {
+                    "id": "IronSmeltingT2",
                     "name": "Iron smelting (lime)",
                     "duration": 20,
                     "inputs": [
@@ -6554,6 +6804,7 @@
                     ]
                 },
                 {
+                    "id": "CopperSmeltingT2Scrap",
                     "name": "Copper scrap smelting",
                     "duration": 20,
                     "inputs": [
@@ -6578,6 +6829,7 @@
                     ]
                 },
                 {
+                    "id": "CopperSmeltingT2",
                     "name": "Copper smelting (sand)",
                     "duration": 20,
                     "inputs": [
@@ -6610,6 +6862,7 @@
                     ]
                 },
                 {
+                    "id": "GlassSmeltingT2",
                     "name": "Glass smelting",
                     "duration": 20,
                     "inputs": [
@@ -6638,6 +6891,7 @@
                     ]
                 },
                 {
+                    "id": "GlassSmeltingT2WithBroken",
                     "name": "Glass broken smelting",
                     "duration": 20,
                     "inputs": [
@@ -6686,6 +6940,7 @@
             ],
             "recipes": [
                 {
+                    "id": "IronSmeltingT1Scrap",
                     "name": "Iron scrap smelting",
                     "duration": 20,
                     "inputs": [
@@ -6710,6 +6965,7 @@
                     ]
                 },
                 {
+                    "id": "IronSmeltingT1Coal",
                     "name": "Iron smelting",
                     "duration": 20,
                     "inputs": [
@@ -6738,6 +6994,7 @@
                     ]
                 },
                 {
+                    "id": "CopperSmeltingT1Scrap",
                     "name": "Copper scrap smelting",
                     "duration": 20,
                     "inputs": [
@@ -6762,6 +7019,7 @@
                     ]
                 },
                 {
+                    "id": "CopperSmeltingT1",
                     "name": "Copper smelting",
                     "duration": 20,
                     "inputs": [
@@ -6790,6 +7048,7 @@
                     ]
                 },
                 {
+                    "id": "GlassSmelting",
                     "name": "Glass smelting",
                     "duration": 20,
                     "inputs": [
@@ -6818,6 +7077,7 @@
                     ]
                 },
                 {
+                    "id": "GlassSmeltingWithBroken",
                     "name": "Glass broken smelting",
                     "duration": 20,
                     "inputs": [
@@ -6866,6 +7126,7 @@
             ],
             "recipes": [
                 {
+                    "id": "SteelCastingCooledT2",
                     "name": "Steel casting (cooled)",
                     "duration": 20,
                     "inputs": [
@@ -6910,6 +7171,7 @@
             ],
             "recipes": [
                 {
+                    "id": "SteelCastingCooled",
                     "name": "Steel casting (cooled)",
                     "duration": 40,
                     "inputs": [
@@ -6958,6 +7220,7 @@
             ],
             "recipes": [
                 {
+                    "id": "IronCastingCooled",
                     "name": "Iron casting",
                     "duration": 20,
                     "inputs": [
@@ -6974,6 +7237,7 @@
                     ]
                 },
                 {
+                    "id": "CopperCastingCooled",
                     "name": "Copper casting",
                     "duration": 20,
                     "inputs": [
@@ -7014,6 +7278,7 @@
             ],
             "recipes": [
                 {
+                    "id": "IronCasting",
                     "name": "Iron casting",
                     "duration": 40,
                     "inputs": [
@@ -7030,6 +7295,7 @@
                     ]
                 },
                 {
+                    "id": "CopperCasting",
                     "name": "Copper casting",
                     "duration": 40,
                     "inputs": [
@@ -7070,6 +7336,7 @@
             ],
             "recipes": [
                 {
+                    "id": "CopperElectrolysisProcess",
                     "name": "Copper purification (acid)",
                     "duration": 40,
                     "inputs": [
@@ -7090,6 +7357,7 @@
                     ]
                 },
                 {
+                    "id": "CopperElectrolysisWithWater",
                     "name": "Copper purification (water)",
                     "duration": 40,
                     "inputs": [
@@ -7134,6 +7402,7 @@
             ],
             "recipes": [
                 {
+                    "id": "SteelSmeltingT2",
                     "name": "Steel smelting",
                     "duration": 40,
                     "inputs": [
@@ -7182,6 +7451,7 @@
             ],
             "recipes": [
                 {
+                    "id": "SteelSmelting",
                     "name": "Steel smelting",
                     "duration": 40,
                     "inputs": [
@@ -7230,6 +7500,7 @@
             ],
             "recipes": [
                 {
+                    "id": "GlassCastingT2",
                     "name": "Glass casting",
                     "duration": 20,
                     "inputs": [
@@ -7270,6 +7541,7 @@
             ],
             "recipes": [
                 {
+                    "id": "GlassCastingT1",
                     "name": "Glass casting",
                     "duration": 20,
                     "inputs": [
@@ -7314,6 +7586,7 @@
             ],
             "recipes": [
                 {
+                    "id": "SiliconCrystallization",
                     "name": "Silicon crystallization",
                     "duration": 60,
                     "inputs": [
@@ -7358,6 +7631,7 @@
             ],
             "recipes": [
                 {
+                    "id": "SiliconTreatment",
                     "name": "Silicon treatment",
                     "duration": 20,
                     "inputs": [
@@ -7402,6 +7676,7 @@
             ],
             "recipes": [
                 {
+                    "id": "GoldSmelting",
                     "name": "Gold smelting",
                     "duration": 30,
                     "inputs": [
@@ -7426,6 +7701,7 @@
                     ]
                 },
                 {
+                    "id": "GoldScrapSmelting",
                     "name": "Gold smelting",
                     "duration": 30,
                     "inputs": [
@@ -7470,6 +7746,7 @@
             ],
             "recipes": [
                 {
+                    "id": "FertilizerProductionT2",
                     "name": "Fertilizer synthesis",
                     "duration": 20,
                     "inputs": [
@@ -7494,6 +7771,7 @@
                     ]
                 },
                 {
+                    "id": "AmmoniaSynthesisT2",
                     "name": "Ammonia synthesis",
                     "duration": 20,
                     "inputs": [
@@ -7514,6 +7792,7 @@
                     ]
                 },
                 {
+                    "id": "LiquidNitrogenT2",
                     "name": "Liquid nitrogen production",
                     "duration": 10,
                     "inputs": [
@@ -7534,6 +7813,7 @@
                     ]
                 },
                 {
+                    "id": "EthanolCookingOilReformingT2",
                     "name": "Fuel transesterification",
                     "duration": 20,
                     "inputs": [
@@ -7554,6 +7834,7 @@
                     ]
                 },
                 {
+                    "id": "FuelGasSynthesis",
                     "name": "FuelGas synthesis",
                     "duration": 20,
                     "inputs": [
@@ -7574,6 +7855,7 @@
                     ]
                 },
                 {
+                    "id": "GraphiteProduction",
                     "name": "Graphite production",
                     "duration": 40,
                     "inputs": [
@@ -7598,6 +7880,7 @@
                     ]
                 },
                 {
+                    "id": "GraphiteProductionCo2",
                     "name": "Graphite production",
                     "duration": 10,
                     "inputs": [
@@ -7614,6 +7897,7 @@
                     ]
                 },
                 {
+                    "id": "DisinfectantProductionT2",
                     "name": "Disinfectant production",
                     "duration": 20,
                     "inputs": [
@@ -7634,6 +7918,7 @@
                     ]
                 },
                 {
+                    "id": "AnestheticsProduction",
                     "name": "Anesthetics production",
                     "duration": 20,
                     "inputs": [
@@ -7658,6 +7943,7 @@
                     ]
                 },
                 {
+                    "id": "MorphineProduction",
                     "name": "Morphine production",
                     "duration": 20,
                     "inputs": [
@@ -7706,6 +7992,7 @@
             ],
             "recipes": [
                 {
+                    "id": "FertilizerProduction",
                     "name": "Fertilizer synthesis",
                     "duration": 40,
                     "inputs": [
@@ -7730,6 +8017,7 @@
                     ]
                 },
                 {
+                    "id": "AmmoniaSynthesis",
                     "name": "Ammonia synthesis",
                     "duration": 40,
                     "inputs": [
@@ -7750,6 +8038,7 @@
                     ]
                 },
                 {
+                    "id": "LiquidNitrogen",
                     "name": "Liquid nitrogen production",
                     "duration": 20,
                     "inputs": [
@@ -7770,6 +8059,7 @@
                     ]
                 },
                 {
+                    "id": "EthanolCookingOilReforming",
                     "name": "Fuel transesterification",
                     "duration": 40,
                     "inputs": [
@@ -7790,6 +8080,7 @@
                     ]
                 },
                 {
+                    "id": "DisinfectantProduction",
                     "name": "Disinfectant production",
                     "duration": 40,
                     "inputs": [
@@ -7834,6 +8125,7 @@
             ],
             "recipes": [
                 {
+                    "id": "CrudeOilRefiningT1",
                     "name": "Crude oil refining",
                     "duration": 20,
                     "inputs": [
@@ -7886,6 +8178,7 @@
             ],
             "recipes": [
                 {
+                    "id": "CrudeOilRefiningT2",
                     "name": "Crude oil refining",
                     "duration": 20,
                     "inputs": [
@@ -7934,6 +8227,7 @@
             ],
             "recipes": [
                 {
+                    "id": "HeavyDistillateRefining",
                     "name": "Heavy distillate refining",
                     "duration": 20,
                     "inputs": [
@@ -7982,6 +8276,7 @@
             ],
             "recipes": [
                 {
+                    "id": "RubberProductionNaphtha",
                     "name": "Rubber production",
                     "duration": 20,
                     "inputs": [
@@ -8002,6 +8297,7 @@
                     ]
                 },
                 {
+                    "id": "RubberProductionNaphthaAlt",
                     "name": "Rubber production (coal)",
                     "duration": 30,
                     "inputs": [
@@ -8026,6 +8322,7 @@
                     ]
                 },
                 {
+                    "id": "RubberProductionEthanol",
                     "name": "Rubber production (ethanol)",
                     "duration": 20,
                     "inputs": [
@@ -8046,6 +8343,7 @@
                     ]
                 },
                 {
+                    "id": "RubberProductionDiesel",
                     "name": "Rubber production (alt)",
                     "duration": 20,
                     "inputs": [
@@ -8066,6 +8364,7 @@
                     ]
                 },
                 {
+                    "id": "RubberProductionDieselWithCoal",
                     "name": "Rubber production (coal) (alt)",
                     "duration": 30,
                     "inputs": [
@@ -8114,6 +8413,7 @@
             ],
             "recipes": [
                 {
+                    "id": "HeavyOilCracking",
                     "name": "HeavyOil cracking",
                     "duration": 20,
                     "inputs": [
@@ -8138,6 +8438,7 @@
                     ]
                 },
                 {
+                    "id": "HeavyOilCrackingToNaphtha",
                     "name": "HeavyOil cracking",
                     "duration": 20,
                     "inputs": [
@@ -8162,6 +8463,7 @@
                     ]
                 },
                 {
+                    "id": "NaphthaReforming",
                     "name": "Naphtha reforming",
                     "duration": 20,
                     "inputs": [
@@ -8186,6 +8488,7 @@
                     ]
                 },
                 {
+                    "id": "DieselReforming",
                     "name": "Diesel reforming",
                     "duration": 20,
                     "inputs": [
@@ -8210,6 +8513,7 @@
                     ]
                 },
                 {
+                    "id": "NaphthaReformingToGas",
                     "name": "Naphtha reforming",
                     "duration": 20,
                     "inputs": [
@@ -8234,6 +8538,7 @@
                     ]
                 },
                 {
+                    "id": "FuelGasReforming",
                     "name": "FuelGas reforming",
                     "duration": 20,
                     "inputs": [
@@ -8282,6 +8587,7 @@
             ],
             "recipes": [
                 {
+                    "id": "HydrogenReforming",
                     "name": "Hydrogen reforming",
                     "duration": 20,
                     "inputs": [
@@ -8330,6 +8636,7 @@
             ],
             "recipes": [
                 {
+                    "id": "SourWaterStripping",
                     "name": "Sour water stripping (recovery)",
                     "duration": 20,
                     "inputs": [
@@ -8382,6 +8689,7 @@
             ],
             "recipes": [
                 {
+                    "id": "PlasticMaking",
                     "name": "Plastic making",
                     "duration": 20,
                     "inputs": [
@@ -8406,6 +8714,7 @@
                     ]
                 },
                 {
+                    "id": "PlasticMakingEthanol",
                     "name": "Plastic making",
                     "duration": 20,
                     "inputs": [
@@ -8458,6 +8767,7 @@
             ],
             "recipes": [
                 {
+                    "id": "MaintenanceT3Recipe",
                     "name": "Maintenance III",
                     "duration": 30,
                     "inputs": [
@@ -8478,6 +8788,7 @@
                     ]
                 },
                 {
+                    "id": "MaintenanceT3Recycling",
                     "name": "Maintenance III",
                     "duration": 30,
                     "inputs": [
@@ -8530,6 +8841,7 @@
             ],
             "recipes": [
                 {
+                    "id": "MaintenanceT2Recipe",
                     "name": "Maintenance II",
                     "duration": 20,
                     "inputs": [
@@ -8550,6 +8862,7 @@
                     ]
                 },
                 {
+                    "id": "MaintenanceT2Recycling",
                     "name": "Maintenance II",
                     "duration": 20,
                     "inputs": [
@@ -8598,6 +8911,7 @@
             ],
             "recipes": [
                 {
+                    "id": "MaintenanceT1Recipe",
                     "name": "Maintenance I",
                     "duration": 20,
                     "inputs": [
@@ -8618,6 +8932,7 @@
                     ]
                 },
                 {
+                    "id": "MaintenanceT1Recycling",
                     "name": "Maintenance I",
                     "duration": 20,
                     "inputs": [
@@ -8666,6 +8981,7 @@
             ],
             "recipes": [
                 {
+                    "id": "MaintenanceT0Recipe",
                     "name": "Maintenance I",
                     "duration": 20,
                     "inputs": [
@@ -8710,6 +9026,7 @@
             ],
             "recipes": [
                 {
+                    "id": "WheatMilling",
                     "name": "Wheat milling",
                     "duration": 30,
                     "inputs": [
@@ -8730,6 +9047,7 @@
                     ]
                 },
                 {
+                    "id": "SoybeanMilling",
                     "name": "Soybean milling",
                     "duration": 30,
                     "inputs": [
@@ -8750,6 +9068,7 @@
                     ]
                 },
                 {
+                    "id": "CanolaMilling",
                     "name": "Canola milling",
                     "duration": 30,
                     "inputs": [
@@ -8770,6 +9089,7 @@
                     ]
                 },
                 {
+                    "id": "CornMilling",
                     "name": "Corn milling (wet)",
                     "duration": 40,
                     "inputs": [
@@ -8818,6 +9138,7 @@
             ],
             "recipes": [
                 {
+                    "id": "TofuProduction",
                     "name": "Tofu making",
                     "duration": 40,
                     "inputs": [
@@ -8850,6 +9171,7 @@
                     ]
                 },
                 {
+                    "id": "MeatProcessing",
                     "name": "Meat processing",
                     "duration": 20,
                     "inputs": [
@@ -8878,6 +9200,7 @@
                     ]
                 },
                 {
+                    "id": "SausageProduction",
                     "name": "Sausage processing",
                     "duration": 20,
                     "inputs": [
@@ -8902,6 +9225,7 @@
                     ]
                 },
                 {
+                    "id": "MeatGrinding",
                     "name": "Meat grinding",
                     "duration": 20,
                     "inputs": [
@@ -8918,6 +9242,7 @@
                     ]
                 },
                 {
+                    "id": "SnackProductionPotato",
                     "name": "Snack production",
                     "duration": 20,
                     "inputs": [
@@ -8950,6 +9275,7 @@
                     ]
                 },
                 {
+                    "id": "SnackProductionCorn",
                     "name": "Snack production",
                     "duration": 20,
                     "inputs": [
@@ -8982,6 +9308,7 @@
                     ]
                 },
                 {
+                    "id": "SugarRefiningCane",
                     "name": "Sugar refining (cane)",
                     "duration": 40,
                     "inputs": [
@@ -9030,6 +9357,7 @@
             ],
             "recipes": [
                 {
+                    "id": "BreadProduction",
                     "name": "Bread making",
                     "duration": 30,
                     "inputs": [
@@ -9050,6 +9378,7 @@
                     ]
                 },
                 {
+                    "id": "CakeProduction",
                     "name": "Cake production",
                     "duration": 30,
                     "inputs": [
@@ -9755,6 +10084,7 @@
             ],
             "recipes": [
                 {
+                    "id": "MaintenanceT3Recipe",
                     "name": "Maintenance III",
                     "duration": 30,
                     "inputs": [
@@ -9775,6 +10105,7 @@
                     ]
                 },
                 {
+                    "id": "MaintenanceT3Recycling",
                     "name": "Maintenance III",
                     "duration": 30,
                     "inputs": [
@@ -9827,6 +10158,7 @@
             ],
             "recipes": [
                 {
+                    "id": "MaintenanceT2Recipe",
                     "name": "Maintenance II",
                     "duration": 20,
                     "inputs": [
@@ -9847,6 +10179,7 @@
                     ]
                 },
                 {
+                    "id": "MaintenanceT2Recycling",
                     "name": "Maintenance II",
                     "duration": 20,
                     "inputs": [
@@ -9895,6 +10228,7 @@
             ],
             "recipes": [
                 {
+                    "id": "MaintenanceT1Recipe",
                     "name": "Maintenance I",
                     "duration": 20,
                     "inputs": [
@@ -9915,6 +10249,7 @@
                     ]
                 },
                 {
+                    "id": "MaintenanceT1Recycling",
                     "name": "Maintenance I",
                     "duration": 20,
                     "inputs": [
@@ -9963,6 +10298,7 @@
             ],
             "recipes": [
                 {
+                    "id": "MaintenanceT0Recipe",
                     "name": "Maintenance I",
                     "duration": 20,
                     "inputs": [
@@ -10798,6 +11134,7 @@
             ],
             "recipes": [
                 {
+                    "id": "NuclearReactor",
                     "name": "NuclearReactor",
                     "duration": 60,
                     "inputs": [
@@ -10904,6 +11241,7 @@
             ],
             "recipes": [
                 {
+                    "id": "WasteSortingPlant",
                     "name": "WasteSortingPlant",
                     "duration": 20,
                     "inputs": [
@@ -11014,6 +11352,7 @@
             ],
             "recipes": [
                 {
+                    "id": "Create Computing Power",
                     "name": "Create Computing Power",
                     "duration": 60,
                     "inputs": [

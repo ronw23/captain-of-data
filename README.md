@@ -6,6 +6,8 @@ In order to open properly, you should set `COI_ROOT` environment variable to you
 
 Updated for latest version `0.4.14b(157)`, and migrated everything to `protosDb.All` getting rid of hardcoded ids, and automatically catching new items/buildings.
 
+Added products.json, product ids, recipe ids, product icon references.
+
 # Original REAMDE is below
 
 # Captain Of Industry Data Export
