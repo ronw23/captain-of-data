@@ -8,6 +8,14 @@ Updated for latest version `0.4.14b(157)`, and migrated everything to `protosDb.
 
 Added products.json, product ids, recipe ids, product icon references.
 
+Added transports.json, conveyor belts throuhgput.
+
+Added details on farms, recipes, production, consumption.
+
+Added details on storages - item type to store.
+
+Added icons.
+
 # Original REAMDE is below
 
 # Captain Of Industry Data Export
