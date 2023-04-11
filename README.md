@@ -4,17 +4,12 @@ Added solution file and project. I have only `VS Community 2019`, so sorry, solu
 
 In order to open properly, you should set `COI_ROOT` environment variable to your Captain Of Industry Steam installation, and set your `PATH` variable to `%COI_ROOT%\Captain of Industry_Data\Managed`.
 
-Updated for latest version `0.4.14b(157)`, and migrated everything to `protosDb.All` getting rid of hardcoded ids, and automatically catching new items/buildings.
-
-Added products.json, product ids, recipe ids, product icon references.
-
-Added transports.json, conveyor belts throuhgput.
-
-Added details on farms, recipes, production, consumption.
-
-Added details on storages - item type to store.
-
-Added icons.
+- Updated for latest version `0.4.14b(157)`, and migrated everything to `protosDb.All` getting rid of hardcoded ids, and automatically catching new items/buildings.
+- Added products.json, product ids, recipe ids, product icon references.
+- Added transports.json, conveyor belts throughput.
+- Added details on farms, recipes, production, consumption.
+- Added details on storages - item type to store.
+- Added icons.
 
 # Original REAMDE is below
 
