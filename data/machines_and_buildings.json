@@ -13,6 +13,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -50,7 +51,7 @@
             "id": "TurbineHighPress",
             "name": "High-pressure turbine",
             "category": "Power production",
-            "next_tier": "",
+            "next_tier": "TurbineHighPressT2",
             "workers": 2,
             "maintenance_cost_units": "Maintenance I",
             "maintenance_cost_quantity": 2,
@@ -58,6 +59,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -103,6 +105,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -140,7 +143,7 @@
             "id": "TurbineLowPress",
             "name": "Low-pressure turbine",
             "category": "Power production",
-            "next_tier": "",
+            "next_tier": "TurbineLowPressT2",
             "workers": 3,
             "maintenance_cost_units": "Maintenance I",
             "maintenance_cost_quantity": 2,
@@ -148,6 +151,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -193,6 +197,7 @@
             "electricity_generated": 300,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -238,6 +243,7 @@
             "electricity_generated": 2500,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -283,6 +289,7 @@
             "electricity_generated": 32,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -314,6 +321,7 @@
             "electricity_generated": 40,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -345,6 +353,7 @@
             "electricity_generated": 180,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -394,6 +403,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -476,6 +486,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -598,6 +609,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -716,6 +728,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -895,6 +908,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -1050,6 +1064,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -1107,6 +1122,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -1218,6 +1234,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -1389,6 +1406,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -1532,6 +1550,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -1568,6 +1587,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -1604,6 +1624,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -1644,6 +1665,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -1680,6 +1702,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -1716,6 +1739,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -1815,6 +1839,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -2014,6 +2039,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -2059,6 +2085,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -2134,6 +2161,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -2209,6 +2237,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -2312,6 +2341,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -2353,6 +2383,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -2406,6 +2437,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -2488,6 +2520,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -2570,6 +2603,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -2706,6 +2740,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -3037,6 +3072,7 @@
             "electricity_generated": 0,
             "computing_consumed": 6,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -3295,6 +3331,7 @@
             "electricity_generated": 0,
             "computing_consumed": 4,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -3884,6 +3921,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -4536,6 +4574,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -4761,6 +4800,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -4919,6 +4959,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -4959,6 +5000,7 @@
             "electricity_generated": 0,
             "computing_consumed": 8,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -5267,6 +5309,7 @@
             "electricity_generated": 0,
             "computing_consumed": 4,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -5575,6 +5618,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -5658,6 +5702,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -5761,6 +5806,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -5860,6 +5906,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -5939,6 +5986,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -6018,6 +6066,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -6067,6 +6116,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -6112,6 +6162,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -6272,6 +6323,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -6346,6 +6398,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -6395,6 +6448,7 @@
             "electricity_generated": 0,
             "computing_consumed": 4,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -6678,6 +6732,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -6735,6 +6790,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -6929,6 +6985,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -7115,6 +7172,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -7160,6 +7218,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -7205,6 +7264,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -7267,6 +7327,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -7325,6 +7386,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -7391,6 +7453,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -7440,6 +7503,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -7489,6 +7553,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -7530,6 +7595,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -7575,6 +7641,7 @@
             "electricity_generated": 0,
             "computing_consumed": 4,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -7620,6 +7687,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -7665,6 +7733,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -7735,6 +7804,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -7981,6 +8051,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -8114,6 +8185,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -8167,6 +8239,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -8216,6 +8289,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -8265,6 +8339,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -8402,6 +8477,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -8576,6 +8652,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -8625,6 +8702,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -8678,6 +8756,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -8752,6 +8831,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -8826,6 +8906,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -8900,6 +8981,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -8970,6 +9052,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9015,6 +9098,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9127,6 +9211,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9346,6 +9431,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9424,6 +9510,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9437,13 +9524,184 @@
                     "quantity": 640
                 }
             ],
-            "recipes": []
+            "recipes": [
+                {
+                    "id": "Crop_Potato",
+                    "name": "Potato",
+                    "duration": 180,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 135
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Potato",
+                            "quantity": 87
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Corn",
+                    "name": "Corn",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 199.5703
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Corn",
+                            "quantity": 99
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Wheat",
+                    "name": "Wheat",
+                    "duration": 360,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 238.3594
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Wheat",
+                            "quantity": 87
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Soybeans",
+                    "name": "Soybeans",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 180
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Soybean",
+                            "quantity": 33
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_SugarCane",
+                    "name": "Sugar cane",
+                    "duration": 540,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 540
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Sugar cane",
+                            "quantity": 264
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Vegetables",
+                    "name": "Vegetables",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 160.5469
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Vegetables",
+                            "quantity": 90
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Fruits",
+                    "name": "Fruits",
+                    "duration": 480,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 399.1406
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Fruit",
+                            "quantity": 120
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Canola",
+                    "name": "Canola",
+                    "duration": 180,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 104.5898
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Canola",
+                            "quantity": 39
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Poppy",
+                    "name": "Poppy",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 135.1172
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Poppy",
+                            "quantity": 30
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Flowers",
+                    "name": "Flowers",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 225
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Flowers",
+                            "quantity": 36
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "FarmT3",
             "name": "Greenhouse",
             "category": "Food production",
-            "next_tier": "",
+            "next_tier": "FarmT4",
             "workers": 18,
             "maintenance_cost_units": "Maintenance I",
             "maintenance_cost_quantity": 6,
@@ -9451,6 +9709,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9464,13 +9723,184 @@
                     "quantity": 320
                 }
             ],
-            "recipes": []
+            "recipes": [
+                {
+                    "id": "Crop_Potato",
+                    "name": "Potato",
+                    "duration": 180,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 121.5527
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Potato",
+                            "quantity": 73
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Corn",
+                    "name": "Corn",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 179.5313
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Corn",
+                            "quantity": 83
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Wheat",
+                    "name": "Wheat",
+                    "duration": 360,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 214.6289
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Wheat",
+                            "quantity": 73
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Soybeans",
+                    "name": "Soybeans",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 162.0703
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Soybean",
+                            "quantity": 28
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_SugarCane",
+                    "name": "Sugar cane",
+                    "duration": 540,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 485.9473
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Sugar cane",
+                            "quantity": 220
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Vegetables",
+                    "name": "Vegetables",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 144.4922
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Vegetables",
+                            "quantity": 75
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Fruits",
+                    "name": "Fruits",
+                    "duration": 480,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 359.0625
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Fruit",
+                            "quantity": 100
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Canola",
+                    "name": "Canola",
+                    "duration": 180,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 94.13086
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Canola",
+                            "quantity": 33
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Poppy",
+                    "name": "Poppy",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 121.5234
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Poppy",
+                            "quantity": 25
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Flowers",
+                    "name": "Flowers",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 202.5
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Flowers",
+                            "quantity": 30
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "FarmT2",
             "name": "Irrigated Farm",
             "category": "Food production",
-            "next_tier": "",
+            "next_tier": "FarmT3",
             "workers": 12,
             "maintenance_cost_units": "Maintenance I",
             "maintenance_cost_quantity": 2,
@@ -9478,6 +9908,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9487,13 +9918,116 @@
                     "quantity": 60
                 }
             ],
-            "recipes": []
+            "recipes": [
+                {
+                    "id": "Crop_Potato",
+                    "name": "Potato",
+                    "duration": 180,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 108.0176
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Potato",
+                            "quantity": 58
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Corn",
+                    "name": "Corn",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 159.6094
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Corn",
+                            "quantity": 66
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Wheat",
+                    "name": "Wheat",
+                    "duration": 360,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 190.7227
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Wheat",
+                            "quantity": 58
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Soybeans",
+                    "name": "Soybeans",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 144.0234
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Soybean",
+                            "quantity": 22
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Vegetables",
+                    "name": "Vegetables",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 128.4375
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Vegetables",
+                            "quantity": 60
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Canola",
+                    "name": "Canola",
+                    "duration": 180,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 83.67188
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Canola",
+                            "quantity": 26
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "FarmT1",
             "name": "Farm",
             "category": "Food production",
-            "next_tier": "",
+            "next_tier": "FarmT2",
             "workers": 10,
             "maintenance_cost_units": "",
             "maintenance_cost_quantity": 0,
@@ -9501,6 +10035,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9510,7 +10045,110 @@
                     "quantity": 30
                 }
             ],
-            "recipes": []
+            "recipes": [
+                {
+                    "id": "Crop_Potato",
+                    "name": "Potato",
+                    "duration": 180,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 108.0176
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Potato",
+                            "quantity": 58
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Corn",
+                    "name": "Corn",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 159.6094
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Corn",
+                            "quantity": 66
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Wheat",
+                    "name": "Wheat",
+                    "duration": 360,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 190.7227
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Wheat",
+                            "quantity": 58
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Soybeans",
+                    "name": "Soybeans",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 144.0234
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Soybean",
+                            "quantity": 22
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Vegetables",
+                    "name": "Vegetables",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 128.4375
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Vegetables",
+                            "quantity": 60
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Canola",
+                    "name": "Canola",
+                    "duration": 180,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 83.67188
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Canola",
+                            "quantity": 26
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "ChickenFarm",
@@ -9524,6 +10162,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9533,7 +10172,33 @@
                     "quantity": 50
                 }
             ],
-            "recipes": []
+            "recipes": [
+                {
+                    "id": "ChickenFarm",
+                    "name": "Chicken farm",
+                    "duration": 60,
+                    "inputs": [
+                        {
+                            "name": "Animal feed",
+                            "quantity": 15.13672
+                        },
+                        {
+                            "name": "Water",
+                            "quantity": 18.06641
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Eggs",
+                            "quantity": 7.324219
+                        },
+                        {
+                            "name": "Chicken carcass",
+                            "quantity": 10
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "CargoDepotT4",
@@ -9547,6 +10212,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9566,7 +10232,7 @@
             "id": "CargoDepotT3",
             "name": "Cargo depot (6)",
             "category": "Cargo docks",
-            "next_tier": "",
+            "next_tier": "CargoDepotT4",
             "workers": 0,
             "maintenance_cost_units": "",
             "maintenance_cost_quantity": 0,
@@ -9574,6 +10240,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9601,6 +10268,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9620,7 +10288,7 @@
             "id": "CargoDepotT1",
             "name": "Cargo depot (2)",
             "category": "Cargo docks",
-            "next_tier": "",
+            "next_tier": "CargoDepotT2",
             "workers": 0,
             "maintenance_cost_units": "",
             "maintenance_cost_quantity": 0,
@@ -9628,6 +10296,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9655,6 +10324,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 720,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9670,7 +10340,7 @@
             "id": "CargoDepotModuleUnitT2",
             "name": "Unit module (M)",
             "category": "Cargo docks",
-            "next_tier": "",
+            "next_tier": "CargoDepotModuleUnitT3",
             "workers": 4,
             "maintenance_cost_units": "Maintenance I",
             "maintenance_cost_quantity": 3,
@@ -9678,6 +10348,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 360,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9693,7 +10364,7 @@
             "id": "CargoDepotModuleUnitT1",
             "name": "Unit module (S)",
             "category": "Cargo docks",
-            "next_tier": "",
+            "next_tier": "CargoDepotModuleUnitT2",
             "workers": 3,
             "maintenance_cost_units": "Maintenance I",
             "maintenance_cost_quantity": 2,
@@ -9701,6 +10372,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 180,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9724,6 +10396,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 720,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9739,7 +10412,7 @@
             "id": "CargoDepotModuleLooseT2",
             "name": "Loose module (M)",
             "category": "Cargo docks",
-            "next_tier": "",
+            "next_tier": "CargoDepotModuleLooseT3",
             "workers": 5,
             "maintenance_cost_units": "Maintenance I",
             "maintenance_cost_quantity": 3,
@@ -9747,6 +10420,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 360,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9762,7 +10436,7 @@
             "id": "CargoDepotModuleLooseT1",
             "name": "Loose module (S)",
             "category": "Cargo docks",
-            "next_tier": "",
+            "next_tier": "CargoDepotModuleLooseT2",
             "workers": 3,
             "maintenance_cost_units": "Maintenance I",
             "maintenance_cost_quantity": 2,
@@ -9770,6 +10444,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 180,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9793,6 +10468,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 880,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9808,7 +10484,7 @@
             "id": "CargoDepotModuleFluidT2",
             "name": "Fluid module (M)",
             "category": "Cargo docks",
-            "next_tier": "",
+            "next_tier": "CargoDepotModuleFluidT3",
             "workers": 4,
             "maintenance_cost_units": "Maintenance I",
             "maintenance_cost_quantity": 3,
@@ -9816,6 +10492,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 440,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9831,7 +10508,7 @@
             "id": "CargoDepotModuleFluidT1",
             "name": "Fluid module (S)",
             "category": "Cargo docks",
-            "next_tier": "",
+            "next_tier": "CargoDepotModuleFluidT2",
             "workers": 3,
             "maintenance_cost_units": "Maintenance I",
             "maintenance_cost_quantity": 2,
@@ -9839,6 +10516,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 220,
             "unity_cost": 0,
             "research_speed": 0,
@@ -9862,6 +10540,7 @@
             "electricity_generated": 0,
             "computing_consumed": 12,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0.2001953,
             "research_speed": 6.398438,
@@ -9903,7 +10582,7 @@
             "id": "ResearchLab4",
             "name": "Research lab IV",
             "category": "Buildings",
-            "next_tier": "",
+            "next_tier": "ResearchLab5",
             "workers": 30,
             "maintenance_cost_units": "Maintenance I",
             "maintenance_cost_quantity": 16,
@@ -9911,6 +10590,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0.2001953,
             "research_speed": 5.601563,
@@ -9952,7 +10632,7 @@
             "id": "ResearchLab3",
             "name": "Research lab III",
             "category": "Buildings",
-            "next_tier": "",
+            "next_tier": "ResearchLab4",
             "workers": 16,
             "maintenance_cost_units": "Maintenance I",
             "maintenance_cost_quantity": 12,
@@ -9960,6 +10640,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0.2001953,
             "research_speed": 4.800781,
@@ -9997,7 +10678,7 @@
             "id": "ResearchLab2",
             "name": "Research lab II",
             "category": "Buildings",
-            "next_tier": "",
+            "next_tier": "ResearchLab3",
             "workers": 8,
             "maintenance_cost_units": "Maintenance I",
             "maintenance_cost_quantity": 8,
@@ -10005,6 +10686,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0.25,
             "research_speed": 4,
@@ -10042,7 +10724,7 @@
             "id": "ResearchLab1",
             "name": "Research lab",
             "category": "Buildings",
-            "next_tier": "",
+            "next_tier": "ResearchLab2",
             "workers": 4,
             "maintenance_cost_units": "",
             "maintenance_cost_quantity": 0,
@@ -10050,6 +10732,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0.25,
             "research_speed": 3.199219,
@@ -10060,269 +10743,6 @@
                 }
             ],
             "recipes": []
-        },
-        {
-            "id": "MaintenanceDepotT3",
-            "name": "Maintenance III depot",
-            "category": "Buildings",
-            "next_tier": "",
-            "workers": 32,
-            "maintenance_cost_units": "",
-            "maintenance_cost_quantity": 0,
-            "electricity_consumed": 140,
-            "electricity_generated": 0,
-            "computing_consumed": 0,
-            "computing_generated": 0,
-            "storage_capacity": 0,
-            "unity_cost": 0,
-            "research_speed": 0,
-            "build_costs": [
-                {
-                    "product": "Construction Parts III",
-                    "quantity": 50
-                },
-                {
-                    "product": "Electronics III",
-                    "quantity": 20
-                }
-            ],
-            "recipes": [
-                {
-                    "id": "MaintenanceT3Recipe",
-                    "name": "Maintenance III",
-                    "duration": 30,
-                    "inputs": [
-                        {
-                            "name": "Mechanical Parts",
-                            "quantity": 2
-                        },
-                        {
-                            "name": "Electronics III",
-                            "quantity": 2
-                        }
-                    ],
-                    "outputs": [
-                        {
-                            "name": "Maintenance III",
-                            "quantity": 60
-                        }
-                    ]
-                },
-                {
-                    "id": "MaintenanceT3Recycling",
-                    "name": "Maintenance III",
-                    "duration": 30,
-                    "inputs": [
-                        {
-                            "name": "Mechanical Parts",
-                            "quantity": 2
-                        },
-                        {
-                            "name": "Electronics III",
-                            "quantity": 2
-                        }
-                    ],
-                    "outputs": [
-                        {
-                            "name": "Maintenance III",
-                            "quantity": 60
-                        },
-                        {
-                            "name": "Recyclables",
-                            "quantity": 4
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "MaintenanceDepotT2",
-            "name": "Maintenance II depot",
-            "category": "Buildings",
-            "next_tier": "",
-            "workers": 28,
-            "maintenance_cost_units": "",
-            "maintenance_cost_quantity": 0,
-            "electricity_consumed": 100,
-            "electricity_generated": 0,
-            "computing_consumed": 0,
-            "computing_generated": 0,
-            "storage_capacity": 0,
-            "unity_cost": 0,
-            "research_speed": 0,
-            "build_costs": [
-                {
-                    "product": "Construction Parts III",
-                    "quantity": 50
-                },
-                {
-                    "product": "Electronics II",
-                    "quantity": 20
-                }
-            ],
-            "recipes": [
-                {
-                    "id": "MaintenanceT2Recipe",
-                    "name": "Maintenance II",
-                    "duration": 20,
-                    "inputs": [
-                        {
-                            "name": "Mechanical Parts",
-                            "quantity": 4
-                        },
-                        {
-                            "name": "Electronics II",
-                            "quantity": 2
-                        }
-                    ],
-                    "outputs": [
-                        {
-                            "name": "Maintenance II",
-                            "quantity": 80
-                        }
-                    ]
-                },
-                {
-                    "id": "MaintenanceT2Recycling",
-                    "name": "Maintenance II",
-                    "duration": 20,
-                    "inputs": [
-                        {
-                            "name": "Mechanical Parts",
-                            "quantity": 4
-                        },
-                        {
-                            "name": "Electronics II",
-                            "quantity": 2
-                        }
-                    ],
-                    "outputs": [
-                        {
-                            "name": "Maintenance II",
-                            "quantity": 80
-                        },
-                        {
-                            "name": "Recyclables",
-                            "quantity": 4
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "MaintenanceDepotT1",
-            "name": "Maintenance depot",
-            "category": "Buildings",
-            "next_tier": "",
-            "workers": 20,
-            "maintenance_cost_units": "",
-            "maintenance_cost_quantity": 0,
-            "electricity_consumed": 60,
-            "electricity_generated": 0,
-            "computing_consumed": 0,
-            "computing_generated": 0,
-            "storage_capacity": 0,
-            "unity_cost": 0,
-            "research_speed": 0,
-            "build_costs": [
-                {
-                    "product": "Construction Parts II",
-                    "quantity": 50
-                }
-            ],
-            "recipes": [
-                {
-                    "id": "MaintenanceT1Recipe",
-                    "name": "Maintenance I",
-                    "duration": 20,
-                    "inputs": [
-                        {
-                            "name": "Mechanical Parts",
-                            "quantity": 8
-                        },
-                        {
-                            "name": "Electronics",
-                            "quantity": 4
-                        }
-                    ],
-                    "outputs": [
-                        {
-                            "name": "Maintenance I",
-                            "quantity": 160
-                        }
-                    ]
-                },
-                {
-                    "id": "MaintenanceT1Recycling",
-                    "name": "Maintenance I",
-                    "duration": 20,
-                    "inputs": [
-                        {
-                            "name": "Mechanical Parts",
-                            "quantity": 8
-                        },
-                        {
-                            "name": "Electronics",
-                            "quantity": 4
-                        }
-                    ],
-                    "outputs": [
-                        {
-                            "name": "Maintenance I",
-                            "quantity": 160
-                        },
-                        {
-                            "name": "Recyclables",
-                            "quantity": 5
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "MaintenanceDepotT0",
-            "name": "Maintenance depot (basic)",
-            "category": "Buildings",
-            "next_tier": "",
-            "workers": 6,
-            "maintenance_cost_units": "",
-            "maintenance_cost_quantity": 0,
-            "electricity_consumed": 25,
-            "electricity_generated": 0,
-            "computing_consumed": 0,
-            "computing_generated": 0,
-            "storage_capacity": 0,
-            "unity_cost": 0,
-            "research_speed": 0,
-            "build_costs": [
-                {
-                    "product": "Construction Parts",
-                    "quantity": 40
-                }
-            ],
-            "recipes": [
-                {
-                    "id": "MaintenanceT0Recipe",
-                    "name": "Maintenance I",
-                    "duration": 20,
-                    "inputs": [
-                        {
-                            "name": "Mechanical Parts",
-                            "quantity": 2
-                        },
-                        {
-                            "name": "Electronics",
-                            "quantity": 1
-                        }
-                    ],
-                    "outputs": [
-                        {
-                            "name": "Maintenance I",
-                            "quantity": 35
-                        }
-                    ]
-                }
-            ]
         },
         {
             "id": "VehiclesDepotT3",
@@ -10336,6 +10756,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10359,6 +10780,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10374,7 +10796,7 @@
             "id": "VehiclesDepot",
             "name": "Vehicles depot",
             "category": "Buildings (for vehicles)",
-            "next_tier": "",
+            "next_tier": "VehiclesDepotT2",
             "workers": 6,
             "maintenance_cost_units": "",
             "maintenance_cost_quantity": 0,
@@ -10382,6 +10804,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10405,6 +10828,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 360,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10420,7 +10844,7 @@
             "id": "FuelStationT2",
             "name": "Fuel station II",
             "category": "Buildings (for vehicles)",
-            "next_tier": "",
+            "next_tier": "FuelStationT3",
             "workers": 0,
             "maintenance_cost_units": "",
             "maintenance_cost_quantity": 0,
@@ -10428,6 +10852,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 120,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10443,7 +10868,7 @@
             "id": "FuelStationT1",
             "name": "Fuel station",
             "category": "Buildings (for vehicles)",
-            "next_tier": "",
+            "next_tier": "FuelStationT2",
             "workers": 0,
             "maintenance_cost_units": "",
             "maintenance_cost_quantity": 0,
@@ -10451,6 +10876,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 40,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10474,6 +10900,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "CountableProductProto",
             "storage_capacity": 4320,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10489,7 +10916,7 @@
             "id": "StorageUnitT3",
             "name": "Unit storage III",
             "category": "Storage",
-            "next_tier": "",
+            "next_tier": "StorageUnitT4",
             "workers": 0,
             "maintenance_cost_units": "",
             "maintenance_cost_quantity": 0,
@@ -10497,6 +10924,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "CountableProductProto",
             "storage_capacity": 2160,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10520,6 +10948,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "CountableProductProto",
             "storage_capacity": 360,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10535,7 +10964,7 @@
             "id": "StorageUnit",
             "name": "Unit storage",
             "category": "Storage",
-            "next_tier": "",
+            "next_tier": "StorageUnitT2",
             "workers": 0,
             "maintenance_cost_units": "",
             "maintenance_cost_quantity": 0,
@@ -10543,6 +10972,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "CountableProductProto",
             "storage_capacity": 180,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10566,6 +10996,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "LooseProductProto",
             "storage_capacity": 4320,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10581,7 +11012,7 @@
             "id": "StorageLooseT3",
             "name": "Loose storage III",
             "category": "Storage",
-            "next_tier": "",
+            "next_tier": "StorageLooseT4",
             "workers": 0,
             "maintenance_cost_units": "",
             "maintenance_cost_quantity": 0,
@@ -10589,6 +11020,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "LooseProductProto",
             "storage_capacity": 2160,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10612,6 +11044,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "LooseProductProto",
             "storage_capacity": 360,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10627,7 +11060,7 @@
             "id": "StorageLoose",
             "name": "Loose storage",
             "category": "Storage",
-            "next_tier": "",
+            "next_tier": "StorageLooseT2",
             "workers": 0,
             "maintenance_cost_units": "",
             "maintenance_cost_quantity": 0,
@@ -10635,6 +11068,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "LooseProductProto",
             "storage_capacity": 180,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10658,6 +11092,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "FluidProductProto",
             "storage_capacity": 4320,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10673,7 +11108,7 @@
             "id": "StorageFluidT3",
             "name": "Fluid storage III",
             "category": "Storage",
-            "next_tier": "",
+            "next_tier": "StorageFluidT4",
             "workers": 0,
             "maintenance_cost_units": "",
             "maintenance_cost_quantity": 0,
@@ -10681,6 +11116,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "FluidProductProto",
             "storage_capacity": 2160,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10704,6 +11140,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "FluidProductProto",
             "storage_capacity": 360,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10719,7 +11156,7 @@
             "id": "StorageFluid",
             "name": "Fluid storage",
             "category": "Storage",
-            "next_tier": "",
+            "next_tier": "StorageFluidT2",
             "workers": 0,
             "maintenance_cost_units": "",
             "maintenance_cost_quantity": 0,
@@ -10727,6 +11164,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "FluidProductProto",
             "storage_capacity": 180,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10750,33 +11188,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
-            "storage_capacity": 5000,
-            "unity_cost": 0,
-            "research_speed": 0,
-            "build_costs": [
-                {
-                    "product": "Construction Parts III",
-                    "quantity": 150
-                },
-                {
-                    "product": "Concrete slab",
-                    "quantity": 500
-                }
-            ],
-            "recipes": []
-        },
-        {
-            "id": "NuclearWasteStorage",
-            "name": "Spent fuel storage",
-            "category": "Storage",
-            "next_tier": "",
-            "workers": 10,
-            "maintenance_cost_units": "",
-            "maintenance_cost_quantity": 0,
-            "electricity_consumed": 0,
-            "electricity_generated": 0,
-            "computing_consumed": 0,
-            "computing_generated": 0,
+            "product_type": "CountableProductProto",
             "storage_capacity": 5000,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10804,6 +11216,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 230,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10831,6 +11244,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 130,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10854,6 +11268,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 70,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10877,6 +11292,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10900,6 +11316,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 200,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10923,6 +11340,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 200,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10946,6 +11364,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 200,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10969,6 +11388,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 400,
             "unity_cost": 0,
             "research_speed": 0,
@@ -10992,6 +11412,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 400,
             "unity_cost": 0,
             "research_speed": 0,
@@ -11015,6 +11436,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -11042,6 +11464,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -11073,6 +11496,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -11100,6 +11524,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -11123,6 +11548,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -11176,6 +11602,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -11203,6 +11630,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -11234,6 +11662,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -11287,6 +11716,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -11300,7 +11730,20 @@
                     "quantity": 30
                 }
             ],
-            "recipes": []
+            "recipes": [
+                {
+                    "id": "RainwaterHarvester",
+                    "name": "Rainwater harvester",
+                    "duration": 2,
+                    "inputs": [],
+                    "outputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 1
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "DataCenter",
@@ -11314,6 +11757,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 0,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
@@ -11345,6 +11789,7 @@
             "electricity_generated": 0,
             "computing_consumed": 0,
             "computing_generated": 1,
+            "product_type": "",
             "storage_capacity": 0,
             "unity_cost": 0,
             "research_speed": 0,
