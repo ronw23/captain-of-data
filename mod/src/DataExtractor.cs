@@ -478,8 +478,7 @@ namespace DataExtractorMod {
         public string MakeProductJsonObject(
             string id,
             string name,
-            string type,
-            string fertilityPerQuantity
+            string type
         )
         {
             System.Text.StringBuilder obj = new System.Text.StringBuilder();
@@ -490,10 +489,6 @@ namespace DataExtractorMod {
             props.Add($"\"name\":\"{name}\"");
             props.Add($"\"icon\":\"{productNameToIcon(name)}\"");
             props.Add($"\"type\":\"{type}\"");
-            if((fertilityPerQuantity != null) && (!fertilityPerQuantity.Equals("")))
-            {
-                props.Add($"\"fertility_per_quantity\":{fertilityPerQuantity}");
-            }
 
             obj.AppendLine("{");
             obj.AppendLine(props.JoinStrings(","));
@@ -2075,17 +2070,10 @@ namespace DataExtractorMod {
                 }
                 if (type != null)
                 {
-                    string fertilityPerQuantity = null;
-                    FertilizerProductParam fertilizerParam = product.GetParam<FertilizerProductParam>().Value;
-                    if(fertilizerParam != null)
-                    {
-                        // fertilityPerQuantity = fertilizerParam.FertilityPerQuantity.ToFix64Percent().ToString();
-                    }
                     productsJson.Add(MakeProductJsonObject(
                         product.Id.ToString(),
                         product.Strings.Name.ToString(),
-                        type,
-                        fertilityPerQuantity));
+                        type));
                 }
             }
 
