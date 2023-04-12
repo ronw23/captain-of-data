@@ -132,6 +132,7 @@ using Mafi.Core.World.Contracts;
 using Mafi.Core.Game;
 using Mafi.Base.Prototypes.Machines;
 using Mafi.Core.Factory.Transports;
+using System.Linq;
 
 namespace DataExtractorMod {
     public sealed class DataExtractor : IMod
@@ -477,7 +478,8 @@ namespace DataExtractorMod {
         public string MakeProductJsonObject(
             string id,
             string name,
-            string type
+            string type,
+            string fertilityPerQuantity
         )
         {
             System.Text.StringBuilder obj = new System.Text.StringBuilder();
@@ -488,6 +490,10 @@ namespace DataExtractorMod {
             props.Add($"\"name\":\"{name}\"");
             props.Add($"\"icon\":\"{productNameToIcon(name)}\"");
             props.Add($"\"type\":\"{type}\"");
+            if((fertilityPerQuantity != null) && (!fertilityPerQuantity.Equals("")))
+            {
+                props.Add($"\"fertility_per_quantity\":{fertilityPerQuantity}");
+            }
 
             obj.AppendLine("{");
             obj.AppendLine(props.JoinStrings(","));
@@ -1396,6 +1402,13 @@ namespace DataExtractorMod {
             */
 
             IEnumerable<FarmProto> farms = protosDb.All<FarmProto>();
+            IEnumerable<ProductProto> fertilizers = protosDb.Filter<ProductProto>(delegate (ProductProto product)
+            {
+                return product.GetParam<FertilizerProductParam>().Value != null;
+            });
+            ProductProto[] fertilizersArray = fertilizers.ToArray<ProductProto>();
+            IEnumerable<CropProto> crops = protosDb.All<CropProto>();
+
             foreach (FarmProto item in farms)
             {
 
@@ -1439,7 +1452,6 @@ namespace DataExtractorMod {
                     }
 
                     List<string> recipeItems = new List<string> { };
-                    IEnumerable<CropProto> crops = protosDb.All<CropProto>();
                     foreach (CropProto crop in crops)
                     {
                         if (crop.RequiresGreenhouse && !item.IsGreenhouse)
@@ -1448,22 +1460,56 @@ namespace DataExtractorMod {
                             continue;
 
                         var duration = (crop.DaysToGrow * 2);
+                        List<string> inputItems = new List<string> { };
+                        List<string> outputItems = new List<string> { };
 
-                        string machineRecipeInputJson = "";
-                        if (crop.ConsumedWaterPerDay.Value != null)
+                        string machineRecipeInputJson;
+                        string machineRecipeOutputJson;
+
+                        machineRecipeOutputJson = MakeRecipeIOJsonObject(crop.ProductProduced.Product.Strings.Name.ToString(), crop.ProductProduced.Quantity.ScaledBy(item.YieldMultiplier).ToString());
+                        outputItems.Add(machineRecipeOutputJson);
+
+                        if (item.HasIrrigationAndFertilizerSupport)
                         {
-                            machineRecipeInputJson = MakeRecipeIOJsonObject("Water", (crop.ConsumedWaterPerDay.Value.ScaledBy(item.DemandsMultiplier) * crop.DaysToGrow).ToString());
+                            if (crop.ConsumedWaterPerDay.Value != null)
+                            {
+                                machineRecipeInputJson = MakeRecipeIOJsonObject("Water", (crop.ConsumedWaterPerDay.Value.ScaledBy(item.DemandsMultiplier) * crop.DaysToGrow).ToString());
+                                inputItems.Add(machineRecipeInputJson);
+                            }
                         }
-                        string machineRecipeOutputJson = MakeRecipeIOJsonObject(crop.ProductProduced.Product.Strings.Name.ToString(), crop.ProductProduced.Quantity.ScaledBy(item.YieldMultiplier).ToString());
 
-                        string machineRecipeJson = MakeRecipeJsonObject(
-                            crop.Id.ToString(),
-                            crop.Strings.Name.ToString(),
-                            duration.ToString(),
-                            machineRecipeInputJson,
-                            machineRecipeOutputJson
-                        );
-                        recipeItems.Add(machineRecipeJson);
+                        if (item.HasIrrigationAndFertilizerSupport && (fertilizersArray.Length != 0))
+                        {
+                            foreach (ProductProto fertilizer in fertilizersArray)
+                            {
+                                List<string> inputItems2 = new List<string> ( inputItems );
+                                Option<FertilizerProductParam> fertilizerParam = fertilizer.GetParam<FertilizerProductParam>();
+                                Fix64 fertilizerFerDay = (crop.ConsumedFertilityPerDay.ToFix64() * crop.DaysToGrow) / fertilizerParam.Value.FertilityPerQuantity.ToFix64();
+                                machineRecipeInputJson = MakeRecipeIOJsonObject(fertilizer.Strings.Name.ToString(), fertilizerFerDay.ScaledBy(item.DemandsMultiplier).ToFix32().ToString());
+                                inputItems2.Add(machineRecipeInputJson);
+
+                                string machineRecipeJson = MakeRecipeJsonObject(
+                                    crop.Id.ToString(),
+                                    crop.Strings.Name.ToString(),
+                                    duration.ToString(),
+                                    inputItems2.JoinStrings(","),
+                                    outputItems.JoinStrings(",")
+                                );
+                                recipeItems.Add(machineRecipeJson);
+                            }
+                        }
+                        else
+                        {
+                            string machineRecipeJson = MakeRecipeJsonObject(
+                                crop.Id.ToString(),
+                                crop.Strings.Name.ToString(),
+                                duration.ToString(),
+                                inputItems.JoinStrings(","),
+                                outputItems.JoinStrings(",")
+                            );
+                            recipeItems.Add(machineRecipeJson);
+                        }
+
                     }
 
                     string machineJson = MakeMachineJsonObject2(
@@ -2029,10 +2075,17 @@ namespace DataExtractorMod {
                 }
                 if (type != null)
                 {
+                    string fertilityPerQuantity = null;
+                    FertilizerProductParam fertilizerParam = product.GetParam<FertilizerProductParam>().Value;
+                    if(fertilizerParam != null)
+                    {
+                        // fertilityPerQuantity = fertilizerParam.FertilityPerQuantity.ToFix64Percent().ToString();
+                    }
                     productsJson.Add(MakeProductJsonObject(
                         product.Id.ToString(),
                         product.Strings.Name.ToString(),
-                        type));
+                        type,
+                        fertilityPerQuantity));
                 }
             }
 

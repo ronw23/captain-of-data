@@ -9533,6 +9533,52 @@
                         {
                             "name": "Water",
                             "quantity": 135
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 19.6875
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Potato",
+                            "quantity": 87
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Potato",
+                    "name": "Potato",
+                    "duration": 180,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 135
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 19.6875
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Potato",
+                            "quantity": 87
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Potato",
+                    "name": "Potato",
+                    "duration": 180,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 135
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 39.37793
                         }
                     ],
                     "outputs": [
@@ -9550,6 +9596,52 @@
                         {
                             "name": "Water",
                             "quantity": 199.5703
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 29.99902
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Corn",
+                            "quantity": 99
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Corn",
+                    "name": "Corn",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 199.5703
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 29.99902
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Corn",
+                            "quantity": 99
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Corn",
+                    "name": "Corn",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 199.5703
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 60
                         }
                     ],
                     "outputs": [
@@ -9567,6 +9659,52 @@
                         {
                             "name": "Water",
                             "quantity": 238.3594
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 39.37598
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Wheat",
+                            "quantity": 87
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Wheat",
+                    "name": "Wheat",
+                    "duration": 360,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 238.3594
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 39.37598
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Wheat",
+                            "quantity": 87
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Wheat",
+                    "name": "Wheat",
+                    "duration": 360,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 238.3594
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 78.75488
                         }
                     ],
                     "outputs": [
@@ -9584,6 +9722,52 @@
                         {
                             "name": "Water",
                             "quantity": 180
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 37.49512
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Soybean",
+                            "quantity": 33
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Soybeans",
+                    "name": "Soybeans",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 180
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 37.49512
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Soybean",
+                            "quantity": 33
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Soybeans",
+                    "name": "Soybeans",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 180
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 74.99316
                         }
                     ],
                     "outputs": [
@@ -9601,6 +9785,52 @@
                         {
                             "name": "Water",
                             "quantity": 540
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 84.36328
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Sugar cane",
+                            "quantity": 264
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_SugarCane",
+                    "name": "Sugar cane",
+                    "duration": 540,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 540
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 84.36328
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Sugar cane",
+                            "quantity": 264
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_SugarCane",
+                    "name": "Sugar cane",
+                    "duration": 540,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 540
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 168.7344
                         }
                     ],
                     "outputs": [
@@ -9618,6 +9848,52 @@
                         {
                             "name": "Water",
                             "quantity": 160.5469
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 26.25098
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Vegetables",
+                            "quantity": 90
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Vegetables",
+                    "name": "Vegetables",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 160.5469
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 26.25098
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Vegetables",
+                            "quantity": 90
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Vegetables",
+                    "name": "Vegetables",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 160.5469
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 52.50391
                         }
                     ],
                     "outputs": [
@@ -9635,6 +9911,52 @@
                         {
                             "name": "Water",
                             "quantity": 399.1406
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 44.99023
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Fruit",
+                            "quantity": 120
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Fruits",
+                    "name": "Fruits",
+                    "duration": 480,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 399.1406
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 44.99023
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Fruit",
+                            "quantity": 120
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Fruits",
+                    "name": "Fruits",
+                    "duration": 480,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 399.1406
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 89.98535
                         }
                     ],
                     "outputs": [
@@ -9652,6 +9974,52 @@
                         {
                             "name": "Water",
                             "quantity": 104.5898
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 16.87109
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Canola",
+                            "quantity": 39
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Canola",
+                    "name": "Canola",
+                    "duration": 180,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 104.5898
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 16.87109
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Canola",
+                            "quantity": 39
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Canola",
+                    "name": "Canola",
+                    "duration": 180,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 104.5898
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 33.74512
                         }
                     ],
                     "outputs": [
@@ -9669,6 +10037,52 @@
                         {
                             "name": "Water",
                             "quantity": 135.1172
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 22.49512
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Poppy",
+                            "quantity": 30
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Poppy",
+                    "name": "Poppy",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 135.1172
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 22.49512
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Poppy",
+                            "quantity": 30
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Poppy",
+                    "name": "Poppy",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 135.1172
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 44.99316
                         }
                     ],
                     "outputs": [
@@ -9686,6 +10100,52 @@
                         {
                             "name": "Water",
                             "quantity": 225
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 37.49512
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Flowers",
+                            "quantity": 36
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Flowers",
+                    "name": "Flowers",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 225
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 37.49512
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Flowers",
+                            "quantity": 36
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Flowers",
+                    "name": "Flowers",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 225
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 74.99316
                         }
                     ],
                     "outputs": [
@@ -9732,6 +10192,52 @@
                         {
                             "name": "Water",
                             "quantity": 121.5527
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 17.71875
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Potato",
+                            "quantity": 73
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Potato",
+                    "name": "Potato",
+                    "duration": 180,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 121.5527
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 17.71875
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Potato",
+                            "quantity": 73
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Potato",
+                    "name": "Potato",
+                    "duration": 180,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 121.5527
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 35.43945
                         }
                     ],
                     "outputs": [
@@ -9749,6 +10255,52 @@
                         {
                             "name": "Water",
                             "quantity": 179.5313
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 26.99902
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Corn",
+                            "quantity": 83
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Corn",
+                    "name": "Corn",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 179.5313
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 26.99902
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Corn",
+                            "quantity": 83
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Corn",
+                    "name": "Corn",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 179.5313
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 54
                         }
                     ],
                     "outputs": [
@@ -9766,6 +10318,52 @@
                         {
                             "name": "Water",
                             "quantity": 214.6289
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 35.43848
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Wheat",
+                            "quantity": 73
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Wheat",
+                    "name": "Wheat",
+                    "duration": 360,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 214.6289
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 35.43848
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Wheat",
+                            "quantity": 73
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Wheat",
+                    "name": "Wheat",
+                    "duration": 360,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 214.6289
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 70.87988
                         }
                     ],
                     "outputs": [
@@ -9783,6 +10381,52 @@
                         {
                             "name": "Water",
                             "quantity": 162.0703
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 33.74512
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Soybean",
+                            "quantity": 28
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Soybeans",
+                    "name": "Soybeans",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 162.0703
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 33.74512
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Soybean",
+                            "quantity": 28
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Soybeans",
+                    "name": "Soybeans",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 162.0703
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 67.49316
                         }
                     ],
                     "outputs": [
@@ -9800,6 +10444,52 @@
                         {
                             "name": "Water",
                             "quantity": 485.9473
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 75.92676
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Sugar cane",
+                            "quantity": 220
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_SugarCane",
+                    "name": "Sugar cane",
+                    "duration": 540,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 485.9473
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 75.92676
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Sugar cane",
+                            "quantity": 220
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_SugarCane",
+                    "name": "Sugar cane",
+                    "duration": 540,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 485.9473
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 151.8604
                         }
                     ],
                     "outputs": [
@@ -9817,6 +10507,52 @@
                         {
                             "name": "Water",
                             "quantity": 144.4922
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 23.625
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Vegetables",
+                            "quantity": 75
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Vegetables",
+                    "name": "Vegetables",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 144.4922
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 23.625
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Vegetables",
+                            "quantity": 75
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Vegetables",
+                    "name": "Vegetables",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 144.4922
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 47.25293
                         }
                     ],
                     "outputs": [
@@ -9834,6 +10570,52 @@
                         {
                             "name": "Water",
                             "quantity": 359.0625
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 40.49121
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Fruit",
+                            "quantity": 100
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Fruits",
+                    "name": "Fruits",
+                    "duration": 480,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 359.0625
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 40.49121
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Fruit",
+                            "quantity": 100
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Fruits",
+                    "name": "Fruits",
+                    "duration": 480,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 359.0625
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 80.9873
                         }
                     ],
                     "outputs": [
@@ -9851,6 +10633,52 @@
                         {
                             "name": "Water",
                             "quantity": 94.13086
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 15.18457
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Canola",
+                            "quantity": 33
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Canola",
+                    "name": "Canola",
+                    "duration": 180,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 94.13086
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 15.18457
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Canola",
+                            "quantity": 33
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Canola",
+                    "name": "Canola",
+                    "duration": 180,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 94.13086
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 30.37012
                         }
                     ],
                     "outputs": [
@@ -9868,6 +10696,52 @@
                         {
                             "name": "Water",
                             "quantity": 121.5234
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 20.24609
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Poppy",
+                            "quantity": 25
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Poppy",
+                    "name": "Poppy",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 121.5234
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 20.24609
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Poppy",
+                            "quantity": 25
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Poppy",
+                    "name": "Poppy",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 121.5234
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 40.49316
                         }
                     ],
                     "outputs": [
@@ -9885,6 +10759,52 @@
                         {
                             "name": "Water",
                             "quantity": 202.5
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 33.74512
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Flowers",
+                            "quantity": 30
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Flowers",
+                    "name": "Flowers",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 202.5
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 33.74512
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Flowers",
+                            "quantity": 30
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Flowers",
+                    "name": "Flowers",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 202.5
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 67.49316
                         }
                     ],
                     "outputs": [
@@ -9927,6 +10847,52 @@
                         {
                             "name": "Water",
                             "quantity": 108.0176
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 15.75
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Potato",
+                            "quantity": 58
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Potato",
+                    "name": "Potato",
+                    "duration": 180,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 108.0176
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 15.75
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Potato",
+                            "quantity": 58
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Potato",
+                    "name": "Potato",
+                    "duration": 180,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 108.0176
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 31.50195
                         }
                     ],
                     "outputs": [
@@ -9944,6 +10910,52 @@
                         {
                             "name": "Water",
                             "quantity": 159.6094
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 23.99902
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Corn",
+                            "quantity": 66
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Corn",
+                    "name": "Corn",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 159.6094
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 23.99902
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Corn",
+                            "quantity": 66
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Corn",
+                    "name": "Corn",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 159.6094
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 48
                         }
                     ],
                     "outputs": [
@@ -9961,6 +10973,52 @@
                         {
                             "name": "Water",
                             "quantity": 190.7227
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 31.50098
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Wheat",
+                            "quantity": 58
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Wheat",
+                    "name": "Wheat",
+                    "duration": 360,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 190.7227
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 31.50098
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Wheat",
+                            "quantity": 58
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Wheat",
+                    "name": "Wheat",
+                    "duration": 360,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 190.7227
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 63.00391
                         }
                     ],
                     "outputs": [
@@ -9978,6 +11036,52 @@
                         {
                             "name": "Water",
                             "quantity": 144.0234
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 29.99609
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Soybean",
+                            "quantity": 22
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Soybeans",
+                    "name": "Soybeans",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 144.0234
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 29.99609
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Soybean",
+                            "quantity": 22
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Soybeans",
+                    "name": "Soybeans",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 144.0234
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 59.99414
                         }
                     ],
                     "outputs": [
@@ -9995,6 +11099,52 @@
                         {
                             "name": "Water",
                             "quantity": 128.4375
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 21
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Vegetables",
+                            "quantity": 60
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Vegetables",
+                    "name": "Vegetables",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 128.4375
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 21
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Vegetables",
+                            "quantity": 60
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Vegetables",
+                    "name": "Vegetables",
+                    "duration": 240,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 128.4375
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 42.00293
                         }
                     ],
                     "outputs": [
@@ -10012,6 +11162,52 @@
                         {
                             "name": "Water",
                             "quantity": 83.67188
+                        },
+                        {
+                            "name": "Fertilizer I",
+                            "quantity": 13.49707
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Canola",
+                            "quantity": 26
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Canola",
+                    "name": "Canola",
+                    "duration": 180,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 83.67188
+                        },
+                        {
+                            "name": "Fertilizer II",
+                            "quantity": 13.49707
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Canola",
+                            "quantity": 26
+                        }
+                    ]
+                },
+                {
+                    "id": "Crop_Canola",
+                    "name": "Canola",
+                    "duration": 180,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 83.67188
+                        },
+                        {
+                            "name": "Fertilizer (organic)",
+                            "quantity": 26.99609
                         }
                     ],
                     "outputs": [
@@ -10050,12 +11246,7 @@
                     "id": "Crop_Potato",
                     "name": "Potato",
                     "duration": 180,
-                    "inputs": [
-                        {
-                            "name": "Water",
-                            "quantity": 108.0176
-                        }
-                    ],
+                    "inputs": [],
                     "outputs": [
                         {
                             "name": "Potato",
@@ -10067,12 +11258,7 @@
                     "id": "Crop_Corn",
                     "name": "Corn",
                     "duration": 240,
-                    "inputs": [
-                        {
-                            "name": "Water",
-                            "quantity": 159.6094
-                        }
-                    ],
+                    "inputs": [],
                     "outputs": [
                         {
                             "name": "Corn",
@@ -10084,12 +11270,7 @@
                     "id": "Crop_Wheat",
                     "name": "Wheat",
                     "duration": 360,
-                    "inputs": [
-                        {
-                            "name": "Water",
-                            "quantity": 190.7227
-                        }
-                    ],
+                    "inputs": [],
                     "outputs": [
                         {
                             "name": "Wheat",
@@ -10101,12 +11282,7 @@
                     "id": "Crop_Soybeans",
                     "name": "Soybeans",
                     "duration": 240,
-                    "inputs": [
-                        {
-                            "name": "Water",
-                            "quantity": 144.0234
-                        }
-                    ],
+                    "inputs": [],
                     "outputs": [
                         {
                             "name": "Soybean",
@@ -10118,12 +11294,7 @@
                     "id": "Crop_Vegetables",
                     "name": "Vegetables",
                     "duration": 240,
-                    "inputs": [
-                        {
-                            "name": "Water",
-                            "quantity": 128.4375
-                        }
-                    ],
+                    "inputs": [],
                     "outputs": [
                         {
                             "name": "Vegetables",
@@ -10135,12 +11306,7 @@
                     "id": "Crop_Canola",
                     "name": "Canola",
                     "duration": 180,
-                    "inputs": [
-                        {
-                            "name": "Water",
-                            "quantity": 83.67188
-                        }
-                    ],
+                    "inputs": [],
                     "outputs": [
                         {
                             "name": "Canola",
