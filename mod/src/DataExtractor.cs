@@ -1485,8 +1485,8 @@ namespace DataExtractorMod {
                                 inputItems2.Add(machineRecipeInputJson);
 
                                 string machineRecipeJson = MakeRecipeJsonObject(
-                                    crop.Id.ToString(),
-                                    crop.Strings.Name.ToString(),
+                                    crop.Id.ToString() + "_" + fertilizer.Id.ToString(),
+                                    crop.Strings.Name.ToString() + " " + fertilizer.Strings.Name.ToString(),
                                     duration.ToString(),
                                     inputItems2.JoinStrings(","),
                                     outputItems.JoinStrings(",")

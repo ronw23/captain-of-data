@@ -9526,8 +9526,8 @@
             ],
             "recipes": [
                 {
-                    "id": "Crop_Potato",
-                    "name": "Potato",
+                    "id": "Crop_Potato_Product_Fertilizer",
+                    "name": "Potato Fertilizer I",
                     "duration": 180,
                     "inputs": [
                         {
@@ -9547,8 +9547,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Potato",
-                    "name": "Potato",
+                    "id": "Crop_Potato_Product_Fertilizer2",
+                    "name": "Potato Fertilizer II",
                     "duration": 180,
                     "inputs": [
                         {
@@ -9568,8 +9568,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Potato",
-                    "name": "Potato",
+                    "id": "Crop_Potato_Product_FertilizerOrganic",
+                    "name": "Potato Fertilizer (organic)",
                     "duration": 180,
                     "inputs": [
                         {
@@ -9589,8 +9589,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Corn",
-                    "name": "Corn",
+                    "id": "Crop_Corn_Product_Fertilizer",
+                    "name": "Corn Fertilizer I",
                     "duration": 240,
                     "inputs": [
                         {
@@ -9610,8 +9610,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Corn",
-                    "name": "Corn",
+                    "id": "Crop_Corn_Product_Fertilizer2",
+                    "name": "Corn Fertilizer II",
                     "duration": 240,
                     "inputs": [
                         {
@@ -9631,8 +9631,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Corn",
-                    "name": "Corn",
+                    "id": "Crop_Corn_Product_FertilizerOrganic",
+                    "name": "Corn Fertilizer (organic)",
                     "duration": 240,
                     "inputs": [
                         {
@@ -9652,8 +9652,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Wheat",
-                    "name": "Wheat",
+                    "id": "Crop_Wheat_Product_Fertilizer",
+                    "name": "Wheat Fertilizer I",
                     "duration": 360,
                     "inputs": [
                         {
@@ -9673,8 +9673,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Wheat",
-                    "name": "Wheat",
+                    "id": "Crop_Wheat_Product_Fertilizer2",
+                    "name": "Wheat Fertilizer II",
                     "duration": 360,
                     "inputs": [
                         {
@@ -9694,8 +9694,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Wheat",
-                    "name": "Wheat",
+                    "id": "Crop_Wheat_Product_FertilizerOrganic",
+                    "name": "Wheat Fertilizer (organic)",
                     "duration": 360,
                     "inputs": [
                         {
@@ -9715,8 +9715,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Soybeans",
-                    "name": "Soybeans",
+                    "id": "Crop_Soybeans_Product_Fertilizer",
+                    "name": "Soybeans Fertilizer I",
                     "duration": 240,
                     "inputs": [
                         {
@@ -9736,8 +9736,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Soybeans",
-                    "name": "Soybeans",
+                    "id": "Crop_Soybeans_Product_Fertilizer2",
+                    "name": "Soybeans Fertilizer II",
                     "duration": 240,
                     "inputs": [
                         {
@@ -9757,8 +9757,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Soybeans",
-                    "name": "Soybeans",
+                    "id": "Crop_Soybeans_Product_FertilizerOrganic",
+                    "name": "Soybeans Fertilizer (organic)",
                     "duration": 240,
                     "inputs": [
                         {
@@ -9778,8 +9778,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_SugarCane",
-                    "name": "Sugar cane",
+                    "id": "Crop_SugarCane_Product_Fertilizer",
+                    "name": "Sugar cane Fertilizer I",
                     "duration": 540,
                     "inputs": [
                         {
@@ -9799,8 +9799,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_SugarCane",
-                    "name": "Sugar cane",
+                    "id": "Crop_SugarCane_Product_Fertilizer2",
+                    "name": "Sugar cane Fertilizer II",
                     "duration": 540,
                     "inputs": [
                         {
@@ -9820,8 +9820,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_SugarCane",
-                    "name": "Sugar cane",
+                    "id": "Crop_SugarCane_Product_FertilizerOrganic",
+                    "name": "Sugar cane Fertilizer (organic)",
                     "duration": 540,
                     "inputs": [
                         {
@@ -9841,8 +9841,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Vegetables",
-                    "name": "Vegetables",
+                    "id": "Crop_Vegetables_Product_Fertilizer",
+                    "name": "Vegetables Fertilizer I",
                     "duration": 240,
                     "inputs": [
                         {
@@ -9862,8 +9862,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Vegetables",
-                    "name": "Vegetables",
+                    "id": "Crop_Vegetables_Product_Fertilizer2",
+                    "name": "Vegetables Fertilizer II",
                     "duration": 240,
                     "inputs": [
                         {
@@ -9883,8 +9883,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Vegetables",
-                    "name": "Vegetables",
+                    "id": "Crop_Vegetables_Product_FertilizerOrganic",
+                    "name": "Vegetables Fertilizer (organic)",
                     "duration": 240,
                     "inputs": [
                         {
@@ -9904,8 +9904,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Fruits",
-                    "name": "Fruits",
+                    "id": "Crop_Fruits_Product_Fertilizer",
+                    "name": "Fruits Fertilizer I",
                     "duration": 480,
                     "inputs": [
                         {
@@ -9925,8 +9925,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Fruits",
-                    "name": "Fruits",
+                    "id": "Crop_Fruits_Product_Fertilizer2",
+                    "name": "Fruits Fertilizer II",
                     "duration": 480,
                     "inputs": [
                         {
@@ -9946,8 +9946,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Fruits",
-                    "name": "Fruits",
+                    "id": "Crop_Fruits_Product_FertilizerOrganic",
+                    "name": "Fruits Fertilizer (organic)",
                     "duration": 480,
                     "inputs": [
                         {
@@ -9967,8 +9967,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Canola",
-                    "name": "Canola",
+                    "id": "Crop_Canola_Product_Fertilizer",
+                    "name": "Canola Fertilizer I",
                     "duration": 180,
                     "inputs": [
                         {
@@ -9988,8 +9988,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Canola",
-                    "name": "Canola",
+                    "id": "Crop_Canola_Product_Fertilizer2",
+                    "name": "Canola Fertilizer II",
                     "duration": 180,
                     "inputs": [
                         {
@@ -10009,8 +10009,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Canola",
-                    "name": "Canola",
+                    "id": "Crop_Canola_Product_FertilizerOrganic",
+                    "name": "Canola Fertilizer (organic)",
                     "duration": 180,
                     "inputs": [
                         {
@@ -10030,8 +10030,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Poppy",
-                    "name": "Poppy",
+                    "id": "Crop_Poppy_Product_Fertilizer",
+                    "name": "Poppy Fertilizer I",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10051,8 +10051,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Poppy",
-                    "name": "Poppy",
+                    "id": "Crop_Poppy_Product_Fertilizer2",
+                    "name": "Poppy Fertilizer II",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10072,8 +10072,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Poppy",
-                    "name": "Poppy",
+                    "id": "Crop_Poppy_Product_FertilizerOrganic",
+                    "name": "Poppy Fertilizer (organic)",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10093,8 +10093,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Flowers",
-                    "name": "Flowers",
+                    "id": "Crop_Flowers_Product_Fertilizer",
+                    "name": "Flowers Fertilizer I",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10114,8 +10114,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Flowers",
-                    "name": "Flowers",
+                    "id": "Crop_Flowers_Product_Fertilizer2",
+                    "name": "Flowers Fertilizer II",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10135,8 +10135,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Flowers",
-                    "name": "Flowers",
+                    "id": "Crop_Flowers_Product_FertilizerOrganic",
+                    "name": "Flowers Fertilizer (organic)",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10185,8 +10185,8 @@
             ],
             "recipes": [
                 {
-                    "id": "Crop_Potato",
-                    "name": "Potato",
+                    "id": "Crop_Potato_Product_Fertilizer",
+                    "name": "Potato Fertilizer I",
                     "duration": 180,
                     "inputs": [
                         {
@@ -10206,8 +10206,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Potato",
-                    "name": "Potato",
+                    "id": "Crop_Potato_Product_Fertilizer2",
+                    "name": "Potato Fertilizer II",
                     "duration": 180,
                     "inputs": [
                         {
@@ -10227,8 +10227,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Potato",
-                    "name": "Potato",
+                    "id": "Crop_Potato_Product_FertilizerOrganic",
+                    "name": "Potato Fertilizer (organic)",
                     "duration": 180,
                     "inputs": [
                         {
@@ -10248,8 +10248,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Corn",
-                    "name": "Corn",
+                    "id": "Crop_Corn_Product_Fertilizer",
+                    "name": "Corn Fertilizer I",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10269,8 +10269,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Corn",
-                    "name": "Corn",
+                    "id": "Crop_Corn_Product_Fertilizer2",
+                    "name": "Corn Fertilizer II",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10290,8 +10290,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Corn",
-                    "name": "Corn",
+                    "id": "Crop_Corn_Product_FertilizerOrganic",
+                    "name": "Corn Fertilizer (organic)",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10311,8 +10311,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Wheat",
-                    "name": "Wheat",
+                    "id": "Crop_Wheat_Product_Fertilizer",
+                    "name": "Wheat Fertilizer I",
                     "duration": 360,
                     "inputs": [
                         {
@@ -10332,8 +10332,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Wheat",
-                    "name": "Wheat",
+                    "id": "Crop_Wheat_Product_Fertilizer2",
+                    "name": "Wheat Fertilizer II",
                     "duration": 360,
                     "inputs": [
                         {
@@ -10353,8 +10353,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Wheat",
-                    "name": "Wheat",
+                    "id": "Crop_Wheat_Product_FertilizerOrganic",
+                    "name": "Wheat Fertilizer (organic)",
                     "duration": 360,
                     "inputs": [
                         {
@@ -10374,8 +10374,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Soybeans",
-                    "name": "Soybeans",
+                    "id": "Crop_Soybeans_Product_Fertilizer",
+                    "name": "Soybeans Fertilizer I",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10395,8 +10395,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Soybeans",
-                    "name": "Soybeans",
+                    "id": "Crop_Soybeans_Product_Fertilizer2",
+                    "name": "Soybeans Fertilizer II",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10416,8 +10416,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Soybeans",
-                    "name": "Soybeans",
+                    "id": "Crop_Soybeans_Product_FertilizerOrganic",
+                    "name": "Soybeans Fertilizer (organic)",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10437,8 +10437,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_SugarCane",
-                    "name": "Sugar cane",
+                    "id": "Crop_SugarCane_Product_Fertilizer",
+                    "name": "Sugar cane Fertilizer I",
                     "duration": 540,
                     "inputs": [
                         {
@@ -10458,8 +10458,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_SugarCane",
-                    "name": "Sugar cane",
+                    "id": "Crop_SugarCane_Product_Fertilizer2",
+                    "name": "Sugar cane Fertilizer II",
                     "duration": 540,
                     "inputs": [
                         {
@@ -10479,8 +10479,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_SugarCane",
-                    "name": "Sugar cane",
+                    "id": "Crop_SugarCane_Product_FertilizerOrganic",
+                    "name": "Sugar cane Fertilizer (organic)",
                     "duration": 540,
                     "inputs": [
                         {
@@ -10500,8 +10500,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Vegetables",
-                    "name": "Vegetables",
+                    "id": "Crop_Vegetables_Product_Fertilizer",
+                    "name": "Vegetables Fertilizer I",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10521,8 +10521,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Vegetables",
-                    "name": "Vegetables",
+                    "id": "Crop_Vegetables_Product_Fertilizer2",
+                    "name": "Vegetables Fertilizer II",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10542,8 +10542,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Vegetables",
-                    "name": "Vegetables",
+                    "id": "Crop_Vegetables_Product_FertilizerOrganic",
+                    "name": "Vegetables Fertilizer (organic)",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10563,8 +10563,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Fruits",
-                    "name": "Fruits",
+                    "id": "Crop_Fruits_Product_Fertilizer",
+                    "name": "Fruits Fertilizer I",
                     "duration": 480,
                     "inputs": [
                         {
@@ -10584,8 +10584,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Fruits",
-                    "name": "Fruits",
+                    "id": "Crop_Fruits_Product_Fertilizer2",
+                    "name": "Fruits Fertilizer II",
                     "duration": 480,
                     "inputs": [
                         {
@@ -10605,8 +10605,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Fruits",
-                    "name": "Fruits",
+                    "id": "Crop_Fruits_Product_FertilizerOrganic",
+                    "name": "Fruits Fertilizer (organic)",
                     "duration": 480,
                     "inputs": [
                         {
@@ -10626,8 +10626,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Canola",
-                    "name": "Canola",
+                    "id": "Crop_Canola_Product_Fertilizer",
+                    "name": "Canola Fertilizer I",
                     "duration": 180,
                     "inputs": [
                         {
@@ -10647,8 +10647,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Canola",
-                    "name": "Canola",
+                    "id": "Crop_Canola_Product_Fertilizer2",
+                    "name": "Canola Fertilizer II",
                     "duration": 180,
                     "inputs": [
                         {
@@ -10668,8 +10668,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Canola",
-                    "name": "Canola",
+                    "id": "Crop_Canola_Product_FertilizerOrganic",
+                    "name": "Canola Fertilizer (organic)",
                     "duration": 180,
                     "inputs": [
                         {
@@ -10689,8 +10689,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Poppy",
-                    "name": "Poppy",
+                    "id": "Crop_Poppy_Product_Fertilizer",
+                    "name": "Poppy Fertilizer I",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10710,8 +10710,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Poppy",
-                    "name": "Poppy",
+                    "id": "Crop_Poppy_Product_Fertilizer2",
+                    "name": "Poppy Fertilizer II",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10731,8 +10731,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Poppy",
-                    "name": "Poppy",
+                    "id": "Crop_Poppy_Product_FertilizerOrganic",
+                    "name": "Poppy Fertilizer (organic)",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10752,8 +10752,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Flowers",
-                    "name": "Flowers",
+                    "id": "Crop_Flowers_Product_Fertilizer",
+                    "name": "Flowers Fertilizer I",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10773,8 +10773,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Flowers",
-                    "name": "Flowers",
+                    "id": "Crop_Flowers_Product_Fertilizer2",
+                    "name": "Flowers Fertilizer II",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10794,8 +10794,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Flowers",
-                    "name": "Flowers",
+                    "id": "Crop_Flowers_Product_FertilizerOrganic",
+                    "name": "Flowers Fertilizer (organic)",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10840,8 +10840,8 @@
             ],
             "recipes": [
                 {
-                    "id": "Crop_Potato",
-                    "name": "Potato",
+                    "id": "Crop_Potato_Product_Fertilizer",
+                    "name": "Potato Fertilizer I",
                     "duration": 180,
                     "inputs": [
                         {
@@ -10861,8 +10861,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Potato",
-                    "name": "Potato",
+                    "id": "Crop_Potato_Product_Fertilizer2",
+                    "name": "Potato Fertilizer II",
                     "duration": 180,
                     "inputs": [
                         {
@@ -10882,8 +10882,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Potato",
-                    "name": "Potato",
+                    "id": "Crop_Potato_Product_FertilizerOrganic",
+                    "name": "Potato Fertilizer (organic)",
                     "duration": 180,
                     "inputs": [
                         {
@@ -10903,8 +10903,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Corn",
-                    "name": "Corn",
+                    "id": "Crop_Corn_Product_Fertilizer",
+                    "name": "Corn Fertilizer I",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10924,8 +10924,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Corn",
-                    "name": "Corn",
+                    "id": "Crop_Corn_Product_Fertilizer2",
+                    "name": "Corn Fertilizer II",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10945,8 +10945,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Corn",
-                    "name": "Corn",
+                    "id": "Crop_Corn_Product_FertilizerOrganic",
+                    "name": "Corn Fertilizer (organic)",
                     "duration": 240,
                     "inputs": [
                         {
@@ -10966,8 +10966,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Wheat",
-                    "name": "Wheat",
+                    "id": "Crop_Wheat_Product_Fertilizer",
+                    "name": "Wheat Fertilizer I",
                     "duration": 360,
                     "inputs": [
                         {
@@ -10987,8 +10987,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Wheat",
-                    "name": "Wheat",
+                    "id": "Crop_Wheat_Product_Fertilizer2",
+                    "name": "Wheat Fertilizer II",
                     "duration": 360,
                     "inputs": [
                         {
@@ -11008,8 +11008,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Wheat",
-                    "name": "Wheat",
+                    "id": "Crop_Wheat_Product_FertilizerOrganic",
+                    "name": "Wheat Fertilizer (organic)",
                     "duration": 360,
                     "inputs": [
                         {
@@ -11029,8 +11029,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Soybeans",
-                    "name": "Soybeans",
+                    "id": "Crop_Soybeans_Product_Fertilizer",
+                    "name": "Soybeans Fertilizer I",
                     "duration": 240,
                     "inputs": [
                         {
@@ -11050,8 +11050,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Soybeans",
-                    "name": "Soybeans",
+                    "id": "Crop_Soybeans_Product_Fertilizer2",
+                    "name": "Soybeans Fertilizer II",
                     "duration": 240,
                     "inputs": [
                         {
@@ -11071,8 +11071,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Soybeans",
-                    "name": "Soybeans",
+                    "id": "Crop_Soybeans_Product_FertilizerOrganic",
+                    "name": "Soybeans Fertilizer (organic)",
                     "duration": 240,
                     "inputs": [
                         {
@@ -11092,8 +11092,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Vegetables",
-                    "name": "Vegetables",
+                    "id": "Crop_Vegetables_Product_Fertilizer",
+                    "name": "Vegetables Fertilizer I",
                     "duration": 240,
                     "inputs": [
                         {
@@ -11113,8 +11113,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Vegetables",
-                    "name": "Vegetables",
+                    "id": "Crop_Vegetables_Product_Fertilizer2",
+                    "name": "Vegetables Fertilizer II",
                     "duration": 240,
                     "inputs": [
                         {
@@ -11134,8 +11134,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Vegetables",
-                    "name": "Vegetables",
+                    "id": "Crop_Vegetables_Product_FertilizerOrganic",
+                    "name": "Vegetables Fertilizer (organic)",
                     "duration": 240,
                     "inputs": [
                         {
@@ -11155,8 +11155,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Canola",
-                    "name": "Canola",
+                    "id": "Crop_Canola_Product_Fertilizer",
+                    "name": "Canola Fertilizer I",
                     "duration": 180,
                     "inputs": [
                         {
@@ -11176,8 +11176,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Canola",
-                    "name": "Canola",
+                    "id": "Crop_Canola_Product_Fertilizer2",
+                    "name": "Canola Fertilizer II",
                     "duration": 180,
                     "inputs": [
                         {
@@ -11197,8 +11197,8 @@
                     ]
                 },
                 {
-                    "id": "Crop_Canola",
-                    "name": "Canola",
+                    "id": "Crop_Canola_Product_FertilizerOrganic",
+                    "name": "Canola Fertilizer (organic)",
                     "duration": 180,
                     "inputs": [
                         {
