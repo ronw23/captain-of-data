@@ -1446,6 +1446,7 @@ namespace DataExtractorMod {
                         machinesProducts.Add(vehicleProductJson);
                     }
 
+                    //recipes are build for max fertility
                     List<string> recipeItems = new List<string> { };
                     foreach (CropProto crop in crops)
                     {
@@ -1580,6 +1581,7 @@ namespace DataExtractorMod {
                         machinesProducts.Add(vehicleProductJson);
                     }
 
+                    //recipe is built for max animals (500 chickens)
                     List<string> recipeItems = new List<string> { };
                     var duration = 60;
 
@@ -2935,12 +2937,13 @@ namespace DataExtractorMod {
                         machinesProducts.Add(vehicleProductJson);
                     }
 
-                    string machineRecipeOutputJson = MakeRecipeIOJsonObject(machine.WaterProto.Strings.Name.ToString(), machine.WaterCollectedPerDay.ToString());
+                    //machine.WaterCollectedPerDay.ToString() - wiki says 35-40 Units per year on average
+                    //one day = 2 in game seconds, one month = 60 in game seconds
+                    string machineRecipeOutputJson = MakeRecipeIOJsonObject(machine.WaterProto.Strings.Name.ToString(), "37");
                     string machineRecipeJson = MakeRecipeJsonObject(
                         id,
                         name,
-                        //one day = 2 in game seconds, one month = 60 in game seconds
-                        "2",
+                        "720",
                         "",
                         machineRecipeOutputJson
                     );
@@ -2974,6 +2977,7 @@ namespace DataExtractorMod {
             }
 
             IEnumerable<DataCenterProto> dataCenters = protosDb.All<DataCenterProto>();
+            IEnumerable<ServerRackProto> dataRacks = protosDb.All<ServerRackProto>();
             foreach (DataCenterProto machine in dataCenters)
             {
 
@@ -2984,8 +2988,8 @@ namespace DataExtractorMod {
                     string name = machine.Strings.Name.ToString();
                     string category = "";
                     string workers = machine.Costs.Workers.ToString();
-                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.ToString();
-                    string maintenance_cost_quantity = machine.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
+                    string maintenance_cost_units = "";
+                    string maintenance_cost_quantity = "0";
                     string electricity_consumed = "0";
                     string electricity_generated = "0";
                     string computing_consumed = "0";
@@ -3010,6 +3014,44 @@ namespace DataExtractorMod {
                         machinesProducts.Add(vehicleProductJson);
                     }
 
+                    //generate recipe on max server racks (48)
+                    int racks_capacity = machine.RacksCapacity;
+                    List<string> recipeItems = new List<string> { };
+                    foreach (ServerRackProto dataRack in dataRacks)
+                    {
+                        string maintenance_cost_units1 = machine.Costs.Maintenance.Product.Strings.Name.ToString();
+                        string maintenance_cost_quantity1 = (machine.Costs.Maintenance.MaintenancePerMonth.Value + (racks_capacity * dataRack.Maintenance.Value)).ToString();
+
+                        string recipe_name = dataRack.Strings.Name.ToString();
+                        string recipe_duration = "60";
+
+                        List<string> inputItems = new List<string> { };
+                        List<string> outputItems = new List<string> { };
+
+                        string machineRecipeInputJson;
+                        machineRecipeInputJson = MakeRecipeIOJsonObject(machine.CoolantIn.Strings.Name.ToString(), (racks_capacity * dataRack.CoolantInPerMonth.Value).ToString());
+                        inputItems.Add(machineRecipeInputJson);
+                        machineRecipeInputJson = MakeRecipeIOJsonObject(maintenance_cost_units1, maintenance_cost_quantity1);
+                        inputItems.Add(machineRecipeInputJson);
+                        machineRecipeInputJson = MakeRecipeIOJsonObject("Electricity", (racks_capacity * dataRack.ConsumedPowerPerTick.Value).ToString());
+                        inputItems.Add(machineRecipeInputJson);
+
+                        string machineRecipeOutputJson;
+                        machineRecipeOutputJson = MakeRecipeIOJsonObject(machine.CoolantOut.Strings.Name.ToString(), (racks_capacity * dataRack.CoolantOutPerMonth.Value).ToString());
+                        outputItems.Add(machineRecipeOutputJson);
+                        machineRecipeOutputJson = MakeRecipeIOJsonObject("Computing", (racks_capacity * dataRack.CreatedComputingPerTick.Value).ToString());
+                        outputItems.Add(machineRecipeOutputJson);
+
+                        string machineRecipeJson = MakeRecipeJsonObject(
+                            dataRack.Id.ToString(),
+                            recipe_name,
+                            recipe_duration,
+                            inputItems.JoinStrings(","),
+                            outputItems.JoinStrings(",")
+                        );
+                        recipeItems.Add(machineRecipeJson);
+                    }
+
                     string machineJson = MakeMachineJsonObject(
                         id,
                         name,
@@ -3025,7 +3067,7 @@ namespace DataExtractorMod {
                         unity_cost,
                         research_speed,
                         machinesProducts.JoinStrings(","),
-                        ""
+                        recipeItems.JoinStrings(",")
                     );
                     machineItems.Add(machineJson);
 
@@ -3038,8 +3080,7 @@ namespace DataExtractorMod {
                 }
             }
 
-            IEnumerable<ServerRackProto> dataRack = protosDb.All<ServerRackProto>();
-            foreach (ServerRackProto machine in dataRack)
+            foreach (ServerRackProto machine in dataRacks)
             {
 
                 try
@@ -3067,28 +3108,6 @@ namespace DataExtractorMod {
                     );
                     machinesProducts.Add(vehicleProductJson);
 
-                    List<string> recipeItems = new List<string> { };
-                    string recipe_name = "Create Computing Power";
-                    string recipe_duration = "60";
-
-                    List<string> inputItems = new List<string> { };
-                    List<string> outputItems = new List<string> { };
-
-                    string machineRecipeInputJson = MakeRecipeIOJsonObject("Chilled water", machine.CoolantInPerMonth.Value.ToString());
-                    inputItems.Add(machineRecipeInputJson);
-
-                    string machineRecipeOutputJson = MakeRecipeIOJsonObject("Water", machine.CoolantOutPerMonth.Value.ToString());
-                    outputItems.Add(machineRecipeOutputJson);
-
-                    string machineRecipeJson = MakeRecipeJsonObject(
-                        recipe_name,
-                        recipe_name,
-                        recipe_duration,
-                        inputItems.JoinStrings(","),
-                        outputItems.JoinStrings(",")
-                    );
-                    recipeItems.Add(machineRecipeJson);
-
                     string machineJson = MakeMachineJsonObject(
                         id,
                         name,
@@ -3104,7 +3123,7 @@ namespace DataExtractorMod {
                         unity_cost,
                         research_speed,
                         machinesProducts.JoinStrings(","),
-                        recipeItems.JoinStrings(",")
+                        ""
                     );
                     machineItems.Add(machineJson);
 

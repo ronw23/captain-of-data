@@ -12900,12 +12900,12 @@
                 {
                     "id": "RainwaterHarvester",
                     "name": "Rainwater harvester",
-                    "duration": 2,
+                    "duration": 720,
                     "inputs": [],
                     "outputs": [
                         {
                             "name": "Water",
-                            "quantity": 1
+                            "quantity": 37
                         }
                     ]
                 }
@@ -12917,8 +12917,8 @@
             "category": "General machines",
             "next_tier": "",
             "workers": 6,
-            "maintenance_cost_units": "Maintenance III",
-            "maintenance_cost_quantity": 4,
+            "maintenance_cost_units": "",
+            "maintenance_cost_quantity": 0,
             "electricity_consumed": 0,
             "electricity_generated": 0,
             "computing_consumed": 0,
@@ -12941,7 +12941,37 @@
                     "quantity": 20
                 }
             ],
-            "recipes": []
+            "recipes": [
+                {
+                    "id": "BasicServerRack",
+                    "name": "Basic rack",
+                    "duration": 60,
+                    "inputs": [
+                        {
+                            "name": "Chilled water",
+                            "quantity": 24
+                        },
+                        {
+                            "name": "Maintenance III",
+                            "quantity": 31.84375
+                        },
+                        {
+                            "name": "Electricity",
+                            "quantity": 240
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 24
+                        },
+                        {
+                            "name": "Computing",
+                            "quantity": 48
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "BasicServerRack",
@@ -12965,25 +12995,7 @@
                     "quantity": 20
                 }
             ],
-            "recipes": [
-                {
-                    "id": "Create Computing Power",
-                    "name": "Create Computing Power",
-                    "duration": 60,
-                    "inputs": [
-                        {
-                            "name": "Chilled water",
-                            "quantity": 0.5
-                        }
-                    ],
-                    "outputs": [
-                        {
-                            "name": "Water",
-                            "quantity": 0.5
-                        }
-                    ]
-                }
-            ]
+            "recipes": []
         }
     ]
 }
