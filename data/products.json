@@ -1,5 +1,5 @@
 {
-    "game_version": "0.4.14.0",
+    "game_version": "0.5.0.0",
     "products": [
         {
             "id": "Product_Virtual_Electricity",
@@ -23,6 +23,12 @@
             "id": "Product_Virtual_Upoints",
             "name": "Unity",
             "icon": "Unity",
+            "type": "VirtualProductProto"
+        },
+        {
+            "id": "Product_Virtual_Heat",
+            "name": "Heat",
+            "icon": "Heat",
             "type": "VirtualProductProto"
         },
         {
@@ -50,6 +56,12 @@
             "type": "CountableProductProto"
         },
         {
+            "id": "Product_Woodchips",
+            "name": "Woodchips",
+            "icon": "Woodchips",
+            "type": "LooseProductProto"
+        },
+        {
             "id": "Product_Fertilizer",
             "name": "Fertilizer I",
             "icon": "Fertilizer1",
@@ -66,6 +78,18 @@
             "name": "Fertilizer (organic)",
             "icon": "Fertilizerorganic",
             "type": "FluidProductProto"
+        },
+        {
+            "id": "Product_TreeSapling",
+            "name": "Tree sapling",
+            "icon": "Treesapling",
+            "type": "CountableProductProto"
+        },
+        {
+            "id": "Product_Paper",
+            "name": "Paper",
+            "icon": "Paper",
+            "type": "CountableProductProto"
         },
         {
             "id": "Product_Dirt",
@@ -101,6 +125,12 @@
             "id": "Product_Gravel",
             "name": "Gravel",
             "icon": "Gravel",
+            "type": "LooseProductProto"
+        },
+        {
+            "id": "Product_ManufacturedSand",
+            "name": "Manufactured sand",
+            "icon": "Manufacturedsand",
             "type": "LooseProductProto"
         },
         {
@@ -152,6 +182,12 @@
             "type": "LooseProductProto"
         },
         {
+            "id": "Product_IronScrapPressed",
+            "name": "Iron scrap pressed",
+            "icon": "Ironscrappressed",
+            "type": "CountableProductProto"
+        },
+        {
             "id": "Product_MoltenIron",
             "name": "Molten iron",
             "icon": "Molteniron",
@@ -192,6 +228,12 @@
             "name": "Copper scrap",
             "icon": "Copperscrap",
             "type": "LooseProductProto"
+        },
+        {
+            "id": "Product_CopperScrapPressed",
+            "name": "Copper scrap pressed",
+            "icon": "Copperscrappressed",
+            "type": "CountableProductProto"
         },
         {
             "id": "Product_MoltenCopper",
@@ -248,6 +290,12 @@
             "type": "LooseProductProto"
         },
         {
+            "id": "Product_GoldScrapPressed",
+            "name": "Gold scrap pressed",
+            "icon": "Goldscrappressed",
+            "type": "CountableProductProto"
+        },
+        {
             "id": "Product_Sand",
             "name": "Sand",
             "icon": "Sand",
@@ -290,21 +338,51 @@
             "type": "LooseProductProto"
         },
         {
-            "id": "Product_YellowCake",
+            "id": "Product_Yellowcake",
             "name": "Yellowcake",
             "icon": "Yellowcake",
             "type": "LooseProductProto"
         },
         {
-            "id": "Product_UraniumPellets",
-            "name": "Uranium pellets",
-            "icon": "Uraniumpellets",
+            "id": "Product_UraniumEnriched",
+            "name": "Enriched uranium (4%)",
+            "icon": "Enricheduranium4%",
             "type": "CountableProductProto"
+        },
+        {
+            "id": "Product_UraniumEnriched20",
+            "name": "Enriched uranium (20%)",
+            "icon": "Enricheduranium20%",
+            "type": "CountableProductProto"
+        },
+        {
+            "id": "Product_UraniumReprocessed",
+            "name": "Reprocessed uranium (1%)",
+            "icon": "Reprocesseduranium1%",
+            "type": "CountableProductProto"
+        },
+        {
+            "id": "Product_Plutonium",
+            "name": "Plutonium",
+            "icon": "Plutonium",
+            "type": "CountableProductProto"
+        },
+        {
+            "id": "Product_UraniumDepleted",
+            "name": "Depleted uranium",
+            "icon": "Depleteduranium",
+            "type": "LooseProductProto"
         },
         {
             "id": "Product_UraniumRod",
             "name": "Uranium rod",
             "icon": "Uraniumrod",
+            "type": "CountableProductProto"
+        },
+        {
+            "id": "Product_MoxRod",
+            "name": "MOX rod",
+            "icon": "MOXrod",
             "type": "CountableProductProto"
         },
         {
@@ -314,9 +392,57 @@
             "type": "CountableProductProto"
         },
         {
+            "id": "Product_SpentMox",
+            "name": "Spent MOX",
+            "icon": "SpentMOX",
+            "type": "CountableProductProto"
+        },
+        {
+            "id": "Product_FissionProduct",
+            "name": "Fission product",
+            "icon": "Fissionproduct",
+            "type": "CountableProductProto"
+        },
+        {
+            "id": "Product_RetiredWaste",
+            "name": "Retired waste",
+            "icon": "Retiredwaste",
+            "type": "CountableProductProto"
+        },
+        {
+            "id": "Product_CoreFuel",
+            "name": "Core fuel",
+            "icon": "Corefuel",
+            "type": "FluidProductProto"
+        },
+        {
+            "id": "Product_CoreFuelDirty",
+            "name": "Core fuel (spent)",
+            "icon": "Corefuelspent",
+            "type": "FluidProductProto"
+        },
+        {
+            "id": "Product_BlanketFuel",
+            "name": "Blanket fuel",
+            "icon": "Blanketfuel",
+            "type": "FluidProductProto"
+        },
+        {
+            "id": "Product_BlanketFuelEnriched",
+            "name": "Blanket fuel (enriched)",
+            "icon": "Blanketfuelenriched",
+            "type": "FluidProductProto"
+        },
+        {
             "id": "Product_Quartz",
             "name": "Quartz",
             "icon": "Quartz",
+            "type": "LooseProductProto"
+        },
+        {
+            "id": "Product_QuartzCrushed",
+            "name": "Quartz crushed",
+            "icon": "Quartzcrushed",
             "type": "LooseProductProto"
         },
         {
@@ -392,15 +518,21 @@
             "type": "FluidProductProto"
         },
         {
+            "id": "Product_SteamSp",
+            "name": "Steam (super)",
+            "icon": "Steamsuper",
+            "type": "FluidProductProto"
+        },
+        {
             "id": "Product_SteamHi",
-            "name": "Steam hi",
-            "icon": "Steamhi",
+            "name": "Steam (high)",
+            "icon": "Steamhigh",
             "type": "FluidProductProto"
         },
         {
             "id": "Product_SteamLP",
-            "name": "Steam lo",
-            "icon": "Steamlo",
+            "name": "Steam (low)",
+            "icon": "Steamlow",
             "type": "FluidProductProto"
         },
         {
@@ -426,6 +558,12 @@
             "name": "Recyclables",
             "icon": "Recyclables",
             "type": "LooseProductProto"
+        },
+        {
+            "id": "Product_RecyclablesPressed",
+            "name": "Recyclables pressed",
+            "icon": "Recyclablespressed",
+            "type": "CountableProductProto"
         },
         {
             "id": "Product_CrudeOil",
@@ -516,12 +654,6 @@
             "name": "Nitrogen",
             "icon": "Nitrogen",
             "type": "FluidProductProto"
-        },
-        {
-            "id": "Product_NitrogenLiquidTank",
-            "name": "Nitrogen Tank",
-            "icon": "NitrogenTank",
-            "type": "CountableProductProto"
         },
         {
             "id": "Product_CarbonDioxide",
@@ -984,6 +1116,12 @@
             "name": "Waste",
             "icon": "Waste",
             "type": "LooseProductProto"
+        },
+        {
+            "id": "Product_WastePressed",
+            "name": "Waste pressed",
+            "icon": "Wastepressed",
+            "type": "CountableProductProto"
         },
         {
             "id": "Product_Flowers",

@@ -163,7 +163,7 @@ namespace DataExtractorMod {
          * -------------------------------------
         */
 
-        public string MakeRecipeIOJsonObject(
+        public static string MakeRecipeIOJsonObject(
             string name,
             string quantity
         )
@@ -182,7 +182,7 @@ namespace DataExtractorMod {
             return obj.ToString();
         }
 
-        public string MakeMachineJsonObject(
+        public static string MakeMachineJsonObject(
             string id,
             string name,
             string category,
@@ -221,7 +221,7 @@ namespace DataExtractorMod {
             );
         }
 
-        public string MakeMachineJsonObject2 (
+        public static string MakeMachineJsonObject2 (
             string id,
             string name, 
             string category,
@@ -269,7 +269,7 @@ namespace DataExtractorMod {
             return obj.ToString();
         }
 
-        public string MakeTransportJsonObject(
+        public static string MakeTransportJsonObject(
             string id,
             string name,
             string category,
@@ -303,7 +303,7 @@ namespace DataExtractorMod {
             return obj.ToString();
         }
 
-        public string MakeRecipeJsonObject(
+        public static string MakeRecipeJsonObject(
             string id,
             string name,
             string duration,
@@ -327,7 +327,7 @@ namespace DataExtractorMod {
             return obj.ToString();
         }
 
-        public string MakeVehicleJsonObject(
+        public static string MakeVehicleJsonObject(
             string name,
             string costs
         )
@@ -345,7 +345,7 @@ namespace DataExtractorMod {
             return obj.ToString();
         }
 
-        public string MakeVehicleProductJsonObject(
+        public static string MakeVehicleProductJsonObject(
             string product,
             string quantity
         )
@@ -363,7 +363,7 @@ namespace DataExtractorMod {
             return obj.ToString();
         }
 
-        public string MakeEngineJsonObject(
+        public static string MakeEngineJsonObject(
             string name,
             string capacity,
             string crew,
@@ -385,7 +385,7 @@ namespace DataExtractorMod {
             return obj.ToString();
         }
         
-        public string MakeGunJsonObject(
+        public static string MakeGunJsonObject(
             string name,
             string range,
             string damage,
@@ -409,7 +409,7 @@ namespace DataExtractorMod {
             return obj.ToString();
         }
         
-        public string MakeArmorJsonObject(
+        public static string MakeArmorJsonObject(
             string name,
             string hp,
             string armor,
@@ -431,7 +431,7 @@ namespace DataExtractorMod {
             return obj.ToString();
         }
 
-        public string MakeBridgeJsonObject(
+        public static string MakeBridgeJsonObject(
             string name,
             string hp,
             string radar,
@@ -455,7 +455,7 @@ namespace DataExtractorMod {
             return obj.ToString();
         }
         
-        public string MakeTankJsonObject(
+        public static string MakeTankJsonObject(
             string name,
             string added_capacity,
             string costs
@@ -475,7 +475,7 @@ namespace DataExtractorMod {
             return obj.ToString();
         }
 
-        public string MakeProductJsonObject(
+        public static string MakeProductJsonObject(
             string id,
             string name,
             string type
@@ -496,7 +496,7 @@ namespace DataExtractorMod {
             return obj.ToString();
         }
 
-        public string MakeTerrainMaterialJsonObject(
+        public static string MakeTerrainMaterialJsonObject(
             string id,
             string name,
             string mined_product,
@@ -532,7 +532,7 @@ namespace DataExtractorMod {
             return obj.ToString();
         }
 
-         public string MakeContractJsonObject(
+         public static string MakeContractJsonObject(
             string id,
             string product_to_buy_name,
             string product_to_buy_quantity,
@@ -565,7 +565,7 @@ namespace DataExtractorMod {
             return obj.ToString();
         }
 
-        public string MakeResearchJsonObject(
+        public static string MakeResearchJsonObject(
             string id,
             string name,
             string difficulty,
@@ -603,6 +603,82 @@ namespace DataExtractorMod {
                 n = n.Replace(" I", "1");
             n = n.Replace(" ", "");
             return n;
+        }
+
+        public static string MakeRecipeJsonObject(
+            ProtosDb protosDb,
+            IRecipeForUi recipe,
+            string defaultId = "",
+            string defaultName = ""
+        )
+        {
+            var duration = (recipe.Duration / 10);
+            var inputs = recipe.AllUserVisibleInputs;
+            var outputs = recipe.AllUserVisibleOutputs;
+
+            string recipe_id = recipe.Id.ToString();
+            string recipe_name = (recipe is RecipeProto) ? ((RecipeProto)recipe).Strings.Name.ToString() : recipe.Id.ToString();
+            if(recipe_id.Equals("RecipeForUiData") && !defaultId.IsEmpty())
+            {
+                recipe_id = defaultId;
+            }
+            if (recipe_name.Equals("RecipeForUiData") && !defaultName.IsEmpty())
+            {
+                recipe_name = defaultName;
+            }
+            string recipe_duration = duration.ToString();
+
+            List<string> inputItems = new List<string> { };
+            List<string> outputItems = new List<string> { };
+
+            inputs.ForEach(delegate (RecipeInput input)
+            {
+                Option<ProductProto> product = protosDb.Get<ProductProto>(input.Product.Id);
+                string machineRecipeInputJson = MakeRecipeIOJsonObject(input.Product.Strings.Name.ToString(), input.Quantity.Value.ToString());
+                inputItems.Add(machineRecipeInputJson);
+            });
+
+            outputs.ForEach(delegate (RecipeOutput output)
+            {
+                Option<ProductProto> product = protosDb.Get<ProductProto>(output.Product.Id);
+                string machineRecipeOutputJson = MakeRecipeIOJsonObject(output.Product.Strings.Name.ToString(), output.Quantity.Value.ToString());
+                outputItems.Add(machineRecipeOutputJson);
+            });
+
+            string machineRecipeJson = MakeRecipeJsonObject(
+                recipe_id,
+                recipe_name,
+                recipe_duration,
+                inputItems.JoinStrings(","),
+                outputItems.JoinStrings(",")
+            );
+            return machineRecipeJson;
+        }
+
+        public static List<string> MakeRecipesJsonObject(
+            ProtosDb protosDb,
+            IEnumerable<IRecipeForUi> machineRecipes,
+            string defaultId = "",
+            string defaultName = ""
+        )
+        {
+            List<string> recipeItems = new List<string> { };
+
+            int i = 0;
+            foreach (IRecipeForUi recipe in machineRecipes)
+            {
+                string defaultIdThis = defaultId.IsEmpty() ? defaultId : (defaultId + ((i != 0) ? i.ToString() : ""));
+                string defaultNameThis = defaultName.IsEmpty() ? defaultName : (defaultName + ((i != 0) ? (" " + i.ToString()) : ""));
+                string machineRecipeJson = MakeRecipeJsonObject(
+                    protosDb,
+                    recipe,
+                    defaultIdThis,
+                    defaultNameThis
+                );
+                recipeItems.Add(machineRecipeJson);
+                i++;
+            }
+            return recipeItems;
         }
 
         /*
@@ -906,9 +982,9 @@ namespace DataExtractorMod {
                     string unity_cost = "0";
                     string research_speed = "0";
                     string next_tier = "";
-                    if (generator.NextTier.HasValue)
+                    if (generator.Upgrade.NextTier.HasValue)
                     {
-                        next_tier = generator.NextTier.Value.Id.ToString();
+                        next_tier = generator.Upgrade.NextTier.Value.Id.ToString();
                     }
 
                     foreach (ToolbarCategoryProto cat in generator.Graphics.Categories)
@@ -927,40 +1003,7 @@ namespace DataExtractorMod {
                         machinesProducts.Add(vehicleProductJson);
                     }
 
-                    List<string> recipeItems = new List<string> { };
-
-                    var duration = (generator.Recipe.Duration / 10);
-                    var inputs = generator.Recipe.AllUserVisibleInputs;
-                    var outputs = generator.Recipe.AllUserVisibleOutputs;
-
-                    string recipe_name = generator.Recipe.Id.ToString();
-                    string recipe_duration = duration.ToString();
-
-                    List<string> inputItems = new List<string> { };
-                    List<string> outputItems = new List<string> { };
-
-                    inputs.ForEach(delegate (RecipeInput input)
-                    {
-                        Option<ProductProto> product = protosDb.Get<ProductProto>(input.Product.Id);
-                        string machineRecipeInputJson = MakeRecipeIOJsonObject(input.Product.Strings.Name.ToString(), input.Quantity.Value.ToString());
-                        inputItems.Add(machineRecipeInputJson);
-                    });
-
-                    outputs.ForEach(delegate (RecipeOutput input)
-                    {
-                        Option<ProductProto> product = protosDb.Get<ProductProto>(input.Product.Id);
-                        string machineRecipeOutputJson = MakeRecipeIOJsonObject(input.Product.Strings.Name.ToString(), input.Quantity.Value.ToString());
-                        outputItems.Add(machineRecipeOutputJson);
-                    });
-
-                    string machineRecipeJson = MakeRecipeJsonObject(
-                        recipe_name,
-                        recipe_name,
-                        recipe_duration,
-                        inputItems.JoinStrings(","),
-                        outputItems.JoinStrings(",")
-                    );
-                    recipeItems.Add(machineRecipeJson);
+                    List<string> recipeItems = MakeRecipesJsonObject(protosDb, new IRecipeForUi[] { generator.Recipe });
 
                     string machineJson = MakeMachineJsonObject2(
                         id,
@@ -1032,41 +1075,10 @@ namespace DataExtractorMod {
                         machinesProducts.Add(vehicleProductJson);
                     }
 
-                    List<string> recipeItems = new List<string> { };
+                    List<string> recipeItems = MakeRecipesJsonObject(protosDb, new IRecipeForUi[] { generator.Recipe });
 
-                    var duration = (generator.Recipe.Duration / 10);
-                    var inputs = generator.Recipe.AllUserVisibleInputs;
                     var outputs = generator.Recipe.AllUserVisibleOutputs;
-
-                    string recipe_name = generator.Recipe.Id.ToString();
-                    string recipe_duration = duration.ToString();
-
-                    List<string> inputItems = new List<string> { };
-                    List<string> outputItems = new List<string> { };
-
-                    inputs.ForEach(delegate (RecipeInput input)
-                    {
-                        Option<ProductProto> product = protosDb.Get<ProductProto>(input.Product.Id);
-                        string machineRecipeInputJson = MakeRecipeIOJsonObject(input.Product.Strings.Name.ToString(), input.Quantity.Value.ToString());
-                        inputItems.Add(machineRecipeInputJson);
-                    });
-
-                    outputs.ForEach(delegate (RecipeOutput input)
-                    {
-                        Option<ProductProto> product = protosDb.Get<ProductProto>(input.Product.Id);
-                        string machineRecipeOutputJson = MakeRecipeIOJsonObject(input.Product.Strings.Name.ToString(), input.Quantity.Value.ToString());
-                        outputItems.Add(machineRecipeOutputJson);
-                        electricity_generated = input.Quantity.Value.ToString();
-                    });
-
-                    string machineRecipeJson = MakeRecipeJsonObject(
-                        recipe_name,
-                        recipe_name,
-                        recipe_duration,
-                        inputItems.JoinStrings(","),
-                        outputItems.JoinStrings(",")
-                    );
-                    recipeItems.Add(machineRecipeJson);
+                    electricity_generated = outputs[0].Quantity.Value.ToString();
 
                     string machineJson = MakeMachineJsonObject(
                         id,
@@ -1204,40 +1216,7 @@ namespace DataExtractorMod {
                         machinesProducts.Add(vehicleProductJson);
                     }
 
-                    List<string> recipeItems = new List<string> { };
-
-                    var duration = (generator.Recipe.Duration / 10);
-                    var inputs = generator.Recipe.AllUserVisibleInputs;
-                    var outputs = generator.Recipe.AllUserVisibleOutputs;
-
-                    string recipe_name = generator.Recipe.Id.ToString();
-                    string recipe_duration = duration.ToString();
-
-                    List<string> inputItems = new List<string> { };
-                    List<string> outputItems = new List<string> { };
-
-                    inputs.ForEach(delegate (RecipeInput input)
-                    {
-                        Option<ProductProto> product = protosDb.Get<ProductProto>(input.Product.Id);
-                        string machineRecipeInputJson = MakeRecipeIOJsonObject(input.Product.Strings.Name.ToString(), input.Quantity.Value.ToString());
-                        inputItems.Add(machineRecipeInputJson);
-                    });
-
-                    outputs.ForEach(delegate (RecipeOutput input)
-                    {
-                        Option<ProductProto> product = protosDb.Get<ProductProto>(input.Product.Id);
-                        string machineRecipeOutputJson = MakeRecipeIOJsonObject(input.Product.Strings.Name.ToString(), input.Quantity.Value.ToString());
-                        outputItems.Add(machineRecipeOutputJson);
-                    });
-
-                    string machineRecipeJson = MakeRecipeJsonObject(
-                        recipe_name,
-                        recipe_name,
-                        recipe_duration,
-                        inputItems.JoinStrings(","),
-                        outputItems.JoinStrings(",")
-                    );
-                    recipeItems.Add(machineRecipeJson);
+                    List<string> recipeItems = MakeRecipesJsonObject(protosDb, new IRecipeForUi[] { generator.Recipe });
 
                     string machineJson = MakeMachineJsonObject(
                         id,
@@ -1281,7 +1260,7 @@ namespace DataExtractorMod {
                 try
                 {
 
-                    IIndexable<RecipeProto> machineRecipes = machine.Recipes;
+                    List<IRecipeForUi> machineRecipes = machine.Recipes.AsEnumerable().ToList<IRecipeForUi>();
 
                     string id = machine.Id.ToString();
                     string name = machine.Strings.Name.ToString();
@@ -1298,9 +1277,9 @@ namespace DataExtractorMod {
                     string unity_cost = "0";
                     string research_speed = "0";
                     string next_tier = "";
-                    if(machine.NextTier.HasValue)
+                    if(machine.Upgrade.NextTier.HasValue)
                     {
-                        next_tier = machine.NextTier.Value.Id.ToString();
+                        next_tier = machine.Upgrade.NextTier.Value.Id.ToString();
                     }
 
                     foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
@@ -1319,46 +1298,7 @@ namespace DataExtractorMod {
                         machinesProducts.Add(vehicleProductJson);
                     }
 
-                    List<string> recipeItems = new List<string> { };
-
-                    foreach (RecipeProto recipe in machineRecipes)
-                    {
-
-                        var duration = (recipe.Duration / 10);
-                        var inputs = recipe.AllUserVisibleInputs;
-                        var outputs = recipe.AllUserVisibleOutputs;
-
-                        string recipe_id = recipe.Id.ToString();
-                        string recipe_name = recipe.Strings.Name.ToString();
-                        string recipe_duration = duration.ToString();
-
-                        List<string> inputItems = new List<string> { };
-                        List<string> outputItems = new List<string> { };
-
-                        inputs.ForEach(delegate (RecipeInput input)
-                        {
-                            Option<ProductProto> product = protosDb.Get<ProductProto>(input.Product.Id);
-                            string machineRecipeInputJson = MakeRecipeIOJsonObject(input.Product.Strings.Name.ToString(), input.Quantity.Value.ToString());
-                            inputItems.Add(machineRecipeInputJson);
-                        });
-
-                        outputs.ForEach(delegate (RecipeOutput input)
-                        {
-                            Option<ProductProto> product = protosDb.Get<ProductProto>(input.Product.Id);
-                            string machineRecipeOutputJson = MakeRecipeIOJsonObject(input.Product.Strings.Name.ToString(), input.Quantity.Value.ToString());
-                            outputItems.Add(machineRecipeOutputJson);
-                        });
-
-                        string machineRecipeJson = MakeRecipeJsonObject(
-                            recipe_id,
-                            recipe_name,
-                            recipe_duration,
-                            inputItems.JoinStrings(","),
-                            outputItems.JoinStrings(",")
-                        );
-                        recipeItems.Add(machineRecipeJson);
-
-                    }
+                    List<string> recipeItems = MakeRecipesJsonObject(protosDb, machineRecipes);
 
                     string machineJson = MakeMachineJsonObject2(
                         id,
@@ -1425,9 +1365,9 @@ namespace DataExtractorMod {
                     string unity_cost = "0";
                     string research_speed = "0";
                     string next_tier = "";
-                    if (item.NextTier.HasValue)
+                    if (item.Upgrade.NextTier.HasValue)
                     {
-                        next_tier = item.NextTier.Value.Id.ToString();
+                        next_tier = item.Upgrade.NextTier.Value.Id.ToString();
                     }
 
                     foreach (ToolbarCategoryProto cat in item.Graphics.Categories)
@@ -1560,9 +1500,9 @@ namespace DataExtractorMod {
                     string unity_cost = "0";
                     string research_speed = "0";
                     string next_tier = "";
-                    if (item.NextTier.HasValue)
+                    if (item.Upgrade.NextTier.HasValue)
                     {
-                        next_tier = item.NextTier.Value.Id.ToString();
+                        next_tier = item.Upgrade.NextTier.Value.Id.ToString();
                     }
 
                     foreach (ToolbarCategoryProto cat in item.Graphics.Categories)
@@ -1666,9 +1606,9 @@ namespace DataExtractorMod {
                     string unity_cost = "0";
                     string research_speed = "0";
                     string next_tier = "";
-                    if (item.NextTier.HasValue)
+                    if (item.Upgrade.NextTier.HasValue)
                     {
-                        next_tier = item.NextTier.Value.Id.ToString();
+                        next_tier = item.Upgrade.NextTier.Value.Id.ToString();
                     }
 
                     foreach (ToolbarCategoryProto cat in item.Graphics.Categories)
@@ -1739,9 +1679,9 @@ namespace DataExtractorMod {
                     string computing_consumed = "0";
                     string computing_generated = "0";
                     string next_tier = "";
-                    if (item.NextTier.HasValue)
+                    if (item.Upgrade.NextTier.HasValue)
                     {
-                        next_tier = item.NextTier.Value.Id.ToString();
+                        next_tier = item.Upgrade.NextTier.Value.Id.ToString();
                     }
 
                     foreach (ToolbarCategoryProto cat in item.Graphics.Categories)
@@ -1808,31 +1748,20 @@ namespace DataExtractorMod {
                     string computing_consumed = item.ComputingConsumed.ToString();
                     string unity_cost = item.UnityMonthlyCost.ToString();
                     string recipes = "";
-                    Fix32 research_speed = (60 / item.DurationForRecipe.Seconds) * item.StepsPerRecipe;
+                    Fix64 research_speed = (60 / item.DurationForRecipe.Seconds) * item.StepsPerRecipe;
                     string product_type = "";
                     string capacity = "0";
                     string computing_generated = "0";
                     string next_tier = "";
-                    if (item.NextTier.HasValue)
+                    if (item.Upgrade.NextTier.HasValue)
                     {
-                        next_tier = item.NextTier.Value.Id.ToString();
+                        next_tier = item.Upgrade.NextTier.Value.Id.ToString();
                     }
 
                     if ( item.Id.ToString() != "ResearchLab1"){
 
-                        List<string> inputList = new List<string> { };
-                        inputList.Add($"\"name\":\"{item.ConsumedPerRecipe.Product.Strings.Name}\"");
-                        inputList.Add($"\"quantity\":{item.ConsumedPerRecipe.Quantity.Value}");
-
-                        List<string> outputList = new List<string> { };
-                        outputList.Add($"\"name\":\"{item.ProducedPerRecipe.Product.Strings.Name}\"");
-                        outputList.Add($"\"quantity\":{item.ProducedPerRecipe.Quantity.Value}");
-
-                        string inputsObj = ($"\"inputs\":[{{{inputList.JoinStrings(",")}}}],");
-                        string outputsObj = ($"\"outputs\":[{{{outputList.JoinStrings(",")}}}]");
-
-                        recipes = $"{{\"id\":\"{id}\",\"name\":\"{name}\",\"duration\":{item.DurationForRecipe.Seconds},{inputsObj + outputsObj}}}";
-
+                        List<string> recipeItems = MakeRecipesJsonObject(protosDb, item.Recipes.AsEnumerable(), id, name);
+                        recipes = recipeItems.JoinStrings(",");
                     }
 
                     foreach (ToolbarCategoryProto cat in item.Graphics.Categories)
@@ -1903,9 +1832,9 @@ namespace DataExtractorMod {
                     string unity_cost = "0";
                     string research_speed = "0";
                     string next_tier = "";
-                    if (machine.NextTier.HasValue)
+                    if (machine.Upgrade.NextTier.HasValue)
                     {
-                        next_tier = machine.NextTier.Value.Id.ToString();
+                        next_tier = machine.Upgrade.NextTier.Value.Id.ToString();
                     }
 
                     foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
@@ -1976,9 +1905,9 @@ namespace DataExtractorMod {
                     string computing_consumed = "0";
                     string computing_generated = "0";
                     string next_tier = "";
-                    if (machine.NextTier.HasValue)
+                    if (machine.Upgrade.NextTier.HasValue)
                     {
-                        next_tier = machine.NextTier.Value.Id.ToString();
+                        next_tier = machine.Upgrade.NextTier.Value.Id.ToString();
                     }
 
                     foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
@@ -2106,9 +2035,9 @@ namespace DataExtractorMod {
                     string computing_consumed = "0";
                     string computing_generated = "0";
                     string next_tier = "";
-                    if (machine.NextTier.HasValue)
+                    if (machine.Upgrade.NextTier.HasValue)
                     {
-                        next_tier = machine.NextTier.Value.Id.ToString();
+                        next_tier = machine.Upgrade.NextTier.Value.Id.ToString();
                     }
 
                     foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
@@ -2570,9 +2499,9 @@ namespace DataExtractorMod {
                     string unity_cost = "0";
                     string research_speed = "0";
                     string next_tier = "";
-                    if (machine.NextTier.HasValue)
+                    if (machine.Upgrade.NextTier.HasValue)
                     {
-                        next_tier = machine.NextTier.Value.Id.ToString();
+                        next_tier = machine.Upgrade.NextTier.Value.Id.ToString();
                     }
 
                     foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
@@ -2591,43 +2520,7 @@ namespace DataExtractorMod {
                         machinesProducts.Add(vehicleProductJson);
                     }
 
-                    List<string> recipeItems = new List<string> { };
-
-                    IRecipeForUi recipe = machine.Recipe;
-
-                    var duration = (recipe.Duration / 10);
-                    var inputs = recipe.AllUserVisibleInputs;
-                    var outputs = recipe.AllUserVisibleOutputs;
-
-                    string recipe_name = recipe.Id.ToString();
-
-                    string recipe_duration = duration.ToString();
-
-                    List<string> inputItems = new List<string> { };
-                    List<string> outputItems = new List<string> { };
-
-                    inputs.ForEach(delegate (RecipeInput input)
-                    {
-                        Option<ProductProto> product = protosDb.Get<ProductProto>(input.Product.Id);
-                        string machineRecipeInputJson = MakeRecipeIOJsonObject(input.Product.Strings.Name.ToString(), input.Quantity.Value.ToString());
-                        inputItems.Add(machineRecipeInputJson);
-                    });
-
-                    outputs.ForEach(delegate (RecipeOutput input)
-                    {
-                        Option<ProductProto> product = protosDb.Get<ProductProto>(input.Product.Id);
-                        string machineRecipeOutputJson = MakeRecipeIOJsonObject(input.Product.Strings.Name.ToString(), input.Quantity.Value.ToString());
-                        outputItems.Add(machineRecipeOutputJson);
-                    });
-
-                    string machineRecipeJson = MakeRecipeJsonObject(
-                        recipe_name,
-                        recipe_name,
-                        recipe_duration,
-                        inputItems.JoinStrings(","),
-                        outputItems.JoinStrings(",")
-                    );
-                    recipeItems.Add(machineRecipeJson);
+                    List<string> recipeItems = MakeRecipesJsonObject(protosDb, machine.Recipes.AsEnumerable(), id, name);
 
                     string machineJson = MakeMachineJsonObject2(
                         id,
@@ -2811,9 +2704,9 @@ namespace DataExtractorMod {
                     string unity_cost = "0";
                     string research_speed = "0";
                     string next_tier = "";
-                    if (machine.NextTier.HasValue)
+                    if (machine.Upgrade.NextTier.HasValue)
                     {
-                        next_tier = machine.NextTier.Value.Id.ToString();
+                        next_tier = machine.Upgrade.NextTier.Value.Id.ToString();
                     }
 
                     foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
@@ -2832,43 +2725,7 @@ namespace DataExtractorMod {
                         machinesProducts.Add(vehicleProductJson);
                     }
 
-                    List<string> recipeItems = new List<string> { };
-
-                    IRecipeForUi recipe = machine.Recipe;
-
-                    var duration = (recipe.Duration / 10);
-                    var inputs = recipe.AllUserVisibleInputs;
-                    var outputs = recipe.AllUserVisibleOutputs;
-
-                    string recipe_name = recipe.Id.ToString();
-
-                    string recipe_duration = duration.ToString();
-
-                    List<string> inputItems = new List<string> { };
-                    List<string> outputItems = new List<string> { };
-
-                    inputs.ForEach(delegate (RecipeInput input)
-                    {
-                        Option<ProductProto> product = protosDb.Get<ProductProto>(input.Product.Id);
-                        string machineRecipeInputJson = MakeRecipeIOJsonObject(input.Product.Strings.Name.ToString(), input.Quantity.Value.ToString());
-                        inputItems.Add(machineRecipeInputJson);
-                    });
-
-                    outputs.ForEach(delegate (RecipeOutput input)
-                    {
-                        Option<ProductProto> product = protosDb.Get<ProductProto>(input.Product.Id);
-                        string machineRecipeOutputJson = MakeRecipeIOJsonObject(input.Product.Strings.Name.ToString(), input.Quantity.Value.ToString());
-                        outputItems.Add(machineRecipeOutputJson);
-                    });
-
-                    string machineRecipeJson = MakeRecipeJsonObject(
-                        recipe_name,
-                        recipe_name,
-                        recipe_duration,
-                        inputItems.JoinStrings(","),
-                        outputItems.JoinStrings(",")
-                    );
-                    recipeItems.Add(machineRecipeJson);
+                    List<string> recipeItems = MakeRecipesJsonObject(protosDb, machine.Recipes.AsEnumerable(), id, name);
 
                     string machineJson = MakeMachineJsonObject2(
                         id,
@@ -3153,14 +3010,14 @@ namespace DataExtractorMod {
                     string id = material.Id.ToString();
                     string name = material.Strings.Name.ToString();
                     string mined_product = material.MinedProduct.Strings.Name.ToString();
-                    string mining_hardness = material.MiningHardness.ToString();
+                    string mining_hardness = "";
                     string mined_quantity_per_tile_cubed = material.MinedQuantityPerTileCubed.ToString();
                     string disruption_recovery_time = material.DisruptionRecoveryTime.ToString();
-                    string is_hardened_floor = material.IsHardenedFloor.ToString().ToLower();
+                    string is_hardened_floor = "false";
                     string max_collapse_height_diff = material.MaxCollapseHeightDiff.ToString();
                     string min_collapse_height_diff = material.MinCollapseHeightDiff.ToString();
                     string mined_quantity_mult = material.MinedQuantityMult.ToString();
-                    string vehicle_traversal_cost = material.VehicleTraversalCost.ToString();
+                    string vehicle_traversal_cost = "0";
 
                     string materialJson = MakeTerrainMaterialJsonObject(
                         id,
@@ -3244,9 +3101,9 @@ namespace DataExtractorMod {
             {
                 string category = "";
                 string next_tier = "";
-                if (transport.NextTier.HasValue)
+                if (transport.Upgrade.NextTier.HasValue)
                 {
-                    next_tier = transport.NextTier.Value.Id.ToString();
+                    next_tier = transport.Upgrade.NextTier.Value.Id.ToString();
                 }
                 string maintenance_cost_units = transport.MaintenanceProduct.Strings.Name.ToString();
                 string maintenance_cost_quantity = transport.MaintenancePerTile.Value.ToString();

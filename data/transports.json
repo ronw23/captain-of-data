@@ -1,5 +1,5 @@
 {
-    "game_version": "0.4.14.0",
+    "game_version": "0.5.0.0",
     "transports": [
         {
             "id": "FlatConveyorT3",
@@ -8,9 +8,9 @@
             "next_tier": "",
             "maintenance_cost_units": "",
             "maintenance_cost_quantity": 0,
-            "electricity_consumed": 80,
+            "electricity_consumed": 160,
             "throughput_per_second": 7.5,
-            "length_per_cost": 5,
+            "length_per_cost": 7,
             "build_costs": [
                 {
                     "product": "Construction Parts III",
@@ -29,9 +29,9 @@
             "next_tier": "FlatConveyorT3",
             "maintenance_cost_units": "",
             "maintenance_cost_quantity": 0,
-            "electricity_consumed": 50,
+            "electricity_consumed": 100,
             "throughput_per_second": 3.330078,
-            "length_per_cost": 5,
+            "length_per_cost": 7,
             "build_costs": [
                 {
                     "product": "Construction Parts III",
@@ -50,9 +50,9 @@
             "next_tier": "FlatConveyorT2",
             "maintenance_cost_units": "",
             "maintenance_cost_quantity": 0,
-            "electricity_consumed": 35,
+            "electricity_consumed": 70,
             "throughput_per_second": 0.9960938,
-            "length_per_cost": 5,
+            "length_per_cost": 7,
             "build_costs": [
                 {
                     "product": "Construction Parts II",
@@ -71,9 +71,9 @@
             "next_tier": "",
             "maintenance_cost_units": "",
             "maintenance_cost_quantity": 0,
-            "electricity_consumed": 80,
+            "electricity_consumed": 160,
             "throughput_per_second": 7.5,
-            "length_per_cost": 5,
+            "length_per_cost": 7,
             "build_costs": [
                 {
                     "product": "Construction Parts III",
@@ -92,9 +92,9 @@
             "next_tier": "LooseMaterialConveyorT3",
             "maintenance_cost_units": "",
             "maintenance_cost_quantity": 0,
-            "electricity_consumed": 50,
+            "electricity_consumed": 100,
             "throughput_per_second": 3.330078,
-            "length_per_cost": 5,
+            "length_per_cost": 7,
             "build_costs": [
                 {
                     "product": "Construction Parts III",
@@ -113,9 +113,9 @@
             "next_tier": "LooseMaterialConveyorT2",
             "maintenance_cost_units": "",
             "maintenance_cost_quantity": 0,
-            "electricity_consumed": 35,
+            "electricity_consumed": 70,
             "throughput_per_second": 0.9960938,
-            "length_per_cost": 5,
+            "length_per_cost": 7,
             "build_costs": [
                 {
                     "product": "Construction Parts II",
@@ -136,7 +136,7 @@
             "maintenance_cost_quantity": 0,
             "electricity_consumed": 0,
             "throughput_per_second": 2.001953,
-            "length_per_cost": 5,
+            "length_per_cost": 7,
             "build_costs": [
                 {
                     "product": "Construction Parts",
@@ -153,7 +153,7 @@
             "maintenance_cost_quantity": 0,
             "electricity_consumed": 0,
             "throughput_per_second": 7.5,
-            "length_per_cost": 5,
+            "length_per_cost": 7,
             "build_costs": [
                 {
                     "product": "Construction Parts III",
@@ -170,7 +170,7 @@
             "maintenance_cost_quantity": 0,
             "electricity_consumed": 0,
             "throughput_per_second": 3.330078,
-            "length_per_cost": 5,
+            "length_per_cost": 7,
             "build_costs": [
                 {
                     "product": "Construction Parts II",
@@ -187,7 +187,7 @@
             "maintenance_cost_quantity": 0,
             "electricity_consumed": 0,
             "throughput_per_second": 0.9960938,
-            "length_per_cost": 5,
+            "length_per_cost": 7,
             "build_costs": [
                 {
                     "product": "Construction Parts",
@@ -204,7 +204,7 @@
             "maintenance_cost_quantity": 0,
             "electricity_consumed": 0,
             "throughput_per_second": 0.9960938,
-            "length_per_cost": 5,
+            "length_per_cost": 7,
             "build_costs": [
                 {
                     "product": "Construction Parts",

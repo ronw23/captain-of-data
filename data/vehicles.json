@@ -1,23 +1,6 @@
 {
-    "game_version": "0.4.14.0",
+    "game_version": "0.5.0.0",
     "vehicles": [
-        {
-            "name": "Pickup",
-            "costs": [
-                {
-                    "product": "Vehicle Parts",
-                    "quantity": 20
-                },
-                {
-                    "product": "Rubber",
-                    "quantity": 10
-                },
-                {
-                    "product": "Diesel",
-                    "quantity": 5
-                }
-            ]
-        },
         {
             "name": "Truck",
             "costs": [
@@ -32,6 +15,23 @@
                 {
                     "product": "Diesel",
                     "quantity": 15
+                }
+            ]
+        },
+        {
+            "name": "Pickup",
+            "costs": [
+                {
+                    "product": "Vehicle Parts",
+                    "quantity": 20
+                },
+                {
+                    "product": "Rubber",
+                    "quantity": 10
+                },
+                {
+                    "product": "Diesel",
+                    "quantity": 5
                 }
             ]
         },
@@ -70,19 +70,19 @@
             ]
         },
         {
-            "name": "Small excavator",
+            "name": "Mega excavator",
             "costs": [
                 {
-                    "product": "Vehicle Parts",
-                    "quantity": 40
+                    "product": "Vehicle Parts III",
+                    "quantity": 240
                 },
                 {
-                    "product": "Iron",
-                    "quantity": 20
+                    "product": "Steel",
+                    "quantity": 120
                 },
                 {
                     "product": "Diesel",
-                    "quantity": 10
+                    "quantity": 70
                 }
             ]
         },
@@ -104,36 +104,19 @@
             ]
         },
         {
-            "name": "Mega excavator",
-            "costs": [
-                {
-                    "product": "Vehicle Parts III",
-                    "quantity": 240
-                },
-                {
-                    "product": "Steel",
-                    "quantity": 120
-                },
-                {
-                    "product": "Diesel",
-                    "quantity": 70
-                }
-            ]
-        },
-        {
-            "name": "Tree harvester",
+            "name": "Small excavator",
             "costs": [
                 {
                     "product": "Vehicle Parts",
-                    "quantity": 30
+                    "quantity": 40
                 },
                 {
                     "product": "Iron",
-                    "quantity": 10
+                    "quantity": 20
                 },
                 {
                     "product": "Diesel",
-                    "quantity": 12
+                    "quantity": 10
                 }
             ]
         },
@@ -151,6 +134,23 @@
                 {
                     "product": "Diesel",
                     "quantity": 32
+                }
+            ]
+        },
+        {
+            "name": "Tree harvester",
+            "costs": [
+                {
+                    "product": "Vehicle Parts",
+                    "quantity": 30
+                },
+                {
+                    "product": "Iron",
+                    "quantity": 10
+                },
+                {
+                    "product": "Diesel",
+                    "quantity": 12
                 }
             ]
         }

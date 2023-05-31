@@ -4,6 +4,10 @@ Added solution file and project. I have only `VS Community 2019`, so sorry, solu
 
 In order to open properly, you should set `COI_ROOT` environment variable to your Captain Of Industry Steam installation, and set your `PATH` variable to `%COI_ROOT%\Captain of Industry_Data\Managed`.
 
+In order to run, place compiled `DataExtractor.dll` to folder `Users\[user]\AppData\Roaming\Captain of Industry\Mods\DataExtractor`
+
+Image icons: use [AssetStudio](https://github.com/Perfare/AssetStudio)
+
 - Updated for latest version `0.4.14b(157)`, and migrated everything to `protosDb.All` getting rid of hardcoded ids, and automatically catching new items/buildings.
 - Added products.json, product ids, recipe ids, product icon references.
 - Added transports.json, conveyor belts throughput.
