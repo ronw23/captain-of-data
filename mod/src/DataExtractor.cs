@@ -137,7 +137,7 @@ using System.Linq;
 namespace DataExtractorMod {
     public sealed class DataExtractor : IMod
     {
-        public string Name => "Data Extractor Mod By ItsDesm";
+        public string Name => "Data Extractor Mod By ItsDesm (modified by doubleaxe)";
 
         public int Version => 1;
 
@@ -196,6 +196,7 @@ namespace DataExtractorMod {
             string capacity,
             string unity_cost,
             string research_speed,
+            string icon,
             string build_costs,
             string recipes
         )
@@ -216,6 +217,7 @@ namespace DataExtractorMod {
                 capacity,
                 unity_cost,
                 research_speed,
+                icon,
                 build_costs,
                 recipes
             );
@@ -237,6 +239,7 @@ namespace DataExtractorMod {
             string capacity,
             string unity_cost,
             string research_speed,
+            string icon,
             string build_costs,
             string recipes
         )
@@ -260,6 +263,7 @@ namespace DataExtractorMod {
             props.Add($"\"storage_capacity\":{capacity}");
             props.Add($"\"unity_cost\":{unity_cost}");
             props.Add($"\"research_speed\":{research_speed}");
+            props.Add($"\"icon_path\":\"{icon}\"");
             props.Add($"\"build_costs\":[{build_costs}]");
             props.Add($"\"recipes\":[{recipes}]");
 
@@ -279,6 +283,7 @@ namespace DataExtractorMod {
             string electricity_consumed,
             string throughput_per_second,
             string length_per_cost,
+            string icon,
             string build_costs
         )
         {
@@ -295,6 +300,7 @@ namespace DataExtractorMod {
             props.Add($"\"electricity_consumed\":{electricity_consumed}");
             props.Add($"\"throughput_per_second\":{throughput_per_second}");
             props.Add($"\"length_per_cost\":{length_per_cost}");
+            props.Add($"\"icon_path\":\"{icon}\"");
             props.Add($"\"build_costs\":[{build_costs}]");
 
             obj.AppendLine("{");
@@ -478,7 +484,8 @@ namespace DataExtractorMod {
         public static string MakeProductJsonObject(
             string id,
             string name,
-            string type
+            string type,
+            string icon
         )
         {
             System.Text.StringBuilder obj = new System.Text.StringBuilder();
@@ -489,6 +496,7 @@ namespace DataExtractorMod {
             props.Add($"\"name\":\"{name}\"");
             props.Add($"\"icon\":\"{productNameToIcon(name)}\"");
             props.Add($"\"type\":\"{type}\"");
+            props.Add($"\"icon_path\":\"{icon}\"");
 
             obj.AppendLine("{");
             obj.AppendLine(props.JoinStrings(","));
@@ -1021,6 +1029,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        generator.IconPath,
                         machinesProducts.JoinStrings(","),
                         recipeItems.JoinStrings(",")
                     );
@@ -1094,6 +1103,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        generator.IconPath,
                         machinesProducts.JoinStrings(","),
                         recipeItems.JoinStrings(",")
                     );
@@ -1162,6 +1172,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        generator.IconPath,
                         machinesProducts.JoinStrings(","),
                         ""
                     );
@@ -1232,6 +1243,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        generator.IconPath,
                         machinesProducts.JoinStrings(","),
                         recipeItems.JoinStrings(",")
                     );
@@ -1316,6 +1328,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        machine.IconPath,
                         machinesProducts.JoinStrings(","),
                         recipeItems.JoinStrings(",")
                     );
@@ -1464,6 +1477,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        item.IconPath,
                         machinesProducts.JoinStrings(","),
                         recipeItems.JoinStrings(",")
                     );
@@ -1570,6 +1584,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        item.IconPath,
                         machinesProducts.JoinStrings(","),
                         machineRecipeJson
                     );
@@ -1643,6 +1658,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        item.IconPath,
                         machinesProducts.JoinStrings(","),
                         ""
                     );
@@ -1716,6 +1732,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        item.IconPath,
                         machinesProducts.JoinStrings(","),
                         ""
                     );
@@ -1796,6 +1813,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed.ToString(),
+                        item.IconPath,
                         machinesProducts.JoinStrings(","),
                         recipes
                     );
@@ -1869,6 +1887,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        machine.IconPath,
                         machinesProducts.JoinStrings(","),
                         ""
                     );
@@ -1942,6 +1961,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        machine.IconPath,
                         machinesProducts.JoinStrings(","),
                         ""
                     );
@@ -2004,7 +2024,8 @@ namespace DataExtractorMod {
                     productsJson.Add(MakeProductJsonObject(
                         product.Id.ToString(),
                         product.Strings.Name.ToString(),
-                        type));
+                        type,
+                        product.IconPath));
                 }
             }
 
@@ -2117,6 +2138,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        machine.IconPath,
                         machinesProducts.JoinStrings(","),
                         ""
                     );
@@ -2138,6 +2160,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        machine.IconPath,
                         machinesProducts.JoinStrings(","),
                         recipeItems.JoinStrings(",")
                     );
@@ -2203,6 +2226,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        machine.IconPath,
                         machinesProducts.JoinStrings(","),
                         ""
                     );
@@ -2268,6 +2292,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        machine.IconPath,
                         machinesProducts.JoinStrings(","),
                         ""
                     );
@@ -2333,6 +2358,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        machine.IconPath,
                         machinesProducts.JoinStrings(","),
                         ""
                     );
@@ -2398,6 +2424,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        machine.IconPath,
                         machinesProducts.JoinStrings(","),
                         ""
                     );
@@ -2463,6 +2490,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        machine.IconPath,
                         machinesProducts.JoinStrings(","),
                         ""
                     );
@@ -2538,6 +2566,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        machine.IconPath,
                         machinesProducts.JoinStrings(","),
                         recipeItems.JoinStrings(",")
                     );
@@ -2603,6 +2632,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        machine.IconPath,
                         machinesProducts.JoinStrings(","),
                         ""
                     );
@@ -2668,6 +2698,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        machine.IconPath,
                         machinesProducts.JoinStrings(","),
                         ""
                     );
@@ -2743,6 +2774,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        machine.IconPath,
                         machinesProducts.JoinStrings(","),
                         recipeItems.JoinStrings(",")
                     );
@@ -2819,6 +2851,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        machine.IconPath,
                         machinesProducts.JoinStrings(","),
                         machineRecipeJson
                     );
@@ -2923,6 +2956,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        machine.IconPath,
                         machinesProducts.JoinStrings(","),
                         recipeItems.JoinStrings(",")
                     );
@@ -2979,6 +3013,7 @@ namespace DataExtractorMod {
                         capacity,
                         unity_cost,
                         research_speed,
+                        "",
                         machinesProducts.JoinStrings(","),
                         ""
                     );
@@ -3129,6 +3164,7 @@ namespace DataExtractorMod {
                     transport.BaseElectricityCost.Value.ToString(),
                     (transport.ThroughputPerTick.Value * 10).ToString(),
                     transport.LengthPerCost.Value.ToString(),
+                    transport.IconPath,
                     machinesProducts.JoinStrings(",")
                 );
                 transportItems.Add(transportsJson);
@@ -3146,6 +3182,12 @@ namespace DataExtractorMod {
             File.WriteAllText("c:/temp/machines_and_buildings.json", $"{{\"game_version\":\"{game_version}\",\"machines_and_buildings\":[{machineItems.JoinStrings(",")}]}}");
             File.WriteAllText("c:/temp/storages.json", $"{{\"game_version\":\"{game_version}\",\"storages\":[{storageItems.JoinStrings(",")}]}}");
 
+            /*
+                * -------------------------------------
+                * TODO - retrieve Mafi.Unity.AssetsDb instance, and get UnityEngine.Texture2D by icon path.
+                * Then use UnityEngine.ImageConversionModule.ImageConversion to convert texture to png, and export it to file.
+                * -------------------------------------
+            */
         }
 
         /*
