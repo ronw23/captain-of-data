@@ -1,5 +1,5 @@
 {
-    "game_version": "0.5.0.0",
+    "game_version": "0.5.1.0",
     "research": [
         {
             "id": "ResearchCpPacking",
@@ -478,26 +478,32 @@
         {
             "id": "ResearchVehicleCapIncrease3",
             "name": "Vehicles management III",
-            "difficulty": 12,
-            "total_steps": 300
+            "difficulty": 9,
+            "total_steps": 216
         },
         {
             "id": "ResearchVehicleCapIncrease4",
             "name": "Vehicles management IV",
-            "difficulty": 20,
-            "total_steps": 524
+            "difficulty": 12,
+            "total_steps": 300
         },
         {
             "id": "ResearchVehicleCapIncrease5",
             "name": "Vehicles management V",
+            "difficulty": 20,
+            "total_steps": 524
+        },
+        {
+            "id": "ResearchVehicleCapIncrease6",
+            "name": "Vehicles management VI",
             "difficulty": 36,
             "total_steps": 972
         },
         {
             "id": "ResearchAdvancedLogisticsControl",
             "name": "Advanced logistics control",
-            "difficulty": 8,
-            "total_steps": 188
+            "difficulty": 5,
+            "total_steps": 104
         },
         {
             "id": "ResearchPipeTransports",
