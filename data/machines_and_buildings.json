@@ -14896,7 +14896,7 @@
             "maintenance_cost_quantity": 36,
             "electricity_consumed": 0,
             "electricity_generated": 0,
-            "computing_consumed": 0,
+            "computing_consumed": 12,
             "computing_generated": 0,
             "product_type": "",
             "storage_capacity": 0,
@@ -14939,6 +14939,56 @@
                     "id": "NuclearReactorT21",
                     "name": "Nuclear reactor II 1",
                     "duration": 30,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 192
+                        },
+                        {
+                            "name": "Uranium rod",
+                            "quantity": 1
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Steam (high)",
+                            "quantity": 192
+                        },
+                        {
+                            "name": "Spent fuel",
+                            "quantity": 1
+                        }
+                    ]
+                },
+                {
+                    "id": "NuclearReactorT22",
+                    "name": "Nuclear reactor II 2",
+                    "duration": 120,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 192
+                        },
+                        {
+                            "name": "MOX rod",
+                            "quantity": 1
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Steam (high)",
+                            "quantity": 192
+                        },
+                        {
+                            "name": "Spent MOX",
+                            "quantity": 1
+                        }
+                    ]
+                },
+                {
+                    "id": "NuclearReactorT23",
+                    "name": "Nuclear reactor II 3",
+                    "duration": 120,
                     "inputs": [
                         {
                             "name": "Water",
@@ -15010,6 +15060,31 @@
                             "quantity": 1
                         }
                     ]
+                },
+                {
+                    "id": "NuclearReactor1",
+                    "name": "Nuclear reactor 1",
+                    "duration": 120,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 192
+                        },
+                        {
+                            "name": "Uranium rod",
+                            "quantity": 1
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Steam (high)",
+                            "quantity": 192
+                        },
+                        {
+                            "name": "Spent fuel",
+                            "quantity": 1
+                        }
+                    ]
                 }
             ]
         },
@@ -15023,7 +15098,7 @@
             "maintenance_cost_quantity": 36,
             "electricity_consumed": 0,
             "electricity_generated": 0,
-            "computing_consumed": 0,
+            "computing_consumed": 18,
             "computing_generated": 0,
             "product_type": "",
             "storage_capacity": 0,
@@ -15048,7 +15123,7 @@
                     "inputs": [
                         {
                             "name": "Water",
-                            "quantity": 64
+                            "quantity": 96
                         },
                         {
                             "name": "Core fuel",
@@ -15058,7 +15133,7 @@
                     "outputs": [
                         {
                             "name": "Steam (super)",
-                            "quantity": 64
+                            "quantity": 96
                         },
                         {
                             "name": "Core fuel (spent)",
@@ -15073,13 +15148,55 @@
                     "inputs": [
                         {
                             "name": "Blanket fuel",
-                            "quantity": 0
+                            "quantity": 1.200195
                         }
                     ],
                     "outputs": [
                         {
                             "name": "Blanket fuel (enriched)",
-                            "quantity": 0
+                            "quantity": 1.200195
+                        }
+                    ]
+                },
+                {
+                    "id": "FastBreederReactor2",
+                    "name": "Fast breeder reactor 2",
+                    "duration": 60,
+                    "inputs": [
+                        {
+                            "name": "Water",
+                            "quantity": 96
+                        },
+                        {
+                            "name": "Core fuel",
+                            "quantity": 1
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Steam (super)",
+                            "quantity": 96
+                        },
+                        {
+                            "name": "Core fuel (spent)",
+                            "quantity": 1
+                        }
+                    ]
+                },
+                {
+                    "id": "FastBreederReactor3",
+                    "name": "Fast breeder reactor 3",
+                    "duration": 60,
+                    "inputs": [
+                        {
+                            "name": "Blanket fuel",
+                            "quantity": 1.200195
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "Blanket fuel (enriched)",
+                            "quantity": 1.200195
                         }
                     ]
                 }

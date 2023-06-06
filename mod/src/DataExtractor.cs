@@ -147,6 +147,8 @@ namespace DataExtractorMod {
         public static readonly string MOD_DIR_PATH = Path.Combine(MOD_ROOT_DIR_PATH, "DataExtractor");
         public static readonly string PLUGIN_DIR_PATH = Path.Combine(MOD_DIR_PATH, "Plugins");
 
+        public static readonly bool DEBUG = true;
+
         public DataExtractor() {
             //AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
             Log.Info(MOD_ROOT_DIR_PATH);
@@ -689,6 +691,18 @@ namespace DataExtractorMod {
             return recipeItems;
         }
 
+        public static void DumpObject(List<string> DUMP, string name, object element)
+        {
+            if (!DEBUG)
+                return;
+            var content = GenericToDataString.ObjectDumper.Dump(element);
+            DUMP.Add(name);
+            DUMP.Add("");
+            DUMP.Add(content);
+            DUMP.Add("");
+            DUMP.Add("");
+        }
+
         /*
          * -------------------------------------
          * Main Mod Code
@@ -699,6 +713,8 @@ namespace DataExtractorMod {
 
         public void RegisterDependencies(DependencyResolverBuilder depBuilder, ProtosDb protosDb, bool gameWasLoaded)
         {
+
+            List<string> DUMP = new List<string> { };
 
             string game_version = typeof(Mafi.Base.BaseMod).GetTypeInfo().Assembly.GetName().Version.ToString();
 
@@ -2520,7 +2536,7 @@ namespace DataExtractorMod {
                     string maintenance_cost_quantity = machine.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = "0";
-                    string computing_consumed = "0";
+                    string computing_consumed = machine.ComputingConsumed.Value.ToString();
                     string computing_generated = "0";
                     string product_type = "";
                     string capacity = "0";
@@ -2548,7 +2564,90 @@ namespace DataExtractorMod {
                         machinesProducts.Add(vehicleProductJson);
                     }
 
-                    List<string> recipeItems = MakeRecipesJsonObject(protosDb, machine.Recipes.AsEnumerable(), id, name);
+                    //nuclear reactor gives all recipes at max power level
+                    //it also contain enrichment recipe, but all values are 0, so we should use fix all recipes here
+                    //we ignore provided recipes, and build our own for min and max power level
+                    //List<string> recipeItems = MakeRecipesJsonObject(protosDb, machine.Recipes.AsEnumerable(), id, name);
+
+                    List<string> recipeItems = new List<string> { };
+
+                    //default recipes are given at max power level
+                    var recipeDurationAtMaxLevel = machine.Recipes.First().Duration;
+                    var duration = (recipeDurationAtMaxLevel / 10);
+                    var waterInPerDuration = (machine.WaterInPerPowerLevel.Quantity.Value * machine.MaxPowerLevel) * (recipeDurationAtMaxLevel.Seconds / machine.ProcessDuration.Seconds);
+                    var steamOutPerDuration = (machine.SteamOutPerPowerLevel.Quantity.Value * machine.MaxPowerLevel) * (recipeDurationAtMaxLevel.Seconds / machine.ProcessDuration.Seconds);
+
+                    //we keep recipe naming convention and order with prev version
+                    int i = 0;
+                    int[] levels = new int[] { machine.MaxPowerLevel, 1 };
+                    foreach(int level in levels)
+                    {
+                        foreach (var fuel in machine.FuelPairs)
+                        {
+                            var fuelPerDuration = (machine.MaxPowerLevel * recipeDurationAtMaxLevel.Seconds) / fuel.Duration.Seconds;
+
+                            string recipe_id = (id + ((i != 0) ? i.ToString() : ""));
+                            string recipe_name = (name + ((i != 0) ? (" " + i.ToString()) : ""));
+
+                            List<string> inputItems = new List<string> { };
+                            List<string> outputItems = new List<string> { };
+
+                            string machineRecipeJson;
+
+                            //each power level decreases duration
+                            //by default duration is specified at max power level
+                            var poverLevelMultiplier = (machine.MaxPowerLevel + 1 - level);
+
+                            machineRecipeJson = MakeRecipeIOJsonObject(machine.WaterInPerPowerLevel.Product.Strings.Name.ToString(), waterInPerDuration.ToString());
+                            inputItems.Add(machineRecipeJson);
+                            machineRecipeJson = MakeRecipeIOJsonObject(machine.SteamOutPerPowerLevel.Product.Strings.Name.ToString(), steamOutPerDuration.ToString());
+                            outputItems.Add(machineRecipeJson);
+
+                            machineRecipeJson = MakeRecipeIOJsonObject(fuel.FuelInProto.Strings.Name.ToString(), fuelPerDuration.ToString());
+                            inputItems.Add(machineRecipeJson);
+                            machineRecipeJson = MakeRecipeIOJsonObject(fuel.SpentFuelOutProto.Strings.Name.ToString(), fuelPerDuration.ToString());
+                            outputItems.Add(machineRecipeJson);
+
+                            machineRecipeJson = MakeRecipeJsonObject(
+                                recipe_id,
+                                recipe_name,
+                                (duration * poverLevelMultiplier).ToString(),
+                                inputItems.JoinStrings(","),
+                                outputItems.JoinStrings(",")
+                            );
+
+                            recipeItems.Add(machineRecipeJson);
+                            i++;
+                        }
+                        //we show enrichment as separate recipe, but actually they are independent and could be executed both
+                        if (machine.Enrichment.HasValue)
+                        {
+                            var enrichment = machine.Enrichment.Value;
+                            string recipe_id = (id + ((i != 0) ? i.ToString() : ""));
+                            string recipe_name = (name + ((i != 0) ? (" " + i.ToString()) : ""));
+
+                            List<string> inputItems = new List<string> { };
+                            List<string> outputItems = new List<string> { };
+
+                            string machineRecipeJson;
+
+                            machineRecipeJson = MakeRecipeIOJsonObject(enrichment.InputProduct.Strings.Name.ToString(), enrichment.ProcessedPerLevel.ToString());
+                            inputItems.Add(machineRecipeJson);
+                            machineRecipeJson = MakeRecipeIOJsonObject(enrichment.OutputProduct.Strings.Name.ToString(), enrichment.ProcessedPerLevel.ToString());
+                            outputItems.Add(machineRecipeJson);
+
+                            machineRecipeJson = MakeRecipeJsonObject(
+                                recipe_id,
+                                recipe_name,
+                                (60 / level).ToString(),
+                                inputItems.JoinStrings(","),
+                                outputItems.JoinStrings(",")
+                            );
+
+                            recipeItems.Add(machineRecipeJson);
+                            i++;
+                        }
+                    }
 
                     string machineJson = MakeMachineJsonObject2(
                         id,
@@ -2572,6 +2671,9 @@ namespace DataExtractorMod {
                     );
                     machineItems.Add(machineJson);
 
+                    DumpObject(DUMP, id, machine);
+                    DumpObject(DUMP, id + "FuelPairs", machine.FuelPairs.AsEnumerable());
+                    DumpObject(DUMP, id + "Enrichment", machine.Enrichment.HasValue ? machine.Enrichment.Value : null);
                 }
                 catch
                 {
@@ -2719,7 +2821,6 @@ namespace DataExtractorMod {
 
                 try
                 {
-
                     string id = machine.Id.ToString();
                     string name = machine.Strings.Name.ToString();
                     string category = "";
@@ -2780,6 +2881,7 @@ namespace DataExtractorMod {
                     );
                     machineItems.Add(machineJson);
 
+                    DumpObject(DUMP, id, machine);
                 }
                 catch
                 {
@@ -2857,6 +2959,7 @@ namespace DataExtractorMod {
                     );
                     machineItems.Add(machineJson);
 
+                    DumpObject(DUMP, id, machine);
                 }
                 catch
                 {
@@ -3188,6 +3291,11 @@ namespace DataExtractorMod {
                 * Then use UnityEngine.ImageConversionModule.ImageConversion to convert texture to png, and export it to file.
                 * -------------------------------------
             */
+
+            if(DUMP.Count != 0)
+            {
+                File.WriteAllLines("c:/temp/dump.txt", DUMP);
+            }
         }
 
         /*
