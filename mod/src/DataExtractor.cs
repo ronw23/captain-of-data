@@ -2618,34 +2618,31 @@ namespace DataExtractorMod {
 
                             recipeItems.Add(machineRecipeJson);
                             i++;
-                        }
-                        //we show enrichment as separate recipe, but actually they are independent and could be executed both
-                        if (machine.Enrichment.HasValue)
-                        {
-                            var enrichment = machine.Enrichment.Value;
-                            string recipe_id = (id + ((i != 0) ? i.ToString() : ""));
-                            string recipe_name = (name + ((i != 0) ? (" " + i.ToString()) : ""));
 
-                            List<string> inputItems = new List<string> { };
-                            List<string> outputItems = new List<string> { };
+                            //merge enrichment recipe, actually they are independent and could be executed both
+                            //because upkeep is not increaed, we should merge these
+                            if (machine.Enrichment.HasValue)
+                            {
+                                var enrichment = machine.Enrichment.Value;
+                                recipe_id = (id + ((i != 0) ? i.ToString() : ""));
+                                recipe_name = (name + ((i != 0) ? (" " + i.ToString()) : ""));
 
-                            string machineRecipeJson;
+                                machineRecipeJson = MakeRecipeIOJsonObject(enrichment.InputProduct.Strings.Name.ToString(), enrichment.ProcessedPerLevel.ToString());
+                                inputItems.Add(machineRecipeJson);
+                                machineRecipeJson = MakeRecipeIOJsonObject(enrichment.OutputProduct.Strings.Name.ToString(), enrichment.ProcessedPerLevel.ToString());
+                                outputItems.Add(machineRecipeJson);
 
-                            machineRecipeJson = MakeRecipeIOJsonObject(enrichment.InputProduct.Strings.Name.ToString(), enrichment.ProcessedPerLevel.ToString());
-                            inputItems.Add(machineRecipeJson);
-                            machineRecipeJson = MakeRecipeIOJsonObject(enrichment.OutputProduct.Strings.Name.ToString(), enrichment.ProcessedPerLevel.ToString());
-                            outputItems.Add(machineRecipeJson);
+                                machineRecipeJson = MakeRecipeJsonObject(
+                                    recipe_id,
+                                    recipe_name,
+                                    (60 / level).ToString(),
+                                    inputItems.JoinStrings(","),
+                                    outputItems.JoinStrings(",")
+                                );
 
-                            machineRecipeJson = MakeRecipeJsonObject(
-                                recipe_id,
-                                recipe_name,
-                                (60 / level).ToString(),
-                                inputItems.JoinStrings(","),
-                                outputItems.JoinStrings(",")
-                            );
-
-                            recipeItems.Add(machineRecipeJson);
-                            i++;
+                                recipeItems.Add(machineRecipeJson);
+                                i++;
+                            }
                         }
                     }
 

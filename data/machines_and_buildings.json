@@ -15147,11 +15147,27 @@
                     "duration": 15,
                     "inputs": [
                         {
+                            "name": "Water",
+                            "quantity": 96
+                        },
+                        {
+                            "name": "Core fuel",
+                            "quantity": 1
+                        },
+                        {
                             "name": "Blanket fuel",
                             "quantity": 1.200195
                         }
                     ],
                     "outputs": [
+                        {
+                            "name": "Steam (super)",
+                            "quantity": 96
+                        },
+                        {
+                            "name": "Core fuel (spent)",
+                            "quantity": 1
+                        },
                         {
                             "name": "Blanket fuel (enriched)",
                             "quantity": 1.200195
@@ -15189,11 +15205,27 @@
                     "duration": 60,
                     "inputs": [
                         {
+                            "name": "Water",
+                            "quantity": 96
+                        },
+                        {
+                            "name": "Core fuel",
+                            "quantity": 1
+                        },
+                        {
                             "name": "Blanket fuel",
                             "quantity": 1.200195
                         }
                     ],
                     "outputs": [
+                        {
+                            "name": "Steam (super)",
+                            "quantity": 96
+                        },
+                        {
+                            "name": "Core fuel (spent)",
+                            "quantity": 1
+                        },
                         {
                             "name": "Blanket fuel (enriched)",
                             "quantity": 1.200195
