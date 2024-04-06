@@ -1,5 +1,5 @@
 {
-    "game_version": "0.5.1.0",
+    "game_version": "0.6.0.0",
     "products": [
         {
             "id": "Product_Virtual_Electricity",
@@ -626,7 +626,7 @@
         },
         {
             "id": "Product_SteamDepleted",
-            "name": "Steam depleted",
+            "name": "Steam (depleted)",
             "icon": "Steamdepleted",
             "type": "FluidProductProto",
             "icon_path": "Assets/Base/Products/Icons/SteamDepleated.svg"

@@ -1,5 +1,5 @@
 {
-    "game_version": "0.5.1.0",
+    "game_version": "0.6.0.0",
     "contracts": [
         {
             "id": "Contract_Product_Coal_For_Product_Cement",

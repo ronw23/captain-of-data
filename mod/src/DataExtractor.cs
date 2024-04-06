@@ -143,6 +143,8 @@ namespace DataExtractorMod {
 
         public bool IsUiOnly => false;
 
+        public Option<IConfig> ModConfig => Option<IConfig>.None;
+
         public static readonly string MOD_ROOT_DIR_PATH = new FileSystemHelper().GetDirPath(FileType.Mod, false);
         public static readonly string MOD_DIR_PATH = Path.Combine(MOD_ROOT_DIR_PATH, "DataExtractor");
         public static readonly string PLUGIN_DIR_PATH = Path.Combine(MOD_DIR_PATH, "Plugins");
@@ -3210,10 +3212,10 @@ namespace DataExtractorMod {
 
                 string contractJson = MakeContractJsonObject(
                     contract.Id.ToString(),
-                    contract.ProductToBuy.Product.Strings.Name.ToString(),
-                    contract.ProductToBuy.Quantity.ToString(),
-                    contract.ProductToPayWith.Product.Strings.Name.ToString(),
-                    contract.ProductToPayWith.Quantity.ToString(),
+                    contract.ProductToBuy.Strings.Name.ToString(),
+                    contract.GetQuantityToBuy(Percent.Hundred).ToString(),
+                    contract.ProductToPayWith.Strings.Name.ToString(),
+                    contract.QuantityToPayWith.ToString(),
                     contract.UpointsPerMonth.ToString(),
                     contract.UpointsPer100ProductsBought.ToString(),
                     contract.UpointsToEstablish.ToString(),
@@ -3334,7 +3336,7 @@ namespace DataExtractorMod {
 
         public void Register(ImmutableArray<DataOnlyMod> mods, RegistrationContext context) {}
 
-        void IMod.ChangeConfigs(Mafi.Collections.Lyst<IConfig> configs)
+        public void EarlyInit(DependencyResolver resolver)
         {
         }
     }

@@ -1,9 +1,9 @@
 {
-    "game_version": "0.5.1.0",
+    "game_version": "0.6.0.0",
     "terrain_materials": [
         {
             "id": "Grass_Terrain",
-            "name": "Grass_Terrain",
+            "name": "Grass",
             "mined_product": "Dirt",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 1.400391,
@@ -16,11 +16,11 @@
         },
         {
             "id": "Dirt_Terrain",
-            "name": "Dirt_Terrain",
+            "name": "Dirt",
             "mined_product": "Dirt",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 1.400391,
-            "disruption_recovery_time": 6000,
+            "disruption_recovery_time": 12000,
             "is_hardened_floor": false,
             "max_collapse_height_diff": 1.200195,
             "min_collapse_height_diff": 0.6005859,
@@ -29,7 +29,7 @@
         },
         {
             "id": "DirtBare_Terrain",
-            "name": "DirtBare_Terrain",
+            "name": "Dirt (bare)",
             "mined_product": "Dirt",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 1.400391,
@@ -41,8 +41,34 @@
             "vehicle_traversal_cost": 0
         },
         {
+            "id": "GrassNoDetails_Terrain",
+            "name": "Grass (no details)",
+            "mined_product": "Dirt",
+            "mining_hardness": "",
+            "mined_quantity_per_tile_cubed": 1.400391,
+            "disruption_recovery_time": 0,
+            "is_hardened_floor": false,
+            "max_collapse_height_diff": 1.799805,
+            "min_collapse_height_diff": 0.9003906,
+            "mined_quantity_mult": "70,00%",
+            "vehicle_traversal_cost": 0
+        },
+        {
+            "id": "DirtNoDetails_Terrain",
+            "name": "Dirt (no details)",
+            "mined_product": "Dirt",
+            "mining_hardness": "",
+            "mined_quantity_per_tile_cubed": 1.400391,
+            "disruption_recovery_time": 12000,
+            "is_hardened_floor": false,
+            "max_collapse_height_diff": 1.200195,
+            "min_collapse_height_diff": 0.6005859,
+            "mined_quantity_mult": "70,00%",
+            "vehicle_traversal_cost": 0
+        },
+        {
             "id": "GrassLush_Terrain",
-            "name": "GrassLush_Terrain",
+            "name": "Grass (lush)",
             "mined_product": "Dirt",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 1.400391,
@@ -55,11 +81,11 @@
         },
         {
             "id": "DirtLush_Terrain",
-            "name": "DirtLush_Terrain",
+            "name": "Dirt (lush)",
             "mined_product": "Dirt",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 1.400391,
-            "disruption_recovery_time": 6000,
+            "disruption_recovery_time": 12000,
             "is_hardened_floor": false,
             "max_collapse_height_diff": 1.200195,
             "min_collapse_height_diff": 0.6005859,
@@ -68,7 +94,7 @@
         },
         {
             "id": "FlowersWhite_Terrain",
-            "name": "FlowersWhite_Terrain",
+            "name": "Grass (white flowers)",
             "mined_product": "Dirt",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 1.400391,
@@ -81,11 +107,11 @@
         },
         {
             "id": "DirtFlowersWhite_Terrain",
-            "name": "DirtFlowersWhite_Terrain",
+            "name": "Dirt (white flowers)",
             "mined_product": "Dirt",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 1.400391,
-            "disruption_recovery_time": 6000,
+            "disruption_recovery_time": 12000,
             "is_hardened_floor": false,
             "max_collapse_height_diff": 1.200195,
             "min_collapse_height_diff": 0.6005859,
@@ -94,7 +120,7 @@
         },
         {
             "id": "FlowersYellowLush_Terrain",
-            "name": "FlowersYellowLush_Terrain",
+            "name": "Grass (yellow flowers, lush)",
             "mined_product": "Dirt",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 1.400391,
@@ -107,11 +133,11 @@
         },
         {
             "id": "DirtFlowersYellowLush_Terrain",
-            "name": "DirtFlowersYellowLush_Terrain",
+            "name": "Dirt (yellow flowers, lush)",
             "mined_product": "Dirt",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 1.400391,
-            "disruption_recovery_time": 6000,
+            "disruption_recovery_time": 12000,
             "is_hardened_floor": false,
             "max_collapse_height_diff": 1.200195,
             "min_collapse_height_diff": 0.6005859,
@@ -120,7 +146,7 @@
         },
         {
             "id": "FlowersRed_Terrain",
-            "name": "FlowersRed_Terrain",
+            "name": "Grass (red flowers)",
             "mined_product": "Dirt",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 1.400391,
@@ -133,11 +159,11 @@
         },
         {
             "id": "DirtFlowersRed_Terrain",
-            "name": "DirtFlowersRed_Terrain",
+            "name": "Dirt (red flowers)",
             "mined_product": "Dirt",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 1.400391,
-            "disruption_recovery_time": 6000,
+            "disruption_recovery_time": 12000,
             "is_hardened_floor": false,
             "max_collapse_height_diff": 1.200195,
             "min_collapse_height_diff": 0.6005859,
@@ -146,7 +172,7 @@
         },
         {
             "id": "FlowersPurpleLush_Terrain",
-            "name": "FlowersPurpleLush_Terrain",
+            "name": "Grass (purple flowers, lush)",
             "mined_product": "Dirt",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 1.400391,
@@ -159,11 +185,11 @@
         },
         {
             "id": "DirtFlowersPurpleLush_Terrain",
-            "name": "DirtFlowersPurpleLush_Terrain",
+            "name": "Dirt (purple flowers, lush)",
             "mined_product": "Dirt",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 1.400391,
-            "disruption_recovery_time": 6000,
+            "disruption_recovery_time": 12000,
             "is_hardened_floor": false,
             "max_collapse_height_diff": 1.200195,
             "min_collapse_height_diff": 0.6005859,
@@ -172,7 +198,7 @@
         },
         {
             "id": "ForestFloor_Terrain",
-            "name": "ForestFloor_Terrain",
+            "name": "Forest floor",
             "mined_product": "Dirt",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 1.400391,
@@ -185,11 +211,11 @@
         },
         {
             "id": "ForestDirt_Terrain",
-            "name": "ForestDirt_Terrain",
+            "name": "Forest dirt",
             "mined_product": "Dirt",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 1.400391,
-            "disruption_recovery_time": 6000,
+            "disruption_recovery_time": 12000,
             "is_hardened_floor": false,
             "max_collapse_height_diff": 1.799805,
             "min_collapse_height_diff": 0.9003906,
@@ -198,7 +224,7 @@
         },
         {
             "id": "FarmGround_Terrain",
-            "name": "FarmGround_Terrain",
+            "name": "Farm ground",
             "mined_product": "Dirt",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
@@ -211,11 +237,11 @@
         },
         {
             "id": "Compost_Terrain",
-            "name": "Compost_Terrain",
+            "name": "Compost",
             "mined_product": "Compost",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 1.400391,
-            "disruption_recovery_time": 6000,
+            "disruption_recovery_time": 12000,
             "is_hardened_floor": false,
             "max_collapse_height_diff": 1.200195,
             "min_collapse_height_diff": 0.6005859,
@@ -224,7 +250,7 @@
         },
         {
             "id": "Rock_Terrain",
-            "name": "Rock_Terrain",
+            "name": "Rock",
             "mined_product": "Rock",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 1.599609,
@@ -237,7 +263,7 @@
         },
         {
             "id": "RockDisrupted_Terrain",
-            "name": "RockDisrupted_Terrain",
+            "name": "Rock (disrupted)",
             "mined_product": "Rock",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 1.599609,
@@ -249,8 +275,21 @@
             "vehicle_traversal_cost": 0
         },
         {
+            "id": "Gravel_Terrain",
+            "name": "Gravel",
+            "mined_product": "Gravel",
+            "mining_hardness": "",
+            "mined_quantity_per_tile_cubed": 2,
+            "disruption_recovery_time": 0,
+            "is_hardened_floor": false,
+            "max_collapse_height_diff": 1.599609,
+            "min_collapse_height_diff": 0.7001953,
+            "mined_quantity_mult": "100,00%",
+            "vehicle_traversal_cost": 0
+        },
+        {
             "id": "RockNoGrassCover_Terrain",
-            "name": "RockNoGrassCover_Terrain",
+            "name": "Rock (no grass cover)",
             "mined_product": "Rock",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 1.599609,
@@ -263,7 +302,7 @@
         },
         {
             "id": "Bedrock_Terrain",
-            "name": "Bedrock_Terrain",
+            "name": "Bedrock",
             "mined_product": "Rock",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 4,
@@ -276,7 +315,7 @@
         },
         {
             "id": "HardenedRock_Terrain",
-            "name": "HardenedRock_Terrain",
+            "name": "Hardened rock",
             "mined_product": "Rock",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
@@ -288,21 +327,8 @@
             "vehicle_traversal_cost": 0
         },
         {
-            "id": "Gravel_Terrain",
-            "name": "Gravel_Terrain",
-            "mined_product": "Gravel",
-            "mining_hardness": "",
-            "mined_quantity_per_tile_cubed": 2,
-            "disruption_recovery_time": 0,
-            "is_hardened_floor": false,
-            "max_collapse_height_diff": 1.599609,
-            "min_collapse_height_diff": 0.7001953,
-            "mined_quantity_mult": "100,00%",
-            "vehicle_traversal_cost": 0
-        },
-        {
             "id": "Sand_Terrain",
-            "name": "Sand_Terrain",
+            "name": "Sand",
             "mined_product": "Sand",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
@@ -315,11 +341,11 @@
         },
         {
             "id": "SandDisrupted_Terrain",
-            "name": "SandDisrupted_Terrain",
+            "name": "Sand (disrupted)",
             "mined_product": "Sand",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
-            "disruption_recovery_time": 3000,
+            "disruption_recovery_time": 6000,
             "is_hardened_floor": false,
             "max_collapse_height_diff": 0.7998047,
             "min_collapse_height_diff": 0.7001953,
@@ -328,7 +354,7 @@
         },
         {
             "id": "Limestone_Terrain",
-            "name": "Limestone_Terrain",
+            "name": "Limestone",
             "mined_product": "Limestone",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
@@ -341,7 +367,7 @@
         },
         {
             "id": "LimestoneDisrupted_Terrain",
-            "name": "LimestoneDisrupted_Terrain",
+            "name": "Limestone (disrupted)",
             "mined_product": "Limestone",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
@@ -354,7 +380,7 @@
         },
         {
             "id": "Quartz_Terrain",
-            "name": "Quartz_Terrain",
+            "name": "Quartz",
             "mined_product": "Quartz",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
@@ -367,7 +393,7 @@
         },
         {
             "id": "QuartzDisrupted_Terrain",
-            "name": "QuartzDisrupted_Terrain",
+            "name": "Quartz (disrupted)",
             "mined_product": "Quartz",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
@@ -379,8 +405,21 @@
             "vehicle_traversal_cost": 0
         },
         {
+            "id": "QuartzCrushed_Terrain",
+            "name": "Quartz (crushed)",
+            "mined_product": "Quartz crushed",
+            "mining_hardness": "",
+            "mined_quantity_per_tile_cubed": 2,
+            "disruption_recovery_time": 0,
+            "is_hardened_floor": false,
+            "max_collapse_height_diff": 1.599609,
+            "min_collapse_height_diff": 0.7001953,
+            "mined_quantity_mult": "100,00%",
+            "vehicle_traversal_cost": 0
+        },
+        {
             "id": "Coal_Terrain",
-            "name": "Coal_Terrain",
+            "name": "Coal",
             "mined_product": "Coal",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2.400391,
@@ -393,7 +432,7 @@
         },
         {
             "id": "CoalDisrupted_Terrain",
-            "name": "CoalDisrupted_Terrain",
+            "name": "Coal (disrupted)",
             "mined_product": "Coal",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2.400391,
@@ -406,7 +445,7 @@
         },
         {
             "id": "Slag_Terrain",
-            "name": "Slag_Terrain",
+            "name": "Slag",
             "mined_product": "Slag",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
@@ -419,7 +458,7 @@
         },
         {
             "id": "SlagCrushed_Terrain",
-            "name": "SlagCrushed_Terrain",
+            "name": "Slag (crushed)",
             "mined_product": "Slag crushed",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
@@ -432,7 +471,7 @@
         },
         {
             "id": "IronOre_Terrain",
-            "name": "IronOre_Terrain",
+            "name": "Iron ore",
             "mined_product": "Iron ore",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
@@ -445,7 +484,7 @@
         },
         {
             "id": "IronOreDisrupted_Terrain",
-            "name": "IronOreDisrupted_Terrain",
+            "name": "Iron ore (disrupted)",
             "mined_product": "Iron ore",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
@@ -458,7 +497,7 @@
         },
         {
             "id": "IronOreCrushed_Terrain",
-            "name": "IronOreCrushed_Terrain",
+            "name": "Iron ore (crushed)",
             "mined_product": "Iron ore crushed",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
@@ -471,7 +510,7 @@
         },
         {
             "id": "CopperOre_Terrain",
-            "name": "CopperOre_Terrain",
+            "name": "Copper ore",
             "mined_product": "Copper ore",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
@@ -484,7 +523,7 @@
         },
         {
             "id": "CopperOreDisrupted_Terrain",
-            "name": "CopperOreDisrupted_Terrain",
+            "name": "Copper ore (disrupted)",
             "mined_product": "Copper ore",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
@@ -497,7 +536,7 @@
         },
         {
             "id": "CopperOreCrushed_Terrain",
-            "name": "CopperOreCrushed_Terrain",
+            "name": "Copper ore (crushed)",
             "mined_product": "Copper ore crushed",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
@@ -510,7 +549,7 @@
         },
         {
             "id": "GoldOre_Terrain",
-            "name": "GoldOre_Terrain",
+            "name": "Gold ore",
             "mined_product": "Gold ore",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
@@ -523,7 +562,7 @@
         },
         {
             "id": "GoldOreDisrupted_Terrain",
-            "name": "GoldOreDisrupted_Terrain",
+            "name": "Gold ore (disrupted)",
             "mined_product": "Gold ore",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
@@ -536,7 +575,7 @@
         },
         {
             "id": "GoldOreCrushed_Terrain",
-            "name": "GoldOreCrushed_Terrain",
+            "name": "Gold ore (crushed)",
             "mined_product": "Gold ore crushed",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
@@ -549,7 +588,7 @@
         },
         {
             "id": "Landfill_Terrain",
-            "name": "Landfill_Terrain",
+            "name": "Landfill",
             "mined_product": "Waste",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
@@ -562,7 +601,7 @@
         },
         {
             "id": "LandfillOld_Terrain",
-            "name": "LandfillOld_Terrain",
+            "name": "Landfill (weathered)",
             "mined_product": "Waste",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,
@@ -575,7 +614,7 @@
         },
         {
             "id": "UraniumDepleted_Terrain",
-            "name": "UraniumDepleted_Terrain",
+            "name": "Depleted uranium",
             "mined_product": "Depleted uranium",
             "mining_hardness": "",
             "mined_quantity_per_tile_cubed": 2,

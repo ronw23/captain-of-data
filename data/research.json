@@ -1,11 +1,17 @@
 {
-    "game_version": "0.5.1.0",
+    "game_version": "0.6.0.0",
     "research": [
         {
             "id": "ResearchCpPacking",
             "name": "Construction",
             "difficulty": 1,
             "total_steps": 10
+        },
+        {
+            "id": "ResearchCustomSurfaces",
+            "name": "Custom surfaces",
+            "difficulty": 3,
+            "total_steps": 48
         },
         {
             "id": "ResearchRepairDock",
@@ -620,6 +626,12 @@
             "total_steps": 76
         },
         {
+            "id": "ResearchTransportsLifts",
+            "name": "Transport lifts",
+            "difficulty": 5,
+            "total_steps": 104
+        },
+        {
             "id": "ResearchVehicleAssembly2",
             "name": "Large vehicles",
             "difficulty": 9,
@@ -632,8 +644,20 @@
             "total_steps": 216
         },
         {
+            "id": "ResearchHydrogenCell",
+            "name": "Hydrogen cell",
+            "difficulty": 15,
+            "total_steps": 384
+        },
+        {
             "id": "ResearchVehicleAssembly3",
             "name": "Mega vehicles",
+            "difficulty": 20,
+            "total_steps": 524
+        },
+        {
+            "id": "ResearchVehicleAssembly3H",
+            "name": "Hydrogen mega vehicles",
             "difficulty": 20,
             "total_steps": 524
         },
@@ -776,8 +800,14 @@
             "total_steps": 300
         },
         {
+            "id": "ResearchElectricity",
+            "name": "Electricity",
+            "difficulty": 0,
+            "total_steps": 0
+        },
+        {
             "id": "ResearchPowerAndMaintenance",
-            "name": "Power & maintenance",
+            "name": "Maintenance",
             "difficulty": 1,
             "total_steps": 10
         },
