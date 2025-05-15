@@ -1,145 +1,260 @@
-{"game_version":"0.7.0.0","engines":[{
-"name":"Ship engine","fuel_capacity":80,"extra_crew_needed":15,"costs":[]
+{
+    "armor": [
+        {
+            "armor_upgrade": 0,
+            "costs": [
+                {
+                    "product": "Iron",
+                    "quantity": 200
+                }
+            ],
+            "hp_upgrade": 0,
+            "name": "Armor plating"
+        },
+        {
+            "armor_upgrade": 0,
+            "costs": [
+                {
+                    "product": "Steel",
+                    "quantity": 200
+                }
+            ],
+            "hp_upgrade": 0,
+            "name": "Armor plating II"
+        }
+    ],
+    "bridges": [
+        {
+            "costs": [
+                {
+                    "product": "Iron",
+                    "quantity": 600
+                }
+            ],
+            "extra_crew_needed": 0,
+            "hp_upgrade": 0,
+            "name": "Ship bridge",
+            "radar_upgrade": 0
+        },
+        {
+            "costs": [
+                {
+                    "product": "Steel",
+                    "quantity": 400
+                },
+                {
+                    "product": "Mechanical Parts",
+                    "quantity": 100
+                },
+                {
+                    "product": "Electronics",
+                    "quantity": 100
+                }
+            ],
+            "extra_crew_needed": 10,
+            "hp_upgrade": 0,
+            "name": "Ship bridge II",
+            "radar_upgrade": 0
+        },
+        {
+            "costs": [
+                {
+                    "product": "Steel",
+                    "quantity": 1200
+                },
+                {
+                    "product": "Mechanical Parts",
+                    "quantity": 200
+                },
+                {
+                    "product": "Electronics",
+                    "quantity": 600
+                }
+            ],
+            "extra_crew_needed": 30,
+            "hp_upgrade": 0,
+            "name": "Ship bridge III",
+            "radar_upgrade": 0
+        }
+    ],
+    "engines": [
+        {
+            "costs": [],
+            "extra_crew_needed": 15,
+            "fuel_capacity": 80,
+            "name": "Ship engine"
+        },
+        {
+            "costs": [
+                {
+                    "product": "Steel",
+                    "quantity": 160
+                },
+                {
+                    "product": "Mechanical Parts",
+                    "quantity": 200
+                },
+                {
+                    "product": "Electronics",
+                    "quantity": 60
+                }
+            ],
+            "extra_crew_needed": 30,
+            "fuel_capacity": 160,
+            "name": "Ship engine II"
+        },
+        {
+            "costs": [
+                {
+                    "product": "Steel",
+                    "quantity": 480
+                },
+                {
+                    "product": "Mechanical Parts",
+                    "quantity": 400
+                },
+                {
+                    "product": "Electronics II",
+                    "quantity": 160
+                }
+            ],
+            "extra_crew_needed": 60,
+            "fuel_capacity": 320,
+            "name": "Ship engine III"
+        }
+    ],
+    "fuel_tanks": [
+        {
+            "added_capacity": 40,
+            "costs": [
+                {
+                    "product": "Steel",
+                    "quantity": 300
+                }
+            ],
+            "name": "Extra fuel tank"
+        }
+    ],
+    "game_version": "0.7.0.0",
+    "weapons": [
+        {
+            "costs": [],
+            "damage": 40,
+            "extra_crew_needed": 0,
+            "name": "Gun (basic)",
+            "range": 13
+        },
+        {
+            "costs": [
+                {
+                    "product": "Iron",
+                    "quantity": 180
+                },
+                {
+                    "product": "Mechanical Parts",
+                    "quantity": 40
+                }
+            ],
+            "damage": 50,
+            "extra_crew_needed": 10,
+            "name": "Gun I (front)",
+            "range": 15
+        },
+        {
+            "costs": [
+                {
+                    "product": "Iron",
+                    "quantity": 180
+                },
+                {
+                    "product": "Mechanical Parts",
+                    "quantity": 40
+                }
+            ],
+            "damage": 50,
+            "extra_crew_needed": 10,
+            "name": "Gun I (rear)",
+            "range": 15
+        },
+        {
+            "costs": [
+                {
+                    "product": "Steel",
+                    "quantity": 180
+                },
+                {
+                    "product": "Mechanical Parts",
+                    "quantity": 80
+                },
+                {
+                    "product": "Electronics",
+                    "quantity": 20
+                }
+            ],
+            "damage": 150,
+            "extra_crew_needed": 15,
+            "name": "Gun II (front)",
+            "range": 20
+        },
+        {
+            "costs": [
+                {
+                    "product": "Steel",
+                    "quantity": 180
+                },
+                {
+                    "product": "Mechanical Parts",
+                    "quantity": 80
+                },
+                {
+                    "product": "Electronics",
+                    "quantity": 20
+                }
+            ],
+            "damage": 150,
+            "extra_crew_needed": 15,
+            "name": "Gun II (rear)",
+            "range": 20
+        },
+        {
+            "costs": [
+                {
+                    "product": "Steel",
+                    "quantity": 540
+                },
+                {
+                    "product": "Mechanical Parts",
+                    "quantity": 240
+                },
+                {
+                    "product": "Electronics",
+                    "quantity": 160
+                }
+            ],
+            "damage": 300,
+            "extra_crew_needed": 20,
+            "name": "Gun III (front)",
+            "range": 25
+        },
+        {
+            "costs": [
+                {
+                    "product": "Steel",
+                    "quantity": 540
+                },
+                {
+                    "product": "Mechanical Parts",
+                    "quantity": 240
+                },
+                {
+                    "product": "Electronics",
+                    "quantity": 160
+                }
+            ],
+            "damage": 300,
+            "extra_crew_needed": 20,
+            "name": "Gun III (rear)",
+            "range": 25
+        }
+    ]
 }
-,{
-"name":"Ship engine II","fuel_capacity":160,"extra_crew_needed":30,"costs":[{
-"product":"Steel","quantity":160
-}
-,{
-"product":"Mechanical Parts","quantity":200
-}
-,{
-"product":"Electronics","quantity":60
-}
-]
-}
-,{
-"name":"Ship engine III","fuel_capacity":320,"extra_crew_needed":60,"costs":[{
-"product":"Steel","quantity":480
-}
-,{
-"product":"Mechanical Parts","quantity":400
-}
-,{
-"product":"Electronics II","quantity":160
-}
-]
-}
-],"weapons":[{
-"name":"Gun (basic)","range":13,"damage":40,"extra_crew_needed":0,"costs":[]
-}
-,{
-"name":"Gun I (front)","range":15,"damage":50,"extra_crew_needed":10,"costs":[{
-"product":"Iron","quantity":180
-}
-,{
-"product":"Mechanical Parts","quantity":40
-}
-]
-}
-,{
-"name":"Gun I (rear)","range":15,"damage":50,"extra_crew_needed":10,"costs":[{
-"product":"Iron","quantity":180
-}
-,{
-"product":"Mechanical Parts","quantity":40
-}
-]
-}
-,{
-"name":"Gun II (front)","range":20,"damage":150,"extra_crew_needed":15,"costs":[{
-"product":"Steel","quantity":180
-}
-,{
-"product":"Mechanical Parts","quantity":80
-}
-,{
-"product":"Electronics","quantity":20
-}
-]
-}
-,{
-"name":"Gun II (rear)","range":20,"damage":150,"extra_crew_needed":15,"costs":[{
-"product":"Steel","quantity":180
-}
-,{
-"product":"Mechanical Parts","quantity":80
-}
-,{
-"product":"Electronics","quantity":20
-}
-]
-}
-,{
-"name":"Gun III (front)","range":25,"damage":300,"extra_crew_needed":20,"costs":[{
-"product":"Steel","quantity":540
-}
-,{
-"product":"Mechanical Parts","quantity":240
-}
-,{
-"product":"Electronics","quantity":160
-}
-]
-}
-,{
-"name":"Gun III (rear)","range":25,"damage":300,"extra_crew_needed":20,"costs":[{
-"product":"Steel","quantity":540
-}
-,{
-"product":"Mechanical Parts","quantity":240
-}
-,{
-"product":"Electronics","quantity":160
-}
-]
-}
-],"armor":[{
-"name":"Armor plating","hp_upgrade":0,"armor_upgrade":0,"costs":[{
-"product":"Iron","quantity":200
-}
-]
-}
-,{
-"name":"Armor plating II","hp_upgrade":0,"armor_upgrade":0,"costs":[{
-"product":"Steel","quantity":200
-}
-]
-}
-],"bridges":[{
-"name":"Ship bridge","hp_upgrade":0,"radar_upgrade":0,"extra_crew_needed":0,"costs":[{
-"product":"Iron","quantity":600
-}
-]
-}
-,{
-"name":"Ship bridge II","hp_upgrade":0,"radar_upgrade":0,"extra_crew_needed":10,"costs":[{
-"product":"Steel","quantity":400
-}
-,{
-"product":"Mechanical Parts","quantity":100
-}
-,{
-"product":"Electronics","quantity":100
-}
-]
-}
-,{
-"name":"Ship bridge III","hp_upgrade":0,"radar_upgrade":0,"extra_crew_needed":30,"costs":[{
-"product":"Steel","quantity":1200
-}
-,{
-"product":"Mechanical Parts","quantity":200
-}
-,{
-"product":"Electronics","quantity":600
-}
-]
-}
-],"fuel_tanks":[{
-"name":"Extra fuel tank","added_capacity":40,"costs":[{
-"product":"Steel","quantity":300
-}
-]
-}
-]}
