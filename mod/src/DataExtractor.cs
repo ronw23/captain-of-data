@@ -1783,7 +1783,7 @@ namespace DataExtractorMod {
                     string computing_consumed = item.ComputingConsumed.ToString();
                     string unity_cost = item.UnityMonthlyCost.ToString();
                     string recipes = "";
-                    Fix64 research_speed = (60 / item.DurationForRecipe.Seconds) * item.StepsPerRecipe;
+                    Fix32 research_speed = (60 / item.DurationOfRecipe.Seconds);
                     string product_type = "";
                     string capacity = "0";
                     string computing_generated = "0";
@@ -3194,8 +3194,8 @@ namespace DataExtractorMod {
                 string researchJson = MakeResearchJsonObject(
                     researchNode.Id.ToString(),
                     researchNode.Strings.Name.ToString(),
-                    researchNode.Difficulty.ToString(),
-                    researchNode.TotalStepsRequired.ToString()
+                    "",
+                    ""
                 );
                 researchItems.Add(researchJson);
 
@@ -3242,8 +3242,8 @@ namespace DataExtractorMod {
                 {
                     next_tier = transport.Upgrade.NextTier.Value.Id.ToString();
                 }
-                string maintenance_cost_units = transport.MaintenanceProduct.Strings.Name.ToString();
-                string maintenance_cost_quantity = transport.MaintenancePerTile.Value.ToString();
+                string maintenance_cost_units = "";
+                string maintenance_cost_quantity = "";
 
                 List<string> machinesProducts = new List<string> { };
 
