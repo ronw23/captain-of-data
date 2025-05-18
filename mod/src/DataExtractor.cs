@@ -318,7 +318,8 @@ namespace DataExtractorMod {
             string name,
             string duration,
             string inputs,
-            string outputs
+            string outputs,
+            string power_multiplier = ""
         )
         {
             System.Text.StringBuilder obj = new System.Text.StringBuilder();
@@ -330,6 +331,7 @@ namespace DataExtractorMod {
             props.Add($"\"duration\":{duration}");
             props.Add($"\"inputs\":[{inputs}]");
             props.Add($"\"outputs\":[{outputs}]");
+            props.Add($"\"power_multiplier\":\"{power_multiplier}\"");
 
             obj.AppendLine("{");
             obj.AppendLine(props.JoinStrings(","));
@@ -630,7 +632,8 @@ namespace DataExtractorMod {
 
             string recipe_id = recipe.Id.ToString();
             string recipe_name = (recipe is RecipeProto) ? ((RecipeProto)recipe).Strings.Name.ToString() : recipe.Id.ToString();
-            if(recipe_id.Equals("RecipeForUiData") && !defaultId.IsEmpty())
+            string recipe_power_multiplier = (recipe is RecipeProto) ? ((RecipeProto)recipe).PowerMultiplier.ToString() : "";
+            if (recipe_id.Equals("RecipeForUiData") && !defaultId.IsEmpty())
             {
                 recipe_id = defaultId;
             }
@@ -662,7 +665,8 @@ namespace DataExtractorMod {
                 recipe_name,
                 recipe_duration,
                 inputItems.JoinStrings(","),
-                outputItems.JoinStrings(",")
+                outputItems.JoinStrings(","),
+                recipe_power_multiplier
             );
             return machineRecipeJson;
         }
@@ -3242,8 +3246,8 @@ namespace DataExtractorMod {
                 {
                     next_tier = transport.Upgrade.NextTier.Value.Id.ToString();
                 }
-                string maintenance_cost_units = "";
-                string maintenance_cost_quantity = "";
+                string maintenance_cost_units = transport.Costs.Maintenance.Product.Strings.Name.ToString();
+                string maintenance_cost_quantity = transport.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
 
                 List<string> machinesProducts = new List<string> { };
 

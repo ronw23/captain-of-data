@@ -5,6 +5,342 @@
             "build_costs": [
                 {
                     "product": "Construction Parts IV",
+                    "quantity": 40
+                }
+            ],
+            "category": "General",
+            "computing_consumed": 0,
+            "computing_generated": 0,
+            "electricity_consumed": 0,
+            "electricity_generated": 0,
+            "icon_path": "Assets/Unity/Generated/Icons/LayoutEntity/TurbineSuperPress.png",
+            "id": "TurbineSuperPress",
+            "maintenance_cost_quantity": 3,
+            "maintenance_cost_units": "Maintenance II",
+            "name": "Super-pressure turbine",
+            "next_tier": "",
+            "product_type": "",
+            "recipes": [
+                {
+                    "duration": 10,
+                    "id": "TurbineSuperPress",
+                    "inputs": [
+                        {
+                            "name": "Steam (super)",
+                            "quantity": 8
+                        }
+                    ],
+                    "name": "TurbineSuperPress",
+                    "outputs": [
+                        {
+                            "name": "Mechanical power",
+                            "quantity": 18000
+                        },
+                        {
+                            "name": "Steam (high)",
+                            "quantity": 8
+                        }
+                    ],
+                    "power_multiplier": ""
+                }
+            ],
+            "research_speed": 0,
+            "storage_capacity": 0,
+            "unity_cost": 0,
+            "workers": 1
+        },
+        {
+            "build_costs": [
+                {
+                    "product": "Construction Parts IV",
+                    "quantity": 40
+                }
+            ],
+            "category": "General",
+            "computing_consumed": 0,
+            "computing_generated": 0,
+            "electricity_consumed": 0,
+            "electricity_generated": 0,
+            "icon_path": "Assets/Unity/Generated/Icons/LayoutEntity/TurbineHighPressT2.png",
+            "id": "TurbineHighPressT2",
+            "maintenance_cost_quantity": 2,
+            "maintenance_cost_units": "Maintenance II",
+            "name": "High-pressure turbine II",
+            "next_tier": "",
+            "product_type": "",
+            "recipes": [
+                {
+                    "duration": 10,
+                    "id": "TurbineHighPressT2",
+                    "inputs": [
+                        {
+                            "name": "Steam (high)",
+                            "quantity": 8
+                        }
+                    ],
+                    "name": "TurbineHighPressT2",
+                    "outputs": [
+                        {
+                            "name": "Mechanical power",
+                            "quantity": 12000
+                        },
+                        {
+                            "name": "Steam (low)",
+                            "quantity": 8
+                        }
+                    ],
+                    "power_multiplier": ""
+                }
+            ],
+            "research_speed": 0,
+            "storage_capacity": 0,
+            "unity_cost": 0,
+            "workers": 2
+        },
+        {
+            "build_costs": [
+                {
+                    "product": "Construction Parts II",
+                    "quantity": 50
+                }
+            ],
+            "category": "General",
+            "computing_consumed": 0,
+            "computing_generated": 0,
+            "electricity_consumed": 0,
+            "electricity_generated": 0,
+            "icon_path": "Assets/Unity/Generated/Icons/LayoutEntity/TurbineHighPress.png",
+            "id": "TurbineHighPress",
+            "maintenance_cost_quantity": 2,
+            "maintenance_cost_units": "Maintenance I",
+            "name": "High-pressure turbine",
+            "next_tier": "TurbineHighPressT2",
+            "product_type": "",
+            "recipes": [
+                {
+                    "duration": 10,
+                    "id": "TurbineHighPress",
+                    "inputs": [
+                        {
+                            "name": "Steam (high)",
+                            "quantity": 4
+                        }
+                    ],
+                    "name": "TurbineHighPress",
+                    "outputs": [
+                        {
+                            "name": "Mechanical power",
+                            "quantity": 6000
+                        },
+                        {
+                            "name": "Steam (low)",
+                            "quantity": 4
+                        }
+                    ],
+                    "power_multiplier": ""
+                }
+            ],
+            "research_speed": 0,
+            "storage_capacity": 0,
+            "unity_cost": 0,
+            "workers": 2
+        },
+        {
+            "build_costs": [
+                {
+                    "product": "Construction Parts IV",
+                    "quantity": 60
+                }
+            ],
+            "category": "General",
+            "computing_consumed": 0,
+            "computing_generated": 0,
+            "electricity_consumed": 0,
+            "electricity_generated": 0,
+            "icon_path": "Assets/Unity/Generated/Icons/LayoutEntity/TurbineLowPressT2.png",
+            "id": "TurbineLowPressT2",
+            "maintenance_cost_quantity": 2,
+            "maintenance_cost_units": "Maintenance II",
+            "name": "Low-pressure turbine II",
+            "next_tier": "",
+            "product_type": "",
+            "recipes": [
+                {
+                    "duration": 10,
+                    "id": "TurbineLowPressT2",
+                    "inputs": [
+                        {
+                            "name": "Steam (low)",
+                            "quantity": 8
+                        }
+                    ],
+                    "name": "TurbineLowPressT2",
+                    "outputs": [
+                        {
+                            "name": "Mechanical power",
+                            "quantity": 6000
+                        },
+                        {
+                            "name": "Steam (depleted)",
+                            "quantity": 8
+                        }
+                    ],
+                    "power_multiplier": ""
+                }
+            ],
+            "research_speed": 0,
+            "storage_capacity": 0,
+            "unity_cost": 0,
+            "workers": 2
+        },
+        {
+            "build_costs": [
+                {
+                    "product": "Construction Parts III",
+                    "quantity": 60
+                }
+            ],
+            "category": "General",
+            "computing_consumed": 0,
+            "computing_generated": 0,
+            "electricity_consumed": 0,
+            "electricity_generated": 0,
+            "icon_path": "Assets/Unity/Generated/Icons/LayoutEntity/TurbineLowPress.png",
+            "id": "TurbineLowPress",
+            "maintenance_cost_quantity": 2,
+            "maintenance_cost_units": "Maintenance I",
+            "name": "Low-pressure turbine",
+            "next_tier": "TurbineLowPressT2",
+            "product_type": "",
+            "recipes": [
+                {
+                    "duration": 10,
+                    "id": "TurbineLowPress",
+                    "inputs": [
+                        {
+                            "name": "Steam (low)",
+                            "quantity": 4
+                        }
+                    ],
+                    "name": "TurbineLowPress",
+                    "outputs": [
+                        {
+                            "name": "Mechanical power",
+                            "quantity": 3000
+                        },
+                        {
+                            "name": "Steam (depleted)",
+                            "quantity": 4
+                        }
+                    ],
+                    "power_multiplier": ""
+                }
+            ],
+            "research_speed": 0,
+            "storage_capacity": 0,
+            "unity_cost": 0,
+            "workers": 2
+        },
+        {
+            "build_costs": [
+                {
+                    "product": "Construction Parts II",
+                    "quantity": 20
+                },
+                {
+                    "product": "Electronics",
+                    "quantity": 20
+                }
+            ],
+            "category": "General",
+            "computing_consumed": 0,
+            "computing_generated": 0,
+            "electricity_consumed": 0,
+            "electricity_generated": 2000,
+            "icon_path": "Assets/Unity/Generated/Icons/LayoutEntity/PowerGeneratorT1.png",
+            "id": "PowerGeneratorT1",
+            "maintenance_cost_quantity": 1,
+            "maintenance_cost_units": "Maintenance I",
+            "name": "Power generator",
+            "next_tier": "",
+            "product_type": "",
+            "recipes": [
+                {
+                    "duration": 0,
+                    "id": "PowerGeneratorT1",
+                    "inputs": [
+                        {
+                            "name": "Mechanical power",
+                            "quantity": 3000
+                        }
+                    ],
+                    "name": "PowerGeneratorT1",
+                    "outputs": [
+                        {
+                            "name": "Electricity",
+                            "quantity": 2000
+                        }
+                    ],
+                    "power_multiplier": ""
+                }
+            ],
+            "research_speed": 0,
+            "storage_capacity": 0,
+            "unity_cost": 0,
+            "workers": 0
+        },
+        {
+            "build_costs": [
+                {
+                    "product": "Construction Parts IV",
+                    "quantity": 40
+                },
+                {
+                    "product": "Electronics",
+                    "quantity": 180
+                }
+            ],
+            "category": "General",
+            "computing_consumed": 0,
+            "computing_generated": 0,
+            "electricity_consumed": 0,
+            "electricity_generated": 15000,
+            "icon_path": "Assets/Unity/Generated/Icons/LayoutEntity/PowerGeneratorT2.png",
+            "id": "PowerGeneratorT2",
+            "maintenance_cost_quantity": 6,
+            "maintenance_cost_units": "Maintenance I",
+            "name": "Power generator (large)",
+            "next_tier": "",
+            "product_type": "",
+            "recipes": [
+                {
+                    "duration": 0,
+                    "id": "PowerGeneratorT2",
+                    "inputs": [
+                        {
+                            "name": "Mechanical power",
+                            "quantity": 18000
+                        }
+                    ],
+                    "name": "PowerGeneratorT2",
+                    "outputs": [
+                        {
+                            "name": "Electricity",
+                            "quantity": 15000
+                        }
+                    ],
+                    "power_multiplier": ""
+                }
+            ],
+            "research_speed": 0,
+            "storage_capacity": 0,
+            "unity_cost": 0,
+            "workers": 0
+        },
+        {
+            "build_costs": [
+                {
+                    "product": "Construction Parts IV",
                     "quantity": 10
                 },
                 {
@@ -58,6 +394,110 @@
             "storage_capacity": 0,
             "unity_cost": 0,
             "workers": 0
+        },
+        {
+            "build_costs": [
+                {
+                    "product": "Construction Parts",
+                    "quantity": 20
+                },
+                {
+                    "product": "Electronics",
+                    "quantity": 20
+                }
+            ],
+            "category": "General",
+            "computing_consumed": 0,
+            "computing_generated": 0,
+            "electricity_consumed": 0,
+            "electricity_generated": 800,
+            "icon_path": "Assets/Unity/Generated/Icons/LayoutEntity/DieselGenerator.png",
+            "id": "DieselGenerator",
+            "maintenance_cost_quantity": 4,
+            "maintenance_cost_units": "Maintenance I",
+            "name": "Diesel generator",
+            "next_tier": "",
+            "product_type": "",
+            "recipes": [
+                {
+                    "duration": 20,
+                    "id": "DieselGenerator",
+                    "inputs": [
+                        {
+                            "name": "Diesel",
+                            "quantity": 1
+                        }
+                    ],
+                    "name": "DieselGenerator",
+                    "outputs": [
+                        {
+                            "name": "Electricity",
+                            "quantity": 800
+                        },
+                        {
+                            "name": "Air pollution",
+                            "quantity": 1
+                        }
+                    ],
+                    "power_multiplier": ""
+                }
+            ],
+            "research_speed": 0,
+            "storage_capacity": 0,
+            "unity_cost": 0,
+            "workers": 2
+        },
+        {
+            "build_costs": [
+                {
+                    "product": "Construction Parts III",
+                    "quantity": 40
+                },
+                {
+                    "product": "Electronics",
+                    "quantity": 60
+                }
+            ],
+            "category": "General",
+            "computing_consumed": 0,
+            "computing_generated": 0,
+            "electricity_consumed": 0,
+            "electricity_generated": 5000,
+            "icon_path": "Assets/Unity/Generated/Icons/LayoutEntity/DieselGeneratorT2.png",
+            "id": "DieselGeneratorT2",
+            "maintenance_cost_quantity": 8,
+            "maintenance_cost_units": "Maintenance I",
+            "name": "Diesel generator II",
+            "next_tier": "",
+            "product_type": "",
+            "recipes": [
+                {
+                    "duration": 20,
+                    "id": "DieselGeneratorT2",
+                    "inputs": [
+                        {
+                            "name": "Diesel",
+                            "quantity": 6
+                        }
+                    ],
+                    "name": "DieselGeneratorT2",
+                    "outputs": [
+                        {
+                            "name": "Electricity",
+                            "quantity": 5000
+                        },
+                        {
+                            "name": "Exhaust",
+                            "quantity": 8
+                        }
+                    ],
+                    "power_multiplier": ""
+                }
+            ],
+            "research_speed": 0,
+            "storage_capacity": 0,
+            "unity_cost": 0,
+            "workers": 2
         },
         {
             "build_costs": [
@@ -16453,6 +16893,250 @@
         {
             "build_costs": [
                 {
+                    "product": "Construction Parts II",
+                    "quantity": 60
+                },
+                {
+                    "product": "Lab Equipment",
+                    "quantity": 12
+                }
+            ],
+            "category": "Buildings",
+            "computing_consumed": 0,
+            "computing_generated": 0,
+            "electricity_consumed": 200,
+            "electricity_generated": 0,
+            "icon_path": "Assets/Unity/Generated/Icons/LayoutEntity/ResearchLab2.png",
+            "id": "ResearchLab2",
+            "maintenance_cost_quantity": 8,
+            "maintenance_cost_units": "Maintenance I",
+            "name": "Research lab I",
+            "next_tier": "ResearchLab3",
+            "product_type": "",
+            "recipes": [
+                {
+                    "duration": 10,
+                    "id": "ResearchLab2",
+                    "inputs": [
+                        {
+                            "name": "Lab Equipment",
+                            "quantity": 1
+                        }
+                    ],
+                    "name": "Research lab I",
+                    "outputs": [],
+                    "power_multiplier": ""
+                },
+                {
+                    "duration": 10,
+                    "id": "ResearchLab21",
+                    "inputs": [
+                        {
+                            "name": "Lab Equipment",
+                            "quantity": 1
+                        }
+                    ],
+                    "name": "Research lab I 1",
+                    "outputs": [
+                        {
+                            "name": "Recyclables",
+                            "quantity": 1
+                        }
+                    ],
+                    "power_multiplier": ""
+                }
+            ],
+            "research_speed": 6,
+            "storage_capacity": 0,
+            "unity_cost": 0.25,
+            "workers": 12
+        },
+        {
+            "build_costs": [
+                {
+                    "product": "Construction Parts III",
+                    "quantity": 120
+                },
+                {
+                    "product": "Lab Equipment II",
+                    "quantity": 24
+                }
+            ],
+            "category": "Buildings",
+            "computing_consumed": 0,
+            "computing_generated": 0,
+            "electricity_consumed": 400,
+            "electricity_generated": 0,
+            "icon_path": "Assets/Unity/Generated/Icons/LayoutEntity/ResearchLab3.png",
+            "id": "ResearchLab3",
+            "maintenance_cost_quantity": 12,
+            "maintenance_cost_units": "Maintenance I",
+            "name": "Research lab II",
+            "next_tier": "ResearchLab4",
+            "product_type": "",
+            "recipes": [
+                {
+                    "duration": 5,
+                    "id": "ResearchLab3",
+                    "inputs": [
+                        {
+                            "name": "Lab Equipment II",
+                            "quantity": 1
+                        }
+                    ],
+                    "name": "Research lab II",
+                    "outputs": [],
+                    "power_multiplier": ""
+                },
+                {
+                    "duration": 5,
+                    "id": "ResearchLab31",
+                    "inputs": [
+                        {
+                            "name": "Lab Equipment II",
+                            "quantity": 1
+                        }
+                    ],
+                    "name": "Research lab II 1",
+                    "outputs": [
+                        {
+                            "name": "Recyclables",
+                            "quantity": 1
+                        }
+                    ],
+                    "power_multiplier": ""
+                }
+            ],
+            "research_speed": 12,
+            "storage_capacity": 0,
+            "unity_cost": 0.2998047,
+            "workers": 20
+        },
+        {
+            "build_costs": [
+                {
+                    "product": "Construction Parts IV",
+                    "quantity": 120
+                },
+                {
+                    "product": "Lab Equipment III",
+                    "quantity": 48
+                }
+            ],
+            "category": "Buildings",
+            "computing_consumed": 0,
+            "computing_generated": 0,
+            "electricity_consumed": 600,
+            "electricity_generated": 0,
+            "icon_path": "Assets/Unity/Generated/Icons/LayoutEntity/ResearchLab4.png",
+            "id": "ResearchLab4",
+            "maintenance_cost_quantity": 12,
+            "maintenance_cost_units": "Maintenance II",
+            "name": "Research lab III",
+            "next_tier": "ResearchLab5",
+            "product_type": "",
+            "recipes": [
+                {
+                    "duration": 5,
+                    "id": "ResearchLab4",
+                    "inputs": [
+                        {
+                            "name": "Lab Equipment III",
+                            "quantity": 2
+                        }
+                    ],
+                    "name": "Research lab III",
+                    "outputs": [],
+                    "power_multiplier": ""
+                },
+                {
+                    "duration": 5,
+                    "id": "ResearchLab41",
+                    "inputs": [
+                        {
+                            "name": "Lab Equipment III",
+                            "quantity": 2
+                        }
+                    ],
+                    "name": "Research lab III 1",
+                    "outputs": [
+                        {
+                            "name": "Recyclables",
+                            "quantity": 2
+                        }
+                    ],
+                    "power_multiplier": ""
+                }
+            ],
+            "research_speed": 12,
+            "storage_capacity": 0,
+            "unity_cost": 0.4003906,
+            "workers": 46
+        },
+        {
+            "build_costs": [
+                {
+                    "product": "Construction Parts IV",
+                    "quantity": 300
+                },
+                {
+                    "product": "Lab Equipment IV",
+                    "quantity": 96
+                }
+            ],
+            "category": "Buildings",
+            "computing_consumed": 12,
+            "computing_generated": 0,
+            "electricity_consumed": 1000,
+            "electricity_generated": 0,
+            "icon_path": "Assets/Unity/Generated/Icons/LayoutEntity/ResearchLab5.png",
+            "id": "ResearchLab5",
+            "maintenance_cost_quantity": 12,
+            "maintenance_cost_units": "Maintenance III",
+            "name": "Research lab IV",
+            "next_tier": "",
+            "product_type": "",
+            "recipes": [
+                {
+                    "duration": 5,
+                    "id": "ResearchLab5",
+                    "inputs": [
+                        {
+                            "name": "Lab Equipment IV",
+                            "quantity": 4
+                        }
+                    ],
+                    "name": "Research lab IV",
+                    "outputs": [],
+                    "power_multiplier": ""
+                },
+                {
+                    "duration": 5,
+                    "id": "ResearchLab51",
+                    "inputs": [
+                        {
+                            "name": "Lab Equipment IV",
+                            "quantity": 4
+                        }
+                    ],
+                    "name": "Research lab IV 1",
+                    "outputs": [
+                        {
+                            "name": "Recyclables",
+                            "quantity": 4
+                        }
+                    ],
+                    "power_multiplier": ""
+                }
+            ],
+            "research_speed": 12,
+            "storage_capacity": 0,
+            "unity_cost": 0.5,
+            "workers": 80
+        },
+        {
+            "build_costs": [
+                {
                     "product": "Construction Parts IV",
                     "quantity": 180
                 }
@@ -17780,6 +18464,100 @@
             "storage_capacity": 0,
             "unity_cost": 0,
             "workers": 30
+        },
+        {
+            "build_costs": [
+                {
+                    "product": "Construction Parts III",
+                    "quantity": 360
+                }
+            ],
+            "category": "Solid",
+            "computing_consumed": 0,
+            "computing_generated": 0,
+            "electricity_consumed": 0,
+            "electricity_generated": 0,
+            "icon_path": "Assets/Unity/Generated/Icons/LayoutEntity/WasteSortingPlant.png",
+            "id": "WasteSortingPlant",
+            "maintenance_cost_quantity": 20,
+            "maintenance_cost_units": "Maintenance I",
+            "name": "Waste sorting plant",
+            "next_tier": "",
+            "product_type": "",
+            "recipes": [
+                {
+                    "duration": 20,
+                    "id": "WasteSortingPlant",
+                    "inputs": [
+                        {
+                            "name": "Recyclables",
+                            "quantity": 48
+                        }
+                    ],
+                    "name": "Waste sorting plant",
+                    "outputs": [
+                        {
+                            "name": "Iron scrap",
+                            "quantity": 0
+                        },
+                        {
+                            "name": "Copper scrap",
+                            "quantity": 0
+                        },
+                        {
+                            "name": "Aluminum scrap",
+                            "quantity": 0
+                        },
+                        {
+                            "name": "Gold scrap",
+                            "quantity": 0
+                        },
+                        {
+                            "name": "Broken glass",
+                            "quantity": 0
+                        }
+                    ],
+                    "power_multiplier": ""
+                },
+                {
+                    "duration": 20,
+                    "id": "WasteSortingPlant1",
+                    "inputs": [
+                        {
+                            "name": "Recyclables pressed",
+                            "quantity": 16
+                        }
+                    ],
+                    "name": "Waste sorting plant 1",
+                    "outputs": [
+                        {
+                            "name": "Iron scrap",
+                            "quantity": 0
+                        },
+                        {
+                            "name": "Copper scrap",
+                            "quantity": 0
+                        },
+                        {
+                            "name": "Aluminum scrap",
+                            "quantity": 0
+                        },
+                        {
+                            "name": "Gold scrap",
+                            "quantity": 0
+                        },
+                        {
+                            "name": "Broken glass",
+                            "quantity": 0
+                        }
+                    ],
+                    "power_multiplier": ""
+                }
+            ],
+            "research_speed": 0,
+            "storage_capacity": 0,
+            "unity_cost": 0,
+            "workers": 32
         },
         {
             "build_costs": [

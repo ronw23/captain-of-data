@@ -1,5 +1,13 @@
 # What's new in this fork
 
+Updated project to `.NET Framework 4.8`
+
+Updated to version `0.7.0 (b406)`
+
+# Original README from doubleaxe
+
+# What's new in this fork
+
 Added solution file and project. I have only `VS Community 2019`, so sorry, solution is for this studio and `Windows .Net 4.0`.
 
 In order to open properly, you should set `COI_ROOT` environment variable to your Captain Of Industry Steam installation, and set your `PATH` variable to `%COI_ROOT%\Captain of Industry_Data\Managed`.
