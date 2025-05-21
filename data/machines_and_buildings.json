@@ -266,7 +266,7 @@
             "product_type": "",
             "recipes": [
                 {
-                    "duration": 0,
+                    "duration": 0.09960938,
                     "id": "PowerGeneratorT1",
                     "inputs": [
                         {
@@ -314,7 +314,7 @@
             "product_type": "",
             "recipes": [
                 {
-                    "duration": 0,
+                    "duration": 0.09960938,
                     "id": "PowerGeneratorT2",
                     "inputs": [
                         {
@@ -2199,7 +2199,7 @@
                     "power_multiplier": "1"
                 },
                 {
-                    "duration": 7,
+                    "duration": 7.5,
                     "id": "VehicleParts1AssemblyT5",
                     "inputs": [
                         {
@@ -2221,7 +2221,7 @@
                     "power_multiplier": "1"
                 },
                 {
-                    "duration": 7,
+                    "duration": 7.5,
                     "id": "VehicleParts2AssemblyT3",
                     "inputs": [
                         {
@@ -2247,7 +2247,7 @@
                     "power_multiplier": "1"
                 },
                 {
-                    "duration": 7,
+                    "duration": 7.5,
                     "id": "VehicleParts3AssemblyT3",
                     "inputs": [
                         {
@@ -2269,7 +2269,7 @@
                     "power_multiplier": "1"
                 },
                 {
-                    "duration": 7,
+                    "duration": 7.5,
                     "id": "LabEquipment1AssemblyT4",
                     "inputs": [
                         {
@@ -2291,7 +2291,7 @@
                     "power_multiplier": "1"
                 },
                 {
-                    "duration": 7,
+                    "duration": 7.5,
                     "id": "LabEquipment2AssemblyT4",
                     "inputs": [
                         {
@@ -2317,7 +2317,7 @@
                     "power_multiplier": "1"
                 },
                 {
-                    "duration": 7,
+                    "duration": 7.5,
                     "id": "LabEquipment3AssemblyT3",
                     "inputs": [
                         {
@@ -2383,7 +2383,7 @@
                     "power_multiplier": "1"
                 },
                 {
-                    "duration": 7,
+                    "duration": 7.5,
                     "id": "HouseholdGoodsAssemblyT4",
                     "inputs": [
                         {
@@ -2771,7 +2771,7 @@
                     "power_multiplier": "1"
                 },
                 {
-                    "duration": 7,
+                    "duration": 7.5,
                     "id": "FoodPackAssemblyMeatT3",
                     "inputs": [
                         {
@@ -2793,7 +2793,7 @@
                     "power_multiplier": "1"
                 },
                 {
-                    "duration": 7,
+                    "duration": 7.5,
                     "id": "FoodPackAssemblyEggsT3",
                     "inputs": [
                         {
@@ -2815,7 +2815,7 @@
                     "power_multiplier": "1"
                 },
                 {
-                    "duration": 7,
+                    "duration": 7.5,
                     "id": "FoodPackAssemblyTofuT3",
                     "inputs": [
                         {
@@ -2837,7 +2837,7 @@
                     "power_multiplier": "1"
                 },
                 {
-                    "duration": 7,
+                    "duration": 7.5,
                     "id": "OfficeSuppliesAssemblyT3",
                     "inputs": [
                         {
@@ -3277,7 +3277,7 @@
                     "power_multiplier": "1"
                 },
                 {
-                    "duration": 7,
+                    "duration": 7.5,
                     "id": "VehicleParts1AssemblyT4",
                     "inputs": [
                         {
@@ -3347,7 +3347,7 @@
                     "power_multiplier": "1"
                 },
                 {
-                    "duration": 7,
+                    "duration": 7.5,
                     "id": "LabEquipment1AssemblyT3",
                     "inputs": [
                         {
@@ -4191,7 +4191,7 @@
                     "power_multiplier": "1"
                 },
                 {
-                    "duration": 7,
+                    "duration": 7.5,
                     "id": "VehicleParts1AssemblyT3",
                     "inputs": [
                         {
@@ -6587,7 +6587,7 @@
                     "power_multiplier": "1"
                 },
                 {
-                    "duration": 7,
+                    "duration": 7.5,
                     "id": "WaterElectrolysisT2",
                     "inputs": [
                         {
