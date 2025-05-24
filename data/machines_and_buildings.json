@@ -1,5 +1,5 @@
 {
-    "game_version": "0.7.1.0",
+    "game_version": "0.7.2.0",
     "machines_and_buildings": [
         {
             "build_costs": [
@@ -2531,6 +2531,28 @@
                     "power_multiplier": "1"
                 },
                 {
+                    "duration": 15,
+                    "id": "UraniumRodsAssemblyT3",
+                    "inputs": [
+                        {
+                            "name": "Enriched uranium (4%)",
+                            "quantity": 2
+                        },
+                        {
+                            "name": "Steel",
+                            "quantity": 1
+                        }
+                    ],
+                    "name": "Uranium rods (T3)",
+                    "outputs": [
+                        {
+                            "name": "Uranium rod",
+                            "quantity": 2
+                        }
+                    ],
+                    "power_multiplier": "1"
+                },
+                {
                     "duration": 40,
                     "id": "SolarCellAssemblyT3",
                     "inputs": [
@@ -3621,7 +3643,7 @@
                             "quantity": 1
                         }
                     ],
-                    "name": "Uranium rods (T1)",
+                    "name": "Uranium rods (T2)",
                     "outputs": [
                         {
                             "name": "Uranium rod",
