@@ -133,10 +133,13 @@ using Mafi.Core.Game;
 using Mafi.Base.Prototypes.Machines;
 using Mafi.Core.Factory.Transports;
 using System.Linq;
+using System;
 
 namespace DataExtractorMod {
     public sealed class DataExtractor : IMod
     {
+
+
         public string Name => "Data Extractor Mod By ItsDesm (modified by doubleaxe)";
 
         public int Version => 1;
@@ -145,13 +148,20 @@ namespace DataExtractorMod {
 
         public Option<IConfig> ModConfig => Option<IConfig>.None;
 
+        private ModManifest manifest;
+
+        ModManifest IMod.Manifest => this.manifest;
+
+        ModJsonConfig IMod.JsonConfig => new ModJsonConfig(this);
+
         public static readonly string MOD_ROOT_DIR_PATH = new FileSystemHelper().GetDirPath(FileType.Mod, false);
         public static readonly string MOD_DIR_PATH = Path.Combine(MOD_ROOT_DIR_PATH, "DataExtractor");
         public static readonly string PLUGIN_DIR_PATH = Path.Combine(MOD_DIR_PATH, "Plugins");
 
         public static readonly bool DEBUG = true;
 
-        public DataExtractor() {
+        public DataExtractor(ModManifest manifest) {
+            this.manifest = manifest;
             //AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
             Log.Info(MOD_ROOT_DIR_PATH);
             Log.Info(MOD_DIR_PATH);
@@ -341,7 +351,8 @@ namespace DataExtractorMod {
 
         public static string MakeVehicleJsonObject(
             string name,
-            string costs
+            string costs,
+            string id
         )
         {
             System.Text.StringBuilder obj = new System.Text.StringBuilder();
@@ -350,6 +361,7 @@ namespace DataExtractorMod {
 
             props.Add($"\"name\":\"{name}\"");
             props.Add($"\"costs\":[{costs}]");
+            props.Add($"\"id\":\"{id}\"");
 
             obj.AppendLine("{");
             obj.AppendLine(props.JoinStrings(","));
@@ -626,13 +638,14 @@ namespace DataExtractorMod {
             string defaultName = ""
         )
         {
-            var duration = (recipe.Duration / 10);
+            var duration = (recipe.Duration.Seconds);
             var inputs = recipe.AllUserVisibleInputs;
             var outputs = recipe.AllUserVisibleOutputs;
 
             string recipe_id = recipe.Id.ToString();
-            string recipe_name = (recipe is RecipeProto) ? ((RecipeProto)recipe).Strings.Name.ToString() : recipe.Id.ToString();
-            string recipe_power_multiplier = (recipe is RecipeProto) ? ((RecipeProto)recipe).PowerMultiplier.ToString() : "";
+            string recipe_name = (recipe is RecipeProto) ? ((RecipeProto)recipe).Strings.Name.TranslatedString : recipe.Id.ToString();
+            
+            string recipe_power_multiplier = (recipe is RecipeProto) ? (((float)((RecipeProto)recipe).PowerMultiplier.RawValue)/100000.0).ToString() : "";
             if (recipe_id.Equals("RecipeForUiData") && !defaultId.IsEmpty())
             {
                 recipe_id = defaultId;
@@ -649,14 +662,14 @@ namespace DataExtractorMod {
             inputs.ForEach(delegate (RecipeInput input)
             {
                 Option<ProductProto> product = protosDb.Get<ProductProto>(input.Product.Id);
-                string machineRecipeInputJson = MakeRecipeIOJsonObject(input.Product.Strings.Name.ToString(), input.Quantity.Value.ToString());
+                string machineRecipeInputJson = MakeRecipeIOJsonObject(input.Product.Strings.Name.TranslatedString, input.Quantity.Value.ToString());
                 inputItems.Add(machineRecipeInputJson);
             });
 
             outputs.ForEach(delegate (RecipeOutput output)
             {
                 Option<ProductProto> product = protosDb.Get<ProductProto>(output.Product.Id);
-                string machineRecipeOutputJson = MakeRecipeIOJsonObject(output.Product.Strings.Name.ToString(), output.Quantity.Value.ToString());
+                string machineRecipeOutputJson = MakeRecipeIOJsonObject(output.Product.Strings.Name.TranslatedString, output.Quantity.Value.ToString());
                 outputItems.Add(machineRecipeOutputJson);
             });
 
@@ -749,14 +762,14 @@ namespace DataExtractorMod {
                     foreach (ProductQuantity cost in item.Value.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         vehicleProducts.Add(vehicleProductJson);
                     }
 
                     string vehicleJson = MakeEngineJsonObject(
-                        item.Strings.Name.ToString(),
+                        item.Strings.Name.TranslatedString,
                         item.FuelCapacity.ToString(),
                         item.ExtraCrew.BonusValue.ToString(),
                         vehicleProducts.JoinStrings(",")
@@ -786,14 +799,14 @@ namespace DataExtractorMod {
                     foreach (ProductQuantity cost in item.Value.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         vehicleProducts.Add(vehicleProductJson);
                     }
 
                     string vehicleJson = MakeGunJsonObject(
-                        item.Strings.Name.ToString(),
+                        item.Strings.Name.TranslatedString,
                         item.Range.ToString(),
                         item.Damage.ToString(),
                         item.ExtraCrew.BonusValue.ToString(),
@@ -823,14 +836,14 @@ namespace DataExtractorMod {
                     foreach (ProductQuantity cost in item.Value.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         vehicleProducts.Add(vehicleProductJson);
                     }
 
                     string vehicleJson = MakeArmorJsonObject(
-                        item.Strings.Name.ToString(),
+                        item.Strings.Name.TranslatedString,
                         "0",
                         "0",
                         vehicleProducts.JoinStrings(",")
@@ -860,14 +873,14 @@ namespace DataExtractorMod {
                     foreach (ProductQuantity cost in item.Value.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         vehicleProducts.Add(vehicleProductJson);
                     }
 
                     string vehicleJson = MakeBridgeJsonObject(
-                        item.Strings.Name.ToString(),
+                        item.Strings.Name.TranslatedString,
                         "0",
                         "0",
                         item.ExtraCrew.BonusValue.ToString(),
@@ -898,14 +911,14 @@ namespace DataExtractorMod {
                     foreach (ProductQuantity cost in item.Value.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         vehicleProducts.Add(vehicleProductJson);
                     }
                     
                     string vehicleJson = MakeTankJsonObject(
-                        item.Strings.Name.ToString(),
+                        item.Strings.Name.TranslatedString,
                         item.AddedFuelCapacity.ToString(),
                         vehicleProducts.JoinStrings(",")
                     );
@@ -956,15 +969,17 @@ namespace DataExtractorMod {
                     foreach (ProductQuantity cost in vehicle.CostToBuild.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         vehicleProducts.Add(vehicleProductJson);
                     }
 
+
                     string vehicleJson = MakeVehicleJsonObject(
-                        vehicle.Strings.Name.ToString(),
-                        vehicleProducts.JoinStrings(",")
+                        vehicle.Strings.Name.TranslatedString,
+                        vehicleProducts.JoinStrings(","),
+                        vehicle.Id.ToString()
                     );
                     vehicleItems.Add(vehicleJson);
 
@@ -998,10 +1013,10 @@ namespace DataExtractorMod {
                 try
                 {
                     string id = generator.Id.ToString();
-                    string name = generator.Strings.Name.ToString();
+                    string name = generator.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = generator.Costs.Workers.ToString();
-                    string maintenance_cost_units = generator.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = generator.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = generator.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = "0";
@@ -1017,17 +1032,17 @@ namespace DataExtractorMod {
                         next_tier = generator.Upgrade.NextTier.Value.Id.ToString();
                     }
 
-                    foreach (ToolbarCategoryProto cat in generator.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in generator.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 ;
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in generator.Costs.Price.Products)
+                    foreach (ProductQuantity cost in generator.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -1077,10 +1092,10 @@ namespace DataExtractorMod {
                 {
 
                     string id = generator.Id.ToString();
-                    string name = generator.Strings.Name.ToString();
+                    string name = generator.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = generator.Costs.Workers.ToString();
-                    string maintenance_cost_units = generator.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = generator.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = generator.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = "";
@@ -1090,17 +1105,17 @@ namespace DataExtractorMod {
                     string unity_cost = "0";
                     string research_speed = "0";
 
-                    foreach (ToolbarCategoryProto cat in generator.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in generator.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 ;
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in generator.Costs.Price.Products)
+                    foreach (ProductQuantity cost in generator.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -1151,10 +1166,10 @@ namespace DataExtractorMod {
                 {
 
                     string id = generator.Id.ToString();
-                    string name = generator.Strings.Name.ToString();
+                    string name = generator.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = generator.Costs.Workers.ToString();
-                    string maintenance_cost_units = generator.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = generator.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = generator.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = generator.OutputElectricity.Value.ToString();
@@ -1164,17 +1179,17 @@ namespace DataExtractorMod {
                     string unity_cost = "0";
                     string research_speed = "0";
 
-                    foreach (ToolbarCategoryProto cat in generator.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in generator.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 ;
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in generator.Costs.Price.Products)
+                    foreach (ProductQuantity cost in generator.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -1220,10 +1235,10 @@ namespace DataExtractorMod {
                 {
 
                     string id = generator.Id.ToString();
-                    string name = generator.Strings.Name.ToString();
+                    string name = generator.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = generator.Costs.Workers.ToString();
-                    string maintenance_cost_units = generator.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = generator.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = generator.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = generator.OutputElectricity.Value.ToString();
@@ -1233,17 +1248,17 @@ namespace DataExtractorMod {
                     string unity_cost = "0";
                     string research_speed = "0";
 
-                    foreach (ToolbarCategoryProto cat in generator.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in generator.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category =  cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 ;
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in generator.Costs.Price.Products)
+                    foreach (ProductQuantity cost in generator.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -1297,10 +1312,10 @@ namespace DataExtractorMod {
                     List<IRecipeForUi> machineRecipes = machine.Recipes.AsEnumerable().ToList<IRecipeForUi>();
 
                     string id = machine.Id.ToString();
-                    string name = machine.Strings.Name.ToString();
+                    string name = machine.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = machine.Costs.Workers.ToString();
-                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = machine.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = machine.ElectricityConsumed.Quantity.Value.ToString();
                     string electricity_generated = "0";
@@ -1316,17 +1331,17 @@ namespace DataExtractorMod {
                         next_tier = machine.Upgrade.NextTier.Value.Id.ToString();
                     }
 
-                    foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in machine.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in machine.Costs.Price.Products)
+                    foreach (ProductQuantity cost in machine.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -1386,10 +1401,10 @@ namespace DataExtractorMod {
                 {
 
                     string id = item.Id.ToString();
-                    string name = item.Strings.Name.ToString();
+                    string name = item.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = item.Costs.Workers.ToString();
-                    string maintenance_cost_units = item.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = item.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = item.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = "0";
@@ -1405,17 +1420,17 @@ namespace DataExtractorMod {
                         next_tier = item.Upgrade.NextTier.Value.Id.ToString();
                     }
 
-                    foreach (ToolbarCategoryProto cat in item.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in item.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in item.Costs.Price.Products)
+                    foreach (ProductQuantity cost in item.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -1437,7 +1452,7 @@ namespace DataExtractorMod {
                         string machineRecipeInputJson;
                         string machineRecipeOutputJson;
 
-                        machineRecipeOutputJson = MakeRecipeIOJsonObject(crop.ProductProduced.Product.Strings.Name.ToString(), crop.ProductProduced.Quantity.ScaledBy(item.YieldMultiplier).ToString());
+                        machineRecipeOutputJson = MakeRecipeIOJsonObject(crop.ProductProduced.Product.Strings.Name.TranslatedString, crop.ProductProduced.Quantity.ScaledBy(item.YieldMultiplier).ToString());
                         outputItems.Add(machineRecipeOutputJson);
 
                         if (item.HasIrrigationAndFertilizerSupport)
@@ -1456,12 +1471,12 @@ namespace DataExtractorMod {
                                 List<string> inputItems2 = new List<string> ( inputItems );
                                 Option<FertilizerProductParam> fertilizerParam = fertilizer.GetParam<FertilizerProductParam>();
                                 Fix64 fertilizerFerDay = (crop.ConsumedFertilityPerDay.ToFix64() * crop.DaysToGrow) / fertilizerParam.Value.FertilityPerQuantity.ToFix64();
-                                machineRecipeInputJson = MakeRecipeIOJsonObject(fertilizer.Strings.Name.ToString(), fertilizerFerDay.ScaledBy(item.DemandsMultiplier).ToFix32().ToString());
+                                machineRecipeInputJson = MakeRecipeIOJsonObject(fertilizer.Strings.Name.TranslatedString, fertilizerFerDay.ScaledBy(item.DemandsMultiplier).ToFix32().ToString());
                                 inputItems2.Add(machineRecipeInputJson);
 
                                 string machineRecipeJson = MakeRecipeJsonObject(
                                     crop.Id.ToString() + "_" + fertilizer.Id.ToString(),
-                                    crop.Strings.Name.ToString() + " " + fertilizer.Strings.Name.ToString(),
+                                    crop.Strings.Name.TranslatedString + " " + fertilizer.Strings.Name.TranslatedString,
                                     duration.ToString(),
                                     inputItems2.JoinStrings(","),
                                     outputItems.JoinStrings(",")
@@ -1473,7 +1488,7 @@ namespace DataExtractorMod {
                         {
                             string machineRecipeJson = MakeRecipeJsonObject(
                                 crop.Id.ToString(),
-                                crop.Strings.Name.ToString(),
+                                crop.Strings.Name.TranslatedString,
                                 duration.ToString(),
                                 inputItems.JoinStrings(","),
                                 outputItems.JoinStrings(",")
@@ -1522,10 +1537,10 @@ namespace DataExtractorMod {
                 {
 
                     string id = item.Id.ToString();
-                    string name = item.Strings.Name.ToString();
+                    string name = item.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = item.Costs.Workers.ToString();
-                    string maintenance_cost_units = item.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = item.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = item.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = "0";
@@ -1541,17 +1556,17 @@ namespace DataExtractorMod {
                         next_tier = item.Upgrade.NextTier.Value.Id.ToString();
                     }
 
-                    foreach (ToolbarCategoryProto cat in item.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in item.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in item.Costs.Price.Products)
+                    foreach (ProductQuantity cost in item.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -1565,20 +1580,20 @@ namespace DataExtractorMod {
                     List<string> outputItems = new List<string> { };
 
                     string machineRecipeInputJson;
-                    machineRecipeInputJson = MakeRecipeIOJsonObject(item.FoodPerAnimalPerMonth.Product.Strings.Name.ToString(), (item.AnimalsCapacity * item.FoodPerAnimalPerMonth.Quantity.Value).ToString());
+                    machineRecipeInputJson = MakeRecipeIOJsonObject(item.FoodPerAnimalPerMonth.Product.Strings.Name.TranslatedString, (item.AnimalsCapacity * item.FoodPerAnimalPerMonth.Quantity.Value).ToString());
                     inputItems.Add(machineRecipeInputJson);
-                    machineRecipeInputJson = MakeRecipeIOJsonObject(item.WaterPerAnimalPerMonth.Product.Strings.Name.ToString(), (item.AnimalsCapacity * item.WaterPerAnimalPerMonth.Quantity.Value).ToString());
+                    machineRecipeInputJson = MakeRecipeIOJsonObject(item.WaterPerAnimalPerMonth.Product.Strings.Name.TranslatedString, (item.AnimalsCapacity * item.WaterPerAnimalPerMonth.Quantity.Value).ToString());
                     inputItems.Add(machineRecipeInputJson);
 
                     string machineRecipeOutputJson;
                     var produced = item.ProducedPerAnimalPerMonth;
                     if(produced != null)
                     {
-                        machineRecipeOutputJson = MakeRecipeIOJsonObject(produced.Value.Product.Strings.Name.ToString(), (item.AnimalsCapacity * produced.Value.Quantity.Value).ToString());
+                        machineRecipeOutputJson = MakeRecipeIOJsonObject(produced.Value.Product.Strings.Name.TranslatedString, (item.AnimalsCapacity * produced.Value.Quantity.Value).ToString());
                         outputItems.Add(machineRecipeOutputJson);
                     }
                     //must be divided by 100, but according to wiki it produces 10 carcass instead of 20
-                    machineRecipeOutputJson = MakeRecipeIOJsonObject(item.CarcassProto.Strings.Name.ToString(), ((item.AnimalsBornPer100AnimalsPerMonth * item.AnimalsCapacity) / 200).ToString());
+                    machineRecipeOutputJson = MakeRecipeIOJsonObject(item.CarcassProto.Strings.Name.TranslatedString, ((item.AnimalsBornPer100AnimalsPerMonth * item.AnimalsCapacity) / 200).ToString());
                     outputItems.Add(machineRecipeOutputJson);
 
                     string machineRecipeJson = MakeRecipeJsonObject(
@@ -1629,10 +1644,10 @@ namespace DataExtractorMod {
                 {
 
                     string id = item.Id.ToString();
-                    string name = item.Strings.Name.ToString();
+                    string name = item.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = item.Costs.Workers.ToString();
-                    string maintenance_cost_units = item.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = item.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = item.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = "0";
@@ -1648,17 +1663,17 @@ namespace DataExtractorMod {
                         next_tier = item.Upgrade.NextTier.Value.Id.ToString();
                     }
 
-                    foreach (ToolbarCategoryProto cat in item.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in item.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in item.Costs.Price.Products)
+                    foreach (ProductQuantity cost in item.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -1703,12 +1718,12 @@ namespace DataExtractorMod {
                 {
 
                     string id = item.Id.ToString();
-                    string name = item.Strings.Name.ToString();
+                    string name = item.Strings.Name.TranslatedString;
                     string category = "";
                     string product_type = "";
                     string capacity = item.Capacity.ToString();
                     string workers = item.Costs.Workers.ToString();
-                    string maintenance_cost_units = item.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = item.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = item.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = "0";
@@ -1722,17 +1737,17 @@ namespace DataExtractorMod {
                         next_tier = item.Upgrade.NextTier.Value.Id.ToString();
                     }
 
-                    foreach (ToolbarCategoryProto cat in item.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in item.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in item.Costs.Price.Products)
+                    foreach (ProductQuantity cost in item.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -1777,10 +1792,10 @@ namespace DataExtractorMod {
                 {
 
                     string id = item.Id.ToString();
-                    string name = item.Strings.Name.ToString();
+                    string name = item.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = item.Costs.Workers.ToString();
-                    string maintenance_cost_units = item.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = item.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = item.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = item.ElectricityConsumed.Quantity.Value.ToString();
                     string electricity_generated = "0";
@@ -1803,17 +1818,17 @@ namespace DataExtractorMod {
                         recipes = recipeItems.JoinStrings(",");
                     }
 
-                    foreach (ToolbarCategoryProto cat in item.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in item.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in item.Costs.Price.Products)
+                    foreach (ProductQuantity cost in item.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -1858,10 +1873,10 @@ namespace DataExtractorMod {
                 {
 
                     string id = machine.Id.ToString();
-                    string name = machine.Strings.Name.ToString();
+                    string name = machine.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = machine.Costs.Workers.ToString();
-                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = machine.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = machine.ElectricityConsumed.Quantity.Value.ToString();
                     string electricity_generated = "0";
@@ -1877,17 +1892,17 @@ namespace DataExtractorMod {
                         next_tier = machine.Upgrade.NextTier.Value.Id.ToString();
                     }
 
-                    foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in machine.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in machine.Costs.Price.Products)
+                    foreach (ProductQuantity cost in machine.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -1932,10 +1947,10 @@ namespace DataExtractorMod {
                 {
 
                     string id = machine.Id.ToString();
-                    string name = machine.Strings.Name.ToString();
+                    string name = machine.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = machine.Costs.Workers.ToString();
-                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = machine.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = "0";
@@ -1951,17 +1966,17 @@ namespace DataExtractorMod {
                         next_tier = machine.Upgrade.NextTier.Value.Id.ToString();
                     }
 
-                    foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in machine.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in machine.Costs.Price.Products)
+                    foreach (ProductQuantity cost in machine.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -2018,34 +2033,34 @@ namespace DataExtractorMod {
                 string type = null;
                 if (product is CountableProductProto)
                 {
-                    countProdNames.Add(product.Strings.Name.ToString());
+                    countProdNames.Add(product.Strings.Name.TranslatedString);
                     type = product.Type.ToString();
                 }
                 else if(product is LooseProductProto)
                 {
-                    looseProdNames.Add(product.Strings.Name.ToString());
+                    looseProdNames.Add(product.Strings.Name.TranslatedString);
                     type = product.Type.ToString();
                 }
                 else if (product is FluidProductProto)
                 {
-                    fluidProdNames.Add(product.Strings.Name.ToString());
+                    fluidProdNames.Add(product.Strings.Name.TranslatedString);
                     type = product.Type.ToString();
                 }
                 else if (product is MoltenProductProto)
                 {
-                    moltenProdNames.Add(product.Strings.Name.ToString());
+                    moltenProdNames.Add(product.Strings.Name.TranslatedString);
                     type = product.Type.ToString();
                 }
                 else if (product is VirtualProductProto)
                 {
-                    virtualProdNames.Add(product.Strings.Name.ToString());
+                    virtualProdNames.Add(product.Strings.Name.TranslatedString);
                     type = product.Type.ToString();
                 }
                 if (type != null)
                 {
                     productsJson.Add(MakeProductJsonObject(
                         product.Id.ToString(),
-                        product.Strings.Name.ToString(),
+                        product.Strings.Name.TranslatedString,
                         type,
                         product.IconPath));
                 }
@@ -2064,10 +2079,10 @@ namespace DataExtractorMod {
                 {
 
                     string id = machine.Id.ToString();
-                    string name = machine.Strings.Name.ToString();
+                    string name = machine.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = machine.Costs.Workers.ToString();
-                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = machine.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = "0";
@@ -2083,17 +2098,17 @@ namespace DataExtractorMod {
                         next_tier = machine.Upgrade.NextTier.Value.Id.ToString();
                     }
 
-                    foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in machine.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in machine.Costs.Price.Products)
+                    foreach (ProductQuantity cost in machine.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -2205,10 +2220,10 @@ namespace DataExtractorMod {
                 {
 
                     string id = machine.Id.ToString();
-                    string name = machine.Strings.Name.ToString();
+                    string name = machine.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = machine.Costs.Workers.ToString();
-                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = machine.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = "0";
@@ -2218,17 +2233,17 @@ namespace DataExtractorMod {
                     string unity_cost = "0";
                     string research_speed = "0";
 
-                    foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in machine.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in machine.Costs.Price.Products)
+                    foreach (ProductQuantity cost in machine.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -2271,10 +2286,10 @@ namespace DataExtractorMod {
                 {
 
                     string id = machine.Id.ToString();
-                    string name = machine.Strings.Name.ToString();
+                    string name = machine.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = machine.Costs.Workers.ToString();
-                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = machine.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = "0";
@@ -2284,17 +2299,17 @@ namespace DataExtractorMod {
                     string unity_cost = "0";
                     string research_speed = "0";
 
-                    foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in machine.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in machine.Costs.Price.Products)
+                    foreach (ProductQuantity cost in machine.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -2337,10 +2352,10 @@ namespace DataExtractorMod {
                 {
 
                     string id = machine.Id.ToString();
-                    string name = machine.Strings.Name.ToString();
+                    string name = machine.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = machine.Costs.Workers.ToString();
-                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = machine.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = "0";
@@ -2350,17 +2365,17 @@ namespace DataExtractorMod {
                     string computing_consumed = "0";
                     string computing_generated = "0";
 
-                    foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in machine.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in machine.Costs.Price.Products)
+                    foreach (ProductQuantity cost in machine.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -2403,10 +2418,10 @@ namespace DataExtractorMod {
                 {
 
                     string id = machine.Id.ToString();
-                    string name = machine.Strings.Name.ToString();
+                    string name = machine.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = machine.Costs.Workers.ToString();
-                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = machine.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = "0";
@@ -2416,17 +2431,17 @@ namespace DataExtractorMod {
                     string computing_consumed = "0";
                     string computing_generated = "0";
 
-                    foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in machine.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in machine.Costs.Price.Products)
+                    foreach (ProductQuantity cost in machine.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -2469,10 +2484,10 @@ namespace DataExtractorMod {
                 {
 
                     string id = machine.Id.ToString();
-                    string name = machine.Strings.Name.ToString();
+                    string name = machine.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = machine.Costs.Workers.ToString();
-                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = machine.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = machine.ElectricityConsumed.Quantity.Value.ToString();
                     string electricity_generated = "0";
@@ -2482,17 +2497,17 @@ namespace DataExtractorMod {
                     string unity_cost = "0";
                     string research_speed = "0";
 
-                    foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in machine.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in machine.Costs.Price.Products)
+                    foreach (ProductQuantity cost in machine.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -2535,10 +2550,10 @@ namespace DataExtractorMod {
                 {
 
                     string id = machine.Id.ToString();
-                    string name = machine.Strings.Name.ToString();
+                    string name = machine.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = machine.Costs.Workers.ToString();
-                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = machine.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = "0";
@@ -2554,17 +2569,17 @@ namespace DataExtractorMod {
                         next_tier = machine.Upgrade.NextTier.Value.Id.ToString();
                     }
 
-                    foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in machine.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in machine.Costs.Price.Products)
+                    foreach (ProductQuantity cost in machine.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -2573,7 +2588,8 @@ namespace DataExtractorMod {
                     //nuclear reactor gives all recipes at max power level
                     //it also contain enrichment recipe, but all values are 0, so we should use fix all recipes here
                     //we ignore provided recipes, and build our own for min and max power level
-                    //List<string> recipeItems = MakeRecipesJsonObject(protosDb, machine.Recipes.AsEnumerable(), id, name);
+
+//                    List<string> recipeItems = MakeRecipesJsonObject(protosDb, machine.Recipes.AsEnumerable(), id, name);
 
                     List<string> recipeItems = new List<string> { };
 
@@ -2604,14 +2620,14 @@ namespace DataExtractorMod {
                             //by default duration is specified at max power level
                             var poverLevelMultiplier = (machine.MaxPowerLevel + 1 - level);
 
-                            machineRecipeJson = MakeRecipeIOJsonObject(machine.WaterInPerPowerLevel.Product.Strings.Name.ToString(), waterInPerDuration.ToString());
+                            machineRecipeJson = MakeRecipeIOJsonObject(machine.WaterInPerPowerLevel.Product.Strings.Name.TranslatedString, waterInPerDuration.ToString());
                             inputItems.Add(machineRecipeJson);
-                            machineRecipeJson = MakeRecipeIOJsonObject(machine.SteamOutPerPowerLevel.Product.Strings.Name.ToString(), steamOutPerDuration.ToString());
+                            machineRecipeJson = MakeRecipeIOJsonObject(machine.SteamOutPerPowerLevel.Product.Strings.Name.TranslatedString, steamOutPerDuration.ToString());
                             outputItems.Add(machineRecipeJson);
 
-                            machineRecipeJson = MakeRecipeIOJsonObject(fuel.FuelInProto.Strings.Name.ToString(), fuelPerDuration.ToString());
+                            machineRecipeJson = MakeRecipeIOJsonObject(fuel.FuelInProto.Strings.Name.TranslatedString, fuelPerDuration.ToString());
                             inputItems.Add(machineRecipeJson);
-                            machineRecipeJson = MakeRecipeIOJsonObject(fuel.SpentFuelOutProto.Strings.Name.ToString(), fuelPerDuration.ToString());
+                            machineRecipeJson = MakeRecipeIOJsonObject(fuel.SpentFuelOutProto.Strings.Name.TranslatedString, fuelPerDuration.ToString());
                             outputItems.Add(machineRecipeJson);
 
                             machineRecipeJson = MakeRecipeJsonObject(
@@ -2633,9 +2649,9 @@ namespace DataExtractorMod {
                                 recipe_id = (id + ((i != 0) ? i.ToString() : ""));
                                 recipe_name = (name + ((i != 0) ? (" " + i.ToString()) : ""));
 
-                                machineRecipeJson = MakeRecipeIOJsonObject(enrichment.InputProduct.Strings.Name.ToString(), enrichment.ProcessedPerLevel.ToString());
+                                machineRecipeJson = MakeRecipeIOJsonObject(enrichment.InputProduct.Strings.Name.TranslatedString, enrichment.ProcessedPerLevel.ToString());
                                 inputItems.Add(machineRecipeJson);
-                                machineRecipeJson = MakeRecipeIOJsonObject(enrichment.OutputProduct.Strings.Name.ToString(), enrichment.ProcessedPerLevel.ToString());
+                                machineRecipeJson = MakeRecipeIOJsonObject(enrichment.OutputProduct.Strings.Name.TranslatedString, enrichment.ProcessedPerLevel.ToString());
                                 outputItems.Add(machineRecipeJson);
 
                                 machineRecipeJson = MakeRecipeJsonObject(
@@ -2694,10 +2710,10 @@ namespace DataExtractorMod {
                 {
 
                     string id = machine.Id.ToString();
-                    string name = machine.Strings.Name.ToString();
+                    string name = machine.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = machine.Costs.Workers.ToString();
-                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = machine.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = machine.ElectricityConsumed.Value.ToString();
                     string electricity_generated = "0";
@@ -2707,17 +2723,17 @@ namespace DataExtractorMod {
                     string unity_cost = "0";
                     string research_speed = "0";
 
-                    foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in machine.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in machine.Costs.Price.Products)
+                    foreach (ProductQuantity cost in machine.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -2760,10 +2776,10 @@ namespace DataExtractorMod {
                 {
 
                     string id = machine.Id.ToString();
-                    string name = machine.Strings.Name.ToString();
+                    string name = machine.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = machine.Costs.Workers.ToString();
-                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = machine.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = "0";
@@ -2773,17 +2789,17 @@ namespace DataExtractorMod {
                     string unity_cost = "0";
                     string research_speed = "0";
 
-                    foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in machine.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in machine.Costs.Price.Products)
+                    foreach (ProductQuantity cost in machine.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -2825,10 +2841,10 @@ namespace DataExtractorMod {
                 try
                 {
                     string id = machine.Id.ToString();
-                    string name = machine.Strings.Name.ToString();
+                    string name = machine.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = machine.Costs.Workers.ToString();
-                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = machine.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = "0";
@@ -2844,17 +2860,17 @@ namespace DataExtractorMod {
                         next_tier = machine.Upgrade.NextTier.Value.Id.ToString();
                     }
 
-                    foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in machine.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in machine.Costs.Price.Products)
+                    foreach (ProductQuantity cost in machine.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -2902,10 +2918,10 @@ namespace DataExtractorMod {
                 {
 
                     string id = machine.Id.ToString();
-                    string name = machine.Strings.Name.ToString();
+                    string name = machine.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = machine.Costs.Workers.ToString();
-                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.ToString();
+                    string maintenance_cost_units = machine.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                     string maintenance_cost_quantity = machine.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
                     string electricity_consumed = "0";
                     string electricity_generated = "0";
@@ -2915,17 +2931,17 @@ namespace DataExtractorMod {
                     string unity_cost = "0";
                     string research_speed = "0";
 
-                    foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in machine.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in machine.Costs.Price.Products)
+                    foreach (ProductQuantity cost in machine.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -2933,7 +2949,7 @@ namespace DataExtractorMod {
 
                     //machine.WaterCollectedPerDay.ToString() - wiki says 35-40 Units per year on average
                     //one day = 2 in game seconds, one month = 60 in game seconds
-                    string machineRecipeOutputJson = MakeRecipeIOJsonObject(machine.WaterProto.Strings.Name.ToString(), "37");
+                    string machineRecipeOutputJson = MakeRecipeIOJsonObject(machine.WaterProto.Strings.Name.TranslatedString, "37");
                     string machineRecipeJson = MakeRecipeJsonObject(
                         id,
                         name,
@@ -2981,7 +2997,7 @@ namespace DataExtractorMod {
                 {
 
                     string id = machine.Id.ToString();
-                    string name = machine.Strings.Name.ToString();
+                    string name = machine.Strings.Name.TranslatedString;
                     string category = "";
                     string workers = machine.Costs.Workers.ToString();
                     string maintenance_cost_units = "";
@@ -2994,17 +3010,17 @@ namespace DataExtractorMod {
                     string unity_cost = "0";
                     string research_speed = "0";
 
-                    foreach (ToolbarCategoryProto cat in machine.Graphics.Categories)
+                    foreach (ToolbarEntryData cat in machine.Graphics.Categories)
                     {
-                        category = cat.Strings.Name.ToString();
+                        category = cat.CategoryProto.Strings.Name.TranslatedString;
                     }
 
                     List<string> machinesProducts = new List<string> { };
 
-                    foreach (ProductQuantity cost in machine.Costs.Price.Products)
+                    foreach (ProductQuantity cost in machine.Costs.BaseConstructionCost.Products)
                     {
                         string vehicleProductJson = MakeVehicleProductJsonObject(
-                            cost.Product.Strings.Name.ToString(),
+                            cost.Product.Strings.Name.TranslatedString,
                             cost.Quantity.ToString()
                         );
                         machinesProducts.Add(vehicleProductJson);
@@ -3015,17 +3031,17 @@ namespace DataExtractorMod {
                     List<string> recipeItems = new List<string> { };
                     foreach (ServerRackProto dataRack in dataRacks)
                     {
-                        string maintenance_cost_units1 = machine.Costs.Maintenance.Product.Strings.Name.ToString();
+                        string maintenance_cost_units1 = machine.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                         string maintenance_cost_quantity1 = (machine.Costs.Maintenance.MaintenancePerMonth.Value + (racks_capacity * dataRack.Maintenance.Value)).ToString();
 
-                        string recipe_name = dataRack.Strings.Name.ToString();
+                        string recipe_name = dataRack.Strings.Name.TranslatedString;
                         string recipe_duration = "60";
 
                         List<string> inputItems = new List<string> { };
                         List<string> outputItems = new List<string> { };
 
                         string machineRecipeInputJson;
-                        machineRecipeInputJson = MakeRecipeIOJsonObject(machine.CoolantIn.Strings.Name.ToString(), (racks_capacity * dataRack.CoolantInPerMonth.Value).ToString());
+                        machineRecipeInputJson = MakeRecipeIOJsonObject(machine.CoolantIn.Strings.Name.TranslatedString, (racks_capacity * dataRack.CoolantInPerMonth.Value).ToString());
                         inputItems.Add(machineRecipeInputJson);
                         machineRecipeInputJson = MakeRecipeIOJsonObject(maintenance_cost_units1, maintenance_cost_quantity1);
                         inputItems.Add(machineRecipeInputJson);
@@ -3033,7 +3049,7 @@ namespace DataExtractorMod {
                         inputItems.Add(machineRecipeInputJson);
 
                         string machineRecipeOutputJson;
-                        machineRecipeOutputJson = MakeRecipeIOJsonObject(machine.CoolantOut.Strings.Name.ToString(), (racks_capacity * dataRack.CoolantOutPerMonth.Value).ToString());
+                        machineRecipeOutputJson = MakeRecipeIOJsonObject(machine.CoolantOut.Strings.Name.TranslatedString, (racks_capacity * dataRack.CoolantOutPerMonth.Value).ToString());
                         outputItems.Add(machineRecipeOutputJson);
                         machineRecipeOutputJson = MakeRecipeIOJsonObject("Computing", (racks_capacity * dataRack.CreatedComputingPerTick.Value).ToString());
                         outputItems.Add(machineRecipeOutputJson);
@@ -3084,7 +3100,7 @@ namespace DataExtractorMod {
                 {
 
                     string id = machine.Id.ToString();
-                    string name = machine.Strings.Name.ToString();
+                    string name = machine.Strings.Name.TranslatedString;
                     string category = "Data center";
                     string workers = "0";
                     string maintenance_cost_units = "Maintenance III";
@@ -3100,7 +3116,7 @@ namespace DataExtractorMod {
                     List<string> machinesProducts = new List<string> { };
 
                     string vehicleProductJson = MakeVehicleProductJsonObject(
-                            machine.ProductToAddThis.Product.Strings.Name.ToString(),
+                            machine.ProductToAddThis.Product.Strings.Name.TranslatedString,
                             machine.ProductToAddThis.Quantity.Value.ToString()
                     );
                     machinesProducts.Add(vehicleProductJson);
@@ -3149,8 +3165,8 @@ namespace DataExtractorMod {
                 try
                 {
                     string id = material.Id.ToString();
-                    string name = material.Strings.Name.ToString();
-                    string mined_product = material.MinedProduct.Strings.Name.ToString();
+                    string name = material.Strings.Name.TranslatedString;
+                    string mined_product = material.MinedProduct.Strings.Name.TranslatedString;
                     string mining_hardness = "";
                     string mined_quantity_per_tile_cubed = material.MinedQuantityPerTileCubed.ToString();
                     string disruption_recovery_time = material.DisruptionRecoveryTime.ToString();
@@ -3197,7 +3213,7 @@ namespace DataExtractorMod {
 
                 string researchJson = MakeResearchJsonObject(
                     researchNode.Id.ToString(),
-                    researchNode.Strings.Name.ToString(),
+                    researchNode.Strings.Name.TranslatedString,
                     "",
                     ""
                 );
@@ -3216,9 +3232,9 @@ namespace DataExtractorMod {
 
                 string contractJson = MakeContractJsonObject(
                     contract.Id.ToString(),
-                    contract.ProductToBuy.Strings.Name.ToString(),
+                    contract.ProductToBuy.Strings.Name.TranslatedString,
                     contract.GetQuantityToBuy(Percent.Hundred).ToString(),
-                    contract.ProductToPayWith.Strings.Name.ToString(),
+                    contract.ProductToPayWith.Strings.Name.TranslatedString,
                     contract.QuantityToPayWith.ToString(),
                     contract.UpointsPerMonth.ToString(),
                     contract.UpointsPer100ProductsBought.ToString(),
@@ -3246,15 +3262,16 @@ namespace DataExtractorMod {
                 {
                     next_tier = transport.Upgrade.NextTier.Value.Id.ToString();
                 }
-                string maintenance_cost_units = transport.Costs.Maintenance.Product.Strings.Name.ToString();
+                string maintenance_cost_units = transport.Costs.Maintenance.Product.Strings.Name.TranslatedString;
                 string maintenance_cost_quantity = transport.Costs.Maintenance.MaintenancePerMonth.Value.ToString();
 
                 List<string> machinesProducts = new List<string> { };
 
-                foreach (ProductQuantity cost in transport.Costs.Price.Products)
+
+                foreach (ProductQuantity cost in transport.Costs.BaseConstructionCost.Products)
                 {
                     string vehicleProductJson = MakeVehicleProductJsonObject(
-                        cost.Product.Strings.Name.ToString(),
+                        cost.Product.Strings.Name.TranslatedString,
                         cost.Quantity.ToString()
                     );
                     machinesProducts.Add(vehicleProductJson);
@@ -3262,13 +3279,13 @@ namespace DataExtractorMod {
 
                 string transportsJson = MakeTransportJsonObject(
                     transport.Id.ToString(),
-                    transport.Strings.Name.ToString(),
+                    transport.Strings.Name.TranslatedString,
                     category,
                     next_tier,
                     maintenance_cost_units,
                     maintenance_cost_quantity,
                     transport.BaseElectricityCost.Value.ToString(),
-                    (transport.ThroughputPerTick.Value * 10).ToString(),
+                    (transport.ThroughputPerTick.Value * 0).ToString(),
                     transport.LengthPerCost.Value.ToString(),
                     transport.IconPath,
                     machinesProducts.JoinStrings(",")
@@ -3342,6 +3359,16 @@ namespace DataExtractorMod {
 
         public void EarlyInit(DependencyResolver resolver)
         {
+        }
+
+        void IMod.MigrateJsonConfig(VersionSlim savedVersion, Mafi.Collections.Dict<string, object> savedValues)
+        {
+        
+        }
+
+        void IDisposable.Dispose()
+        {
+
         }
     }
 }

@@ -135,7 +135,7 @@
             "name": "Extra fuel tank"
         }
     ],
-    "game_version": "0.7.0.0",
+    "game_version": "0.8.1.0",
     "weapons": [
         {
             "costs": [],
